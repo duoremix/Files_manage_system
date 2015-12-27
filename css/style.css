@@ -1,0 +1,68 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%;}legend{color:#000;}#yui3-css-stamp.cssreset{display:none;}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif,"黑体";
+}
+
+.topbanner {
+	width: 100%;
+	height: 190px;
+	background-image: url(../image/banner.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center -200px;
+}
+
+.topbanner h1{
+	padding-top: 100px;
+	text-align: center;
+	font-size: 36px;
+	font-family: Microsoft Yahei;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px 1px black;
+	color: white;
+	display: block;
+}
+
+.form-field {
+	margin: 20px auto;
+	width: 300px;
+	height: 46px;
+}
+
+.form-field select{
+	padding: 12px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	width: 100%;
+	height: auto;
+}
+
+.form-field input[type=text], .form-field input[type=password]{
+	padding: 12px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	width: 276px;
+	height: auto;
+}
+
+.form-field button {
+	padding: 12px;
+	border: 0;
+	border-radius: 3px;
+	width: 100%;
+	height: auto;
+	background-color: #03a9f4;
+	color: white;
+	font-size: 16px;
+	letter-spacing: 10px;
+	cursor: pointer;
+	transition: background-color .2s;
+}
+
+.form-field button:hover {
+	background-color: #2A8BB7;
+	transition: background-color .2s;
+}
