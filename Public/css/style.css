@@ -1,0 +1,190 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%;}legend{color:#000;}#yui3-css-stamp.cssreset{display:none;}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif,"黑体";
+}
+
+body.container {
+	position: relative;
+	padding-top: 133px;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*登录页面*/
+
+.topbanner {
+	width: 100%;
+	height: 190px;
+	background-image: url(../image/banner.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center -200px;
+}
+
+.topbanner img {
+	margin: 0 auto;
+	padding-top: 100px;
+	width: 360px;
+	display: block;
+}
+
+.topbanner h1{
+	padding-top: 100px;
+	text-align: center;
+	font-size: 36px;
+	font-family: Microsoft Yahei;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px 1px black;
+	color: white;
+	display: block;
+}
+
+.form-field {
+	margin: 20px auto;
+	width: 300px;
+	height: 46px;
+}
+
+.form-field select{
+	padding: 12px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	width: 100%;
+	height: auto;
+}
+
+.form-field input[type=text], .form-field input[type=password]{
+	padding: 12px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	width: 276px;
+	height: auto;
+}
+
+.form-field button {
+	padding: 12px;
+	border: 0;
+	border-radius: 3px;
+	width: 100%;
+	height: auto;
+	background-color: #03a9f4;
+	color: white;
+	font-size: 16px;
+	letter-spacing: 10px;
+	cursor: pointer;
+	transition: background-color .2s;
+}
+
+.form-field button:hover {
+	background-color: #2A8BB7;
+	transition: background-color .2s;
+}
+
+/*登录页面*/
+
+/*主页*/
+
+div.nav-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid #aaa;
+	width: 100%;
+}
+
+div.nav-wrapper .logo {
+	padding-top: 25px;
+	padding-left: 80px;
+	width: 320px;
+	display: inline-block;
+}
+
+div.nav-wrapper .logo img {
+	width: 100%;
+}
+
+div.nav-wrapper ul.nav {
+	padding-left: 80px;
+}
+
+div.nav-wrapper ul.nav li.dropdown {
+	padding-right: 70px;
+	display: inline-block;
+}
+
+div.nav-wrapper ul.nav li.dropdown a {
+	color: #006699;
+	text-decoration: none;
+}
+
+div.nav-wrapper ul.nav li.dropdown a.level1 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: inline-block;
+}
+
+div.nav-wrapper ul.nav li.dropdown.active a.level1 {
+	color: #990000;
+}
+
+div.nav-wrapper ul.nav li.dropdown ul.dropdown-menu {
+	position: absolute;
+	border-top: none;
+	border: 1px solid rgba(0,0,0,.15);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	display: none;
+}
+
+div.nav-wrapper ul.nav li.dropdown ul.dropdown-menu>li {
+	padding: 10px 20px;
+	display: inline-block;
+}
+
+div.nav-wrapper ul.nav li.dropdown ul.dropdown-menu>li>a {
+	font-size: 14px;
+}
+
+div.nav-wrapper ul.nav li.dropdown ul.dropdown-menu>li>a:hover {
+	text-decoration: underline;
+}
+
+div.user-wrapper {
+	padding-top: 20px;
+	padding-right: 80px;
+	width: 210px;
+	float: right;
+	display: inline-block;
+}
+
+div.user-wrapper div {
+	display: inline-block;
+}
+
+div.user-wrapper div a{
+	color: #006699;
+}
+
+div.user-wrapper div#username {
+	padding-right: 10px;
+	border-right: 1px solid #aaa;
+	color: #006699;
+}
+
+div.user-wrapper div#exit {
+	padding-left: 10px;
+}
+
+div.welcome {
+	padding-top: 70px;
+	padding-left: 80px;
+	font-size: 40px;
+	color: #000669;
+	line-height: 65px;
+}
+
+/*主页*/
