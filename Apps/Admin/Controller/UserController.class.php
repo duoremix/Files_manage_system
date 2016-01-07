@@ -23,12 +23,7 @@ class UserController extends Controller {
 		//查询数据库中的用户名和职位
 		$res2 = $user->where($data2)->select();
 		//检验用户名和职位的合法性
-		if($res2){
-		}else{
-			$this->error("用户与职位不匹配，请重选");
-		}
-		//检验用户名和密码的合法性
-		if($res){
+		if($res&&$res2){
 			session_start();
 			$_SESSION['job'] = $data['job'];
 			$_SESSION['username'] = $data['username'];

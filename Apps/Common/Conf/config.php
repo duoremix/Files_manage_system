@@ -7,6 +7,7 @@ return array(
     'TMPL_PARSE_STRING'  =>array(
          '__Admin__' => 'Admin',
          '__User__' => 'Admin/User',
+         '__Index__' => 'Admin/Index',
          '__BaseInfo__' => 'Admin/BaseInfo'
     ),
 	'DB_FIELD_CACHE'=>false,

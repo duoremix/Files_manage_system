@@ -81,8 +81,86 @@
 					</li>
 				</ul>
 			</div>
-			<div class="welcome">
-				欢迎使用<br>企业档案管理系统！
+			<div class="content">
+				<div class="single-row">
+					<ul class="mybreadcrumb">
+						<li><a href="__APP__/Admin/Index">主页</a></li>
+						<li>基本档案管理</li>
+						<li>查看档案</li>
+					</ul>
+				</div>
+				<div class="single-row">
+					<button class="btn btn-primary" onclick="window.location='__URL__/create'">新建档案</button>
+					<button class="btn btn-danger multi_delete">批量删除</button>
+				</div>
+				<div class="single-row">
+					<select name="department" id="department">
+						<option value="全部">全部</option>
+						<option value="Java项目组">Java项目组</option>
+						<option value="Php项目组">Php项目组</option>
+						<option value="IOS项目组">IOS项目组</option>
+					</select>
+				</div>
+				<div class="single-row">
+					<table class="table table-striped">
+						<tr>
+							<td>档案编号</td>
+							<td>姓名</td>
+							<td>性别</td>
+							<td>部门</td>
+							<td>职务</td>
+							<td>操作</td>
+						</tr>
+						<tr>
+							<td>J00001</td>
+							<td>刘汝佳</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
+							<td>
+								<a href="__URL__/show">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+						<tr>
+							<td>J00002</td>
+							<td>刘汝剑</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+						<tr>
+							<td>J00003</td>
+							<td>刘汝城</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+						<tr>
+							<td>J00004</td>
+							<td>刘汝楚</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
+							<td>
+								<a href="">查看</a>
+								<a href="">修改</a>
+								<a href="">删除</a>
+							</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -92,6 +170,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
+			multi_delete.init();
 		}
 	</script>
 </body>
