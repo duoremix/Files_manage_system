@@ -33,7 +33,7 @@
 						<a href="#" class="level1">绩效档案管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">考勤档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a>
 							</li>
 							<li>
 								<a href="">奖惩档案管理</a>

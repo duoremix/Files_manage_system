@@ -22,13 +22,13 @@ var multi_delete = {
 				});
 				$cancel.insertAfter($(this));
 				$('.checkbox:eq(0)>input').on('click', function(event) {
-					if($(this).attr('checked') != 'checked') {
+					if(!$(this).attr('checked')) {
 						$('.checkbox>input').each(function(index, el) {
-							$(this).attr('checked', 'checked');
+							$(this).attr('checked', 'true');
 						});
 					} else {
 						$('.checkbox>input').each(function(index, el) {
-							$(this).attr('checked', 'false');
+							$(this).removeAttr('checked')
 						});
 					}
 				});
@@ -42,6 +42,16 @@ var multi_delete = {
 				});
 				$flag = true;
 			}
+		});
+	}
+}
+
+//批量删除功能
+
+var baseInfo_save = {
+	init: function() {
+		$('#save').on('click', function(event) {
+			$('#form_baseInfo').submit();
 		});
 	}
 }

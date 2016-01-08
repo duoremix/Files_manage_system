@@ -242,12 +242,12 @@ p.form-title {
 	font-weight: bold;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"] {
 	border: 1px solid #aaa;
 	border-radius: 3px;
 }
 
-input[type="text"].short,
+input[type="text"].short, input[type="number"].short,
 input[type="text"].middle,
 input[type="text"].long,
 input[type="text"].longer {
@@ -256,7 +256,7 @@ input[type="text"].longer {
   font-size: 14px;
 }
 
-input[type="text"].short {
+input[type="text"].short, input[type="number"].short {
 	width: 120px;
 }
 

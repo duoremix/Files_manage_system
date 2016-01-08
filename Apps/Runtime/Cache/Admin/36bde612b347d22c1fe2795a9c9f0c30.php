@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>企业档案管理系统</title>
-	<link rel="shortcut icon" href="__PUBLIC__/image/icon.png">
-	<link rel="stylesheet" href="__PUBLIC__/css/style.css">
+	<link rel="shortcut icon" href="/Files_manage_system/Public/image/icon.png">
+	<link rel="stylesheet" href="/Files_manage_system/Public/css/style.css">
 </head>
 <body class="container">
 	<section>
 		<div class="container">
 			<div class="nav-wrapper">
 				<div class="logo">
-					<a href="__APP__/Admin/Index"><img src="__PUBLIC__/image/logo2.png"></a>
+					<a href="/Files_manage_system/Admin/Index"><img src="/Files_manage_system/Public/image/logo2.png"></a>
 				</div>
 				<div class="user-wrapper">
-					<div id="username">欢迎您，<a href="#">{$_SESSION['username']}</a></div>
-					<div id="exit"><a href="__ROOT__">退出登录</a></div>
+					<div id="username">欢迎您，<a href="#"><?php echo ($_SESSION['username']); ?></a></div>
+					<div id="exit"><a href="/Files_manage_system">退出登录</a></div>
 				</div>
 				<ul class="nav">
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="__APP__/Admin/BaseInfo/create">新建档案</a>
+								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
-								<a href="__APP__/Admin/BaseInfo/check">查看档案</a>
+								<a href="/Files_manage_system/Admin/BaseInfo/check">查看档案</a>
 							</li>
 						</ul>
 					</li>
@@ -33,7 +33,7 @@
 						<a href="#" class="level1">绩效档案管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="__APP__/Admin/Performance/attendence_check">考勤档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a>
 							</li>
 							<li>
 								<a href="">奖惩档案管理</a>
@@ -84,22 +84,24 @@
 			<div class="content">
 				<div class="single-row">
 					<ul class="mybreadcrumb">
-						<li><a href="__APP__/Admin/Index">主页</a></li>
-						<li>基本档案管理</li>
-						<li>查看档案</li>
+						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
+						<li>绩效档案管理</li>
+						<li>考勤档案管理</li>
 					</ul>
 				</div>
 				<div class="single-row">
-					<button class="btn btn-primary" onclick="window.location='__URL__/create'">新建档案</button>
-					<button class="btn btn-danger multi_delete">批量删除</button>
+					<button class="btn btn-primary" onclick="window.location='/Files_manage_system/Admin/Performance/attendence_create'">新建档案</button>
 				</div>
 				<div class="single-row">
-					<select name="department" id="department">
-						<option value="全部">全部</option>
-						<option value="Java项目组">Java项目组</option>
-						<option value="Php项目组">Php项目组</option>
-						<option value="IOS项目组">IOS项目组</option>
-					</select>
+					<label>
+						<span>选择部门：</span>
+						<select name="department" id="department">
+							<option value="全部">全部</option>
+							<option value="Java项目组">Java项目组</option>
+							<option value="Php项目组">Php项目组</option>
+							<option value="IOS项目组">IOS项目组</option>
+						</select>
+					</label>
 				</div>
 				<div class="single-row">
 					<table class="table table-striped">
@@ -118,9 +120,7 @@
 							<td>Java项目组</td>
 							<td>Java工程师</td>
 							<td>
-								<a href="__URL__/show">查看</a>
-								<a href="">修改</a>
-								<a href="">删除</a>
+								<a href="/Files_manage_system/Admin/Performance/attendence_list">查看考勤档案</a>
 							</td>
 						</tr>
 						<tr>
@@ -130,9 +130,7 @@
 							<td>Java项目组</td>
 							<td>Java工程师</td>
 							<td>
-								<a href="">查看</a>
-								<a href="">修改</a>
-								<a href="">删除</a>
+								<a href="">查看考勤档案</a>
 							</td>
 						</tr>
 						<tr>
@@ -142,9 +140,7 @@
 							<td>Java项目组</td>
 							<td>Java工程师</td>
 							<td>
-								<a href="">查看</a>
-								<a href="">修改</a>
-								<a href="">删除</a>
+								<a href="">查看考勤档案</a>
 							</td>
 						</tr>
 						<tr>
@@ -154,9 +150,7 @@
 							<td>Java项目组</td>
 							<td>Java工程师</td>
 							<td>
-								<a href="">查看</a>
-								<a href="">修改</a>
-								<a href="">删除</a>
+								<a href="">查看考勤档案</a>
 							</td>
 						</tr>
 					</table>
@@ -165,8 +159,8 @@
 		</div>
 	</section>
 
-	<script src="__PUBLIC__/js/jquery.js"></script>
-	<script src="__PUBLIC__/js/script.js"></script>
+	<script src="/Files_manage_system/Public/js/jquery.js"></script>
+	<script src="/Files_manage_system/Public/js/script.js"></script>
 	<script>
 		window.onload = function() {
 			main_nav.init();
