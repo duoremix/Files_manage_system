@@ -22,7 +22,7 @@
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
+								<a href="">新建档案</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/BaseInfo/check">查看档案</a>
@@ -86,20 +86,19 @@
 					<ul class="mybreadcrumb">
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
 						<li>基本档案管理</li>
-						<li>新建档案</li>
+						<li>查看档案</li>
 					</ul>
 				</div>
 				<div>
-					<form action="/Files_manage_system/Admin/BaseInfo/BaseInfo_save" method="post" id="form_baseInfo">
-						<div class="single-row">
-							<a id="save" class="btn btn-primary">保存</a>
-							<a id="cancel" class="btn btn-default" onclick="window.location='/Files_manage_system/Admin/BaseInfo/check'">取消</a>
-						</div>
+					<div class="single-row">
+						<button class="btn btn-primary" href="/Files_manage_system/Admin/BaseInfo/create">修改档案</button>
+						<button class="btn btn-danger">删除档案</button>
+					</div>
+					<form action="/Files_manage_system/Admin/BaseInfo/editInfo" method="post">
 						<div id="emp_photo">
 							<img src="/Files_manage_system/Public/image/lin.jpeg" alt="">
 						</div>
 						<div class="single-row">
-							<input type="hidden" name="id" value="<?php echo ($auto_id); ?>">
 							<label>
 								<span>档案编号：</span>
 								<input type="text" name="fm_num" class="short">
@@ -166,7 +165,7 @@
 								</label>
 								<label>
 									<span>毕业日期：</span>
-									<input type="text" name="emp_gra_date" class="short datepick">
+									<input type="text" name="emp_gra__date" class="short datepick">
 								</label>
 							</div>
 							<div class="single-row">
@@ -277,7 +276,7 @@
 							<div class="single-row">
 								<label>
 									<span>发卡银行：</span>
-									<input type="text" name="emp_bank_name" class="short">
+									<input type="text" name="emp_bank" class="short">
 								</label>
 								<label>
 									<span>社会保险：</span>
@@ -295,7 +294,7 @@
 							<div class="single-row">
 								<label>
 									<span>信用卡号：</span>
-									<input type="text" name="emp_bank_num" class="short">
+									<input type="text" name="emp_card_num" class="short">
 								</label>
 								<label>
 									<span>医疗保险：</span>
@@ -326,7 +325,6 @@
 				dateFormat: "yy-mm-dd"
 			});
 			main_nav.init();
-			baseInfo_save.init();
 		}
 	</script>
 </body>

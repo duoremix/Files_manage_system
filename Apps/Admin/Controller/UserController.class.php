@@ -5,6 +5,7 @@ class UserController extends Controller {
     public function index(){
     	unset($_SESSION['job']);
 		unset($_SESSION['username']);
+		unset($_SESSION['newFileId']);
         $this->display('login');
     }
 

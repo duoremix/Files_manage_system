@@ -91,17 +91,18 @@
 				</div>
 				<div>
 					<div class="single-row">
-						<button class="btn btn-primary" href="__URL__/create">修改档案</button>
+						<a class="btn btn-primary" href="__URL__/edit">修改档案</a>
 						<button class="btn btn-danger">删除档案</button>
 					</div>
 					<form action="__URL__/editInfo" method="post">
+						<input type="hidden" name="id" value="{$id}">
 						<div id="emp_photo">
 							<img src="__PUBLIC__/image/lin.jpeg" alt="">
 						</div>
 						<div class="single-row">
 							<label>
 								<span>档案编号：</span>
-								<input type="text" name="fm_num" class="short">
+								<input type="text" name="fm_num" class="short" value="{$fm_num}">
 							</label>
 						</div>
 						<div class="single-row">
@@ -109,20 +110,20 @@
 							<div class="single-row">
 								<label>
 									<span>姓名：</span>
-									<input type="text" name="emp_name" class="short">
+									<input type="text" name="emp_name" class="short" value="{$emp_name}">
 								</label>
 								<span>性别：</span>
 								<label>
 									<span>男</span>
-									<input type="radio" name="emp_sex" value="男">
+									<input type="radio" name="emp_sex" value="男" {$emp_sex_male}>
 								</label>
 								<label>
 									<span>女</span>
-									<input type="radio" name="emp_sex" value="女">
+									<input type="radio" name="emp_sex" value="女" {$emp_sex_female}>
 								</label>
 								<label>
 									<span>出生日期：</span>
-									<input type="text" name="emp_borndate" class="short datepick">
+									<input type="text" name="emp_borndate" class="short datepick" value="{$emp_borndate}">
 								</label>
 							</div>
 							<div class="single-row">
@@ -146,7 +147,7 @@
 								</label>
 								<label>
 									<span>身份证号：</span>
-									<input type="text" name="emp_idnum" class="middle">
+									<input type="text" name="emp_idnum" class="middle" value="{$emp_idnum}">
 								</label>
 							</div>
 							<div class="single-row">
@@ -161,11 +162,11 @@
 								</label>
 								<label>
 									<span>毕业学校：</span>
-									<input type="text" name="emp_gra_school" class="short">
+									<input type="text" name="emp_gra_school" class="short" value="{$emp_gra_school}">
 								</label>
 								<label>
 									<span>毕业日期：</span>
-									<input type="text" name="emp_gra__date" class="short datepick">
+									<input type="text" name="emp_gra_date" class="short datepick" value="{$emp_gra_date}">
 								</label>
 							</div>
 							<div class="single-row">
@@ -173,47 +174,47 @@
 								<label>
 									<label>
 										<span>党员</span>
-										<input type="radio" name="emp_politics" value="党员">
+										<input type="radio" name="emp_politics" value="党员" {$emp_politics_dangyuan}>
 									</label>
 									<label>
 										<span>群众</span>
-										<input type="radio" name="emp_politics" value="群众">
+										<input type="radio" name="emp_politics" value="群众" {$emp_politics_qunzhong}>
 									</label>
 								</label>
 								<span>婚姻状况：</span>
 								<label>
 									<label>
 										<span>未婚</span>
-										<input type="radio" name="emp_marriage" value="未婚">
+										<input type="radio" name="emp_marriage" value="未婚" {$emp_marriage_unmarried}>
 									</label>
 									<label>
 										<span>已婚</span>
-										<input type="radio" name="emp_marriage" value="已婚">
+										<input type="radio" name="emp_marriage" value="已婚" {$emp_marriage_married}>
 									</label>
 								</label>
 								<label>
 									<span>邮政编码：</span>
-									<input type="text" name="emp_postcode" class="short">
+									<input type="text" name="emp_postcode" class="short" value="{$emp_postcode}">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>电话号码：</span>
-									<input type="text" name="emp_phone" class="short">
+									<input type="text" name="emp_phone" class="short" value="{$emp_phone}">
 								</label>
 								<label>
 									<span>QQ：</span>
-									<input type="text" name="emp_qq" class="short">
+									<input type="text" name="emp_qq" class="short" value="{$emp_qq}">
 								</label>
 								<label>
 									<span>电子邮箱：</span>
-									<input type="text" name="emp_email" class="middle">
+									<input type="text" name="emp_email" class="middle" value="{$emp_email}">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>家庭住址：</span>
-									<input type="text" name="emp_addr" class="longer">
+									<input type="text" name="emp_addr" class="longer" value="{$emp_addr}">
 								</label>
 							</div>
 						</div>
@@ -230,13 +231,13 @@
 								</label>
 								<label>
 									<span>职务：</span>
-									<input type="text" name="emp_job" class="short">
+									<input type="text" name="emp_job" class="short" value="{$emp_job}">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>入职时间：</span>
-									<input type="text" name="emp_entry_date" class="short datepick">
+									<input type="text" name="emp_entry_date" class="short datepick" value="{$emp_entry_date}">
 								</label>
 								<label>
 									<span>用工形式：</span>
@@ -248,65 +249,65 @@
 								</label>
 								<label>
 									<span>离职时间：</span>
-									<input type="text" name="emp_exit_date" class="short datepick">
+									<input type="text" name="emp_exit_date" class="short datepick" value="{$emp_exit_date}">
 								</label>
 								<label>
 									<span>离职原因：</span>
-									<input type="text" name="emp_exit_reason" class="short">
+									<input type="text" name="emp_exit_reason" class="short" value="{$emp_exit_reason}">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>合同开始：</span>
-									<input type="text" name="emp_cont_start" class="short datepick">
+									<input type="text" name="emp_cont_start" class="short datepick" value="{$emp_cont_start}">
 								</label>
 								<label>
 									<span>合同结束：</span>
-									<input type="text" name="emp_cont_end" class="short datepick">
+									<input type="text" name="emp_cont_end" class="short datepick" value="{$emp_cont_end}">
 								</label>
 								<label>
 									<span>转正时间：</span>
-									<input type="text" name="emp_full_date" class="short datepick">
+									<input type="text" name="emp_full_date" class="short datepick" value="{$emp_full_date}">
 								</label>
 								<label>
 									<span>转正工龄：</span>
-									<input type="text" name="emp_full_age" class="short">
+									<input type="text" name="emp_full_age" class="short" value="{$emp_full_age}">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>发卡银行：</span>
-									<input type="text" name="emp_bank" class="short">
+									<input type="text" name="emp_bank" class="short" value="{$emp_bank}">
 								</label>
 								<label>
 									<span>社会保险：</span>
-									<input type="text" name="emp_sociaty_insu" class="short">
+									<input type="text" name="emp_sociaty_insu" class="short" value="{$emp_sociaty_insu}">
 								</label>
 								<label>
 									<span>失业保险：</span>
-									<input type="text" name="emp_lostjob_insu" class="short">
+									<input type="text" name="emp_lostjob_insu" class="short" value="{$emp_lostjob_insu}">
 								</label>
 								<label>
 									<span>养老保险：</span>
-									<input type="text" name="emp_old_insu" class="short">
+									<input type="text" name="emp_old_insu" class="short" value="{$emp_old_insu}">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>信用卡号：</span>
-									<input type="text" name="emp_card_num" class="short">
+									<input type="text" name="emp_card_num" class="short" value="{$emp_card_num}">
 								</label>
 								<label>
 									<span>医疗保险：</span>
-									<input type="text" name="emp_medical_insu" class="short">
+									<input type="text" name="emp_medical_insu" class="short" value="{$emp_medical_insu}">
 								</label>
 								<label>
 									<span>工伤保险：</span>
-									<input type="text" name="emp_hurt_insu" class="short">
+									<input type="text" name="emp_hurt_insu" class="short" value="{$emp_hurt_insu}">
 								</label>
 								<label>
 									<span>公积金号：</span>
-									<input type="text" name="emp_reseverd_fund" class="short">
+									<input type="text" name="emp_reseverd_fund" class="short" value="{$emp_reseverd_fund}">
 								</label>
 							</div>
 						</div>
