@@ -93,7 +93,7 @@
 					<form action="/Files_manage_system/Admin/BaseInfo/BaseInfo_save" method="post" id="form_baseInfo">
 						<div class="single-row">
 							<a id="save" class="btn btn-primary">保存</a>
-							<a id="cancel" class="btn btn-default" onclick="window.location='/Files_manage_system/Admin/BaseInfo/check'">取消</a>
+							<a id="cancel" class="btn btn-default" href='/Files_manage_system/Admin/BaseInfo/check'>取消</a>
 						</div>
 						<div id="emp_photo">
 							<img src="/Files_manage_system/Public/image/lin.jpeg" alt="">

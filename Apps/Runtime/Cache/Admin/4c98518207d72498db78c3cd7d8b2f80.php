@@ -102,7 +102,8 @@
 					</select>
 				</div>
 				<div class="single-row">
-					<table class="table table-striped">
+					<?php echo ($infoData); ?>
+					<!-- <table class="table table-striped">
 						<tr>
 							<td>档案编号</td>
 							<td>姓名</td>
@@ -159,7 +160,7 @@
 								<a href="">删除</a>
 							</td>
 						</tr>
-					</table>
+					</table> -->
 				</div>
 			</div>
 		</div>
@@ -171,6 +172,7 @@
 		window.onload = function() {
 			main_nav.init();
 			multi_delete.init();
+			baseInfo_list_operation.init();
 		}
 	</script>
 </body>
