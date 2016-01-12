@@ -33,7 +33,7 @@
 						<a href="#" class="level1">绩效档案管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">考勤档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a>
 							</li>
 							<li>
 								<a href="">奖惩档案管理</a>
@@ -114,12 +114,15 @@
 								</label>
 								<span>性别：</span>
 								<label>
-									<span>男</span>
-									<input type="radio" name="emp_sex" value="男">
-								</label>
-								<label>
-									<span>女</span>
-									<input type="radio" name="emp_sex" value="女">
+									<span>性别：</span>
+									<label class="normal">
+										<span>男</span>
+										<input type="radio" name="emp_sex" value="男" <?php echo ($emp_sex_male); ?>>
+									</label>
+									<label class="normal">
+										<span>女</span>
+										<input type="radio" name="emp_sex" value="女" <?php echo ($emp_sex_female); ?>>
+									</label>
 								</label>
 								<label>
 									<span>出生日期：</span>
@@ -170,26 +173,26 @@
 								</label>
 							</div>
 							<div class="single-row">
-								<span>政治面貌：</span>
 								<label>
-									<label>
+									<span>政治面貌：</span>
+									<label class="normal">
 										<span>党员</span>
-										<input type="radio" name="emp_politics" value="党员">
+										<input type="radio" name="emp_politics" value="党员" <?php echo ($emp_politics_dangyuan); ?>>
 									</label>
-									<label>
+									<label class="normal">
 										<span>群众</span>
-										<input type="radio" name="emp_politics" value="群众">
+										<input type="radio" name="emp_politics" value="群众" <?php echo ($emp_politics_qunzhong); ?>>
 									</label>
 								</label>
-								<span>婚姻状况：</span>
 								<label>
-									<label>
+									<span>婚姻状况：</span>
+									<label class="normal">
 										<span>未婚</span>
-										<input type="radio" name="emp_marriage" value="未婚">
+										<input type="radio" name="emp_marriage" value="未婚" <?php echo ($emp_marriage_unmarried); ?>>
 									</label>
-									<label>
+									<label class="normal">
 										<span>已婚</span>
-										<input type="radio" name="emp_marriage" value="已婚">
+										<input type="radio" name="emp_marriage" value="已婚" <?php echo ($emp_marriage_married); ?>>
 									</label>
 								</label>
 								<label>

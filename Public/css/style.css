@@ -233,6 +233,10 @@ td>a {
 	display: inline-block;
 }
 
+td>a:first-child {
+  padding-left: 0;
+}
+
 td>a:last-child {
 	border: none;
 }
@@ -309,7 +313,12 @@ a.ui-datepicker-next {
 
 form label {
 	padding-right: 20px;
+  min-width: 200px;
 	display: inline-block; 
+}
+
+form label.normal {
+  min-width: 0;
 }
 
 /*通用*/

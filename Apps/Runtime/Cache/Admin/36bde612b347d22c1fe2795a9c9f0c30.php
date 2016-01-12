@@ -104,7 +104,8 @@
 					</label>
 				</div>
 				<div class="single-row">
-					<table class="table table-striped">
+					<?php echo ($infoData); ?>
+					<!-- <table class="table table-striped">
 						<tr>
 							<td>档案编号</td>
 							<td>姓名</td>
@@ -153,7 +154,7 @@
 								<a href="">查看考勤档案</a>
 							</td>
 						</tr>
-					</table>
+					</table> -->
 				</div>
 			</div>
 		</div>
@@ -164,7 +165,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			multi_delete.init();
+			attendence_list.init();
 		}
 	</script>
 </body>

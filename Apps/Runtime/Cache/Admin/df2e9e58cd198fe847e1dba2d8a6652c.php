@@ -33,7 +33,7 @@
 						<a href="#" class="level1">绩效档案管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">考勤档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a>
 							</li>
 							<li>
 								<a href="">奖惩档案管理</a>
@@ -91,27 +91,32 @@
 					</ul>
 				</div>
 				<div>
-					<div class="single-row">
-						<button id="save" class="btn btn-primary">保存</button>
-						<button id="cancel" class="btn btn-default" onclick="window.location='/Files_manage_system/Admin/Performance/attendence_check'">取消</button>
-					</div>
-					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post">
+					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
+						<div class="single-row">
+							<button id="save" class="btn btn-primary">保存</button>
+							<a id="cancel" class="btn btn-default" href="/Files_manage_system/Admin/Performance/attendence_check">取消</a>
+						</div>
 						<div class="single-row">
 							<label>
 								<span>部门：</span>
 								<select name="department" id="department">
-									<option value="Java项目组">Java项目组</option>
+									<?php echo ($department_data_str); ?>
+									<!-- <option value="Java项目组">Java项目组</option>
 									<option value="Php项目组">Php项目组</option>
-									<option value="IOS项目组">IOS项目组</option>
+									<option value="IOS项目组">IOS项目组</option> -->
 								</select>
 							</label>
 							<label>
 								<span>员工：</span>
 								<select name="employee" id="employee">
-									<option value="刘汝佳">刘汝佳</option>
+									<!-- <option value="刘汝佳">刘汝佳</option>
 									<option value="刘汝剑">刘汝剑</option>
-									<option value="刘汝城">刘汝城</option>
+									<option value="刘汝城">刘汝城</option> -->
 								</select>
+							</label>
+							<label>
+								<span>员工编号：</span>
+								<input type="text" name="emp_id" class="short" style="width:50px;" value="<?php echo ($emp_id); ?>">
 							</label>
 						</div>
 						<div class="single-row">
@@ -144,10 +149,6 @@
 						</div>
 						<div class="single-row">
 							<label>
-								<span>考勤日期：</span>
-								<input type="text" name="attendence_date" class="short datepick">
-							</label>
-							<label>
 								<span>审批人：</span>
 								<input type="text" name="manage_person" class="short">
 							</label>
@@ -163,6 +164,10 @@
 							</label>
 						</div>
 					</form>
+					<div>
+						<?php echo ($employee_data_str); ?>
+						<input type="hidden" id="emp_data" value="<?php echo ($emp_data_str); ?>">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -177,6 +182,7 @@
 				dateFormat: "yy-mm-dd"
 			});
 			main_nav.init();
+			attendence_initData.init();
 		}
 	</script>
 </body>

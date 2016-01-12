@@ -87,20 +87,23 @@
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
 						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">绩效档案管理</a></li>
 						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a></li>
-						<li>刘汝佳的考勤档案</li>
+						<li><?php echo ($emp_name); ?>的考勤档案</li>
 					</ul>
 				</div>
 				<div class="single-row">
-					<button class="btn btn-primary" onclick="window.location='/Files_manage_system/Admin/Performance/attendence_create'">新建档案</button>
+					<a class="btn btn-primary" href="attendence_create">新建档案</a>
+					<a class="btn btn-default" href="attendence_check">返回</a>
 				</div>
-				<p class="form-title">刘汝佳的考勤档案</p>
+				<p class="form-title"><?php echo ($emp_name); ?>的考勤档案</p>
 				<div class="single-row">
-					<table class="table table-striped">
+					<?php echo ($infoData); ?>
+					<!-- <table class="table table-striped">
 						<tr>
 							<td>档案编号</td>
 							<td>考勤状况</td>
 							<td>原因</td>
-							<td>考勤日期</td>
+							<td>开始日期</td>
+							<td>结束日期</td>
 							<td>审批人</td>
 							<td>审批日期</td>
 							<td>操作</td>
@@ -109,6 +112,7 @@
 							<td>J30001</td>
 							<td>迟到</td>
 							<td>无</td>
+							<td>2016-01-07</td>	
 							<td>2016-01-07</td>	
 							<td>郭富城</td>
 							<td>2016-01-07</td>
@@ -121,6 +125,7 @@
 							<td>J30001</td>
 							<td>请假</td>
 							<td>病假</td>
+							<td>2016-01-08</td>	
 							<td>2016-01-08</td>
 							<td>郭富城</td>
 							<td>2016-01-08</td>
@@ -129,7 +134,7 @@
 								<a href="">删除</a>
 							</td>
 						</tr>
-					</table>
+					</table> -->
 				</div>
 			</div>
 		</div>
@@ -140,7 +145,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			multi_delete.init();
+			attendence_delete.init();
 		}
 	</script>
 </body>

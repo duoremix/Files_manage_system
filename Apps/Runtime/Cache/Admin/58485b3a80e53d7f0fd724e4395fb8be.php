@@ -86,7 +86,7 @@
 					<ul class="mybreadcrumb">
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
 						<li>基本档案管理</li>
-						<li>查看档案</li>
+						<li>修改档案</li>
 					</ul>
 				</div>
 				<div>
@@ -112,14 +112,16 @@
 									<span>姓名：</span>
 									<input type="text" name="emp_name" class="short" value="<?php echo ($emp_name); ?>">
 								</label>
-								<span>性别：</span>
 								<label>
-									<span>男</span>
-									<input type="radio" name="emp_sex" value="男" <?php echo ($emp_sex_male); ?>>
-								</label>
-								<label>
-									<span>女</span>
-									<input type="radio" name="emp_sex" value="女" <?php echo ($emp_sex_female); ?>>
+									<span>性别：</span>
+									<label class="normal">
+										<span>男</span>
+										<input type="radio" name="emp_sex" value="男" <?php echo ($emp_sex_male); ?>>
+									</label>
+									<label class="normal">
+										<span>女</span>
+										<input type="radio" name="emp_sex" value="女" <?php echo ($emp_sex_female); ?>>
+									</label>
 								</label>
 								<label>
 									<span>出生日期：</span>
@@ -170,24 +172,24 @@
 								</label>
 							</div>
 							<div class="single-row">
-								<span>政治面貌：</span>
 								<label>
-									<label>
+									<span>政治面貌：</span>
+									<label class="normal">
 										<span>党员</span>
 										<input type="radio" name="emp_politics" value="党员" <?php echo ($emp_politics_dangyuan); ?>>
 									</label>
-									<label>
+									<label class="normal">
 										<span>群众</span>
 										<input type="radio" name="emp_politics" value="群众" <?php echo ($emp_politics_qunzhong); ?>>
 									</label>
 								</label>
-								<span>婚姻状况：</span>
 								<label>
-									<label>
+									<span>婚姻状况：</span>
+									<label class="normal">
 										<span>未婚</span>
 										<input type="radio" name="emp_marriage" value="未婚" <?php echo ($emp_marriage_unmarried); ?>>
 									</label>
-									<label>
+									<label class="normal">
 										<span>已婚</span>
 										<input type="radio" name="emp_marriage" value="已婚" <?php echo ($emp_marriage_married); ?>>
 									</label>
@@ -312,6 +314,13 @@
 							</div>
 						</div>
 					</form>
+					<div>
+						<input type="hidden" name="hidden_folk" id="hidden_folk" value="<?php echo ($emp_folk); ?>">
+						<input type="hidden" name="hidden_native" id="hidden_native" value="<?php echo ($emp_native); ?>">
+						<input type="hidden" name="hidden_edu" id="hidden_edu" value="<?php echo ($emp_edu); ?>">
+						<input type="hidden" name="hidden_department" id="hidden_department" value="<?php echo ($emp_department); ?>">
+						<input type="hidden" name="hidden_use_form" id="hidden_use_form" value="<?php echo ($emp_use_form); ?>">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -326,6 +335,7 @@
 				dateFormat: "yy-mm-dd"
 			});
 			main_nav.init();
+			baseInfo_putin.init();
 		}
 	</script>
 </body>

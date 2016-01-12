@@ -15,13 +15,12 @@ class BaseInfoController extends Controller {
 
     public function create() {
         $personal_info = M('Personal_info');
-        $personal_info->create();
         $mysql_id = $personal_info->field('id')->select();
         $arraylength = count($mysql_id);
         for($x=0;$x<$arraylength;$x++){
             $ids[$x] = $mysql_id[$x]['id'];
         }
-        $auto_id = 0;
+        $auto_id = 1;
         while(in_array($auto_id, $ids)) {
             $auto_id++;
         } 
@@ -55,17 +54,12 @@ class BaseInfoController extends Controller {
     	$this->display('check');
     }
 
-    public function test() {
-        $_SESSION['newFileId'] = $_POST['id'];
-        $this->display('show');
-    }
-
     public function show() {
         if($_POST['id'] != '') {
-            $_SESSION['newFileId'] = $_POST['id'];
+            $_SESSION['newEmpId'] = $_POST['id'];
         }
-        if($_SESSION['newFileId'] != '') {
-            $id = $_SESSION['newFileId'];
+        if($_SESSION['newEmpId'] != '') {
+            $id = $_SESSION['newEmpId'];
             $this->assign('id', $id);
         }
         $personal_info = M('personal_info');
@@ -280,10 +274,10 @@ class BaseInfoController extends Controller {
 
     public function edit() {
         if($_POST['id'] != '') {
-            $_SESSION['newFileId'] = $_POST['id'];
+            $_SESSION['newEmpId'] = $_POST['id'];
         }
-        if($_SESSION['newFileId'] != '') {
-            $id = $_SESSION['newFileId'];
+        if($_SESSION['newEmpId'] != '') {
+            $id = $_SESSION['newEmpId'];
             $this->assign('id', $id);
         }
         $personal_info = M('personal_info');
@@ -504,7 +498,7 @@ class BaseInfoController extends Controller {
         $duty_info->create();
         $res2 = $duty_info->add();
         session_start();
-        $_SESSION['newFileId'] = $_POST['id'];
+        $_SESSION['newEmpId'] = $_POST['id'];
         if($res&&$res2) {
             $this->success('新建档案成功!', 'show');
         }
@@ -512,10 +506,10 @@ class BaseInfoController extends Controller {
 
     public function BaseInfo_edit() {
         if($_POST['id'] != '') {
-            $_SESSION['newFileId'] = $_POST['id'];
+            $_SESSION['newEmpId'] = $_POST['id'];
         }
-        if($_SESSION['newFileId'] != '') {
-            $id = $_SESSION['newFileId'];
+        if($_SESSION['newEmpId'] != '') {
+            $id = $_SESSION['newEmpId'];
             $this->assign('id', $id);
         }
         $personal_info = M('personal_info');
@@ -527,7 +521,7 @@ class BaseInfoController extends Controller {
         $duty_info->create();
         $res2 = $duty_info->add();
         session_start();
-        $_SESSION['newFileId'] = $_POST['id'];
+        $_SESSION['newEmpId'] = $_POST['id'];
         if($res&&$res2) {
             $this->success('修改档案成功!', 'show');
         }
@@ -539,10 +533,22 @@ class BaseInfoController extends Controller {
         $res = $personal_info->where('id='.$id)->delete();
         $duty_info = M('duty_info');
         $res2 = $duty_info->where('id='.$id)->delete();
-        unset($_SESSION['newFileId']);
+        unset($_SESSION['newEmpId']);
         if($res&&$res2) {
             $this->success('删除档案成功!', 'check');
         }
+    }
+
+    public function BaseInfo_multiDelete() {
+        $ids = $_POST['data'];
+        $arraylength = count($ids);
+        $personal_info = M('personal_info');
+        $duty_info = M('duty_info');
+        for($x=0;$x<$arraylength;$x++) {
+            $personal_info->where('id='.$ids[$x])->delete();
+            $duty_info->where('id='.$ids[$x])->delete();
+        }
+        echo "删除成功";
     }
 
 }

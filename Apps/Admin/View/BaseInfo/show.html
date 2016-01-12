@@ -113,14 +113,16 @@
 									<span>姓名：</span>
 									<input type="text" name="emp_name" class="short" value="{$emp_name}" readonly>
 								</label>
-								<span>性别：</span>
 								<label>
-									<span>男</span>
-									<input type="radio" name="emp_sex" value="男" {$emp_sex_male} onclick="return false;">
-								</label>
-								<label>
-									<span>女</span>
-									<input type="radio" name="emp_sex" value="女" {$emp_sex_female} onclick="return false;">
+									<span>性别：</span>
+									<label class="normal">
+										<span>男</span>
+										<input type="radio" name="emp_sex" value="男" {$emp_sex_male} onclick="return false;">
+									</label>
+									<label class="normal">
+										<span>女</span>
+										<input type="radio" name="emp_sex" value="女" {$emp_sex_female} onclick="return false;">
+									</label>
 								</label>
 								<label>
 									<span>出生日期：</span>
@@ -130,7 +132,7 @@
 							<div class="single-row">
 								<label>
 									<span>民族：</span>
-									<select name="emp_folk" id="emp_folk">
+									<select name="emp_folk" id="emp_folk" disabled>
 										<option value="汉族">汉族</option>
 										<option value="瑶族">瑶族</option>
 										<option value="回族">回族</option>
@@ -139,7 +141,7 @@
 								</label>
 								<label>
 									<span>籍贯：</span>
-									<select name="emp_native" id="emp_native">
+									<select name="emp_native" id="emp_native" disabled>
 										<option value="广东">广东</option>
 										<option value="上海">上海</option>
 										<option value="浙江">浙江</option>
@@ -154,7 +156,7 @@
 							<div class="single-row">
 								<label>
 									<span>学历水平：</span>
-									<select name="emp_edu" id="emp_edu" readonly>
+									<select name="emp_edu" id="emp_edu" readonly disabled>
 										<option value="大专">大专</option>
 										<option value="本科">本科</option>
 										<option value="硕士">硕士</option>
@@ -171,24 +173,24 @@
 								</label>
 							</div>
 							<div class="single-row">
-								<span>政治面貌：</span>
 								<label>
-									<label>
+									<span>政治面貌：</span>
+									<label class="normal">
 										<span>党员</span>
 										<input type="radio" name="emp_politics" value="党员" {$emp_politics_dangyuan} onclick="return false;">
 									</label>
-									<label>
+									<label class="normal">
 										<span>群众</span>
 										<input type="radio" name="emp_politics" value="群众" {$emp_politics_qunzhong} onclick="return false;">
 									</label>
 								</label>
-								<span>婚姻状况：</span>
 								<label>
-									<label>
+									<span>婚姻状况：</span>
+									<label class="normal">
 										<span>未婚</span>
 										<input type="radio" name="emp_marriage" value="未婚" {$emp_marriage_unmarried} onclick="return false;">
 									</label>
-									<label>
+									<label class="normal">
 										<span>已婚</span>
 										<input type="radio" name="emp_marriage" value="已婚" {$emp_marriage_married} onclick="return false;">
 									</label>
@@ -224,7 +226,7 @@
 							<div class="single-row">
 								<label>
 									<span>部门：</span>
-									<select name="emp_department" id="emp_department">
+									<select name="emp_department" id="emp_department" disabled>
 										<option value="Java项目组">Java项目组</option>
 										<option value="Php项目组">Php项目组</option>
 										<option value="IOS项目组">IOS项目组</option>
@@ -242,7 +244,7 @@
 								</label>
 								<label>
 									<span>用工形式：</span>
-									<select name="emp_use_form" id="emp_use_form">
+									<select name="emp_use_form" id="emp_use_form" disabled>
 										<option value="实习">实习</option>
 										<option value="兼职">兼职</option>
 										<option value="全职">全职</option>
@@ -313,6 +315,13 @@
 							</div>
 						</div>
 					</form>
+					<div>
+						<input type="hidden" name="hidden_folk" id="hidden_folk" value="{$emp_folk}">
+						<input type="hidden" name="hidden_native" id="hidden_native" value="{$emp_native}">
+						<input type="hidden" name="hidden_edu" id="hidden_edu" value="{$emp_edu}">
+						<input type="hidden" name="hidden_department" id="hidden_department" value="{$emp_department}">
+						<input type="hidden" name="hidden_use_form" id="hidden_use_form" value="{$emp_use_form}">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -323,11 +332,9 @@
 	<script src="__PUBLIC__/js/script.js"></script>
 	<script>
 		window.onload = function() {
-			$(".datepick").datepicker({
-				dateFormat: "yy-mm-dd"
-			});
 			main_nav.init();
 			baseInfo_delete.init();
+			baseInfo_putin.init();
 		}
 	</script>
 </body>

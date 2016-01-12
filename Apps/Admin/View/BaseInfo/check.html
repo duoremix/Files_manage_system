@@ -94,12 +94,15 @@
 					<button class="btn btn-danger multi_delete">批量删除</button>
 				</div>
 				<div class="single-row">
-					<select name="department" id="department">
-						<option value="全部">全部</option>
-						<option value="Java项目组">Java项目组</option>
-						<option value="Php项目组">Php项目组</option>
-						<option value="IOS项目组">IOS项目组</option>
-					</select>
+					<label>
+						<span>部门：</span>
+						<select name="department" id="department">
+							<option value="全部">全部</option>
+							<option value="Java项目组">Java项目组</option>
+							<option value="Php项目组">Php项目组</option>
+							<option value="IOS项目组">IOS项目组</option>
+						</select>
+					</label>
 				</div>
 				<div class="single-row">
 					{$infoData}
@@ -171,7 +174,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			multi_delete.init();
+			baseInfo_multiDelete.init();
 			baseInfo_list_operation.init();
 		}
 	</script>
