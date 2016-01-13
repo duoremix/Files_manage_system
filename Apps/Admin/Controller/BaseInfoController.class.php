@@ -23,8 +23,18 @@ class BaseInfoController extends Controller {
         $auto_id = 1;
         while(in_array($auto_id, $ids)) {
             $auto_id++;
-        } 
+        }
+        $count = 1;
+        while($auto_id/10 >= 1) {
+            $count++;
+        }
+        $auto_fm_num = 'J';
+        for($x=0;$x<5-$count;$x++) {
+            $auto_fm_num = $auto_fm_num.'0';
+        }
+        $auto_fm_num = $auto_fm_num.$auto_id;
         $this->assign('auto_id', $auto_id);
+        $this->assign('auto_fm_num', $auto_fm_num);
         $this->display('create');
     }
 

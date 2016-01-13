@@ -102,7 +102,7 @@
 							<input type="hidden" name="id" value="<?php echo ($auto_id); ?>">
 							<label>
 								<span>档案编号：</span>
-								<input type="text" name="fm_num" class="short">
+								<input type="text" name="fm_num" class="short" value="<?php echo ($auto_fm_num); ?>" readonly>
 							</label>
 						</div>
 						<div class="single-row">

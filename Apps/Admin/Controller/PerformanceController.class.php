@@ -66,7 +66,63 @@ class PerformanceController extends Controller {
     	}
     	$attendence_info = M('Attendence_info');
     	$attendence_data = $attendence_info->where('id='.$_SESSION['newFileId'])->select();
-    	//写到这里
+    	
+        if($attendence_data[0]['department'] != '') {
+            $data['department'] = $attendence_data[0]['department'];
+            $this->assign('department', $data['department']);
+        }
+
+        if($attendence_data[0]['employee'] != '') {
+            $data['employee'] = $attendence_data[0]['employee'];
+            $this->assign('employee', $data['employee']);
+        }
+
+        if($attendence_data[0]['emp_id'] != '') {
+            $data['emp_id'] = $attendence_data[0]['emp_id'];
+            $this->assign('emp_id', $data['emp_id']);
+        }
+
+        if($attendence_data[0]['attendence_status'] != '') {
+            $data['attendence_status'] = $attendence_data[0]['attendence_status'];
+            $this->assign('attendence_status', $data['attendence_status']);
+        }
+
+        if($attendence_data[0]['attendence_reason'] != '') {
+            $data['attendence_reason'] = $attendence_data[0]['attendence_reason'];
+            $this->assign('attendence_reason', $data['attendence_reason']);
+        }
+
+        if($attendence_data[0]['attendence_money'] != '') {
+            $data['attendence_money'] = $attendence_data[0]['attendence_money'];
+            $this->assign('attendence_money', $data['attendence_money']);
+        }
+
+        if($attendence_data[0]['attendence_start_date'] != '') {
+            $data['attendence_start_date'] = $attendence_data[0]['attendence_start_date'];
+            $this->assign('attendence_start_date', $data['attendence_start_date']);
+        }
+
+        if($attendence_data[0]['attendence_end_date'] != '') {
+            $data['attendence_end_date'] = $attendence_data[0]['attendence_end_date'];
+            $this->assign('attendence_end_date', $data['attendence_end_date']);
+        }
+
+        if($attendence_data[0]['manage_person'] != '') {
+            $data['manage_person'] = $attendence_data[0]['manage_person'];
+            $this->assign('manage_person', $data['manage_person']);
+        }
+
+        if($attendence_data[0]['manage_date'] != '') {
+            $data['manage_date'] = $attendence_data[0]['manage_date'];
+            $this->assign('manage_date', $data['manage_date']);
+        }
+
+        if($attendence_data[0]['attendence_content'] != '') {
+            $data['attendence_content'] = $attendence_data[0]['attendence_content'];
+            $this->assign('attendence_content', $data['attendence_content']);
+        }
+
+        $this->assign('fileId', $_SESSION['newFileId']);
     	$this->display('attendence_show');
     }
 
@@ -88,9 +144,11 @@ class PerformanceController extends Controller {
     		$department_data_str = $department_data_str.'<option value='.$department_data[$x]['department'].'>'.$department_data[$x]['department'].'</option>';
     		$duty_data = $duty_info->where(array('emp_department'=>$department_data[$x]['department']))->field('id, emp_name')->select();
     		$arraylength2 = count($duty_data);
+            $employee_data_str = $employee_data_str.'<input type="hidden" value="';
     		for($y=0;$y<$arraylength2;$y++) {
-    			$employee_data_str = $employee_data_str.'<input type="hidden" value='.'"<option value='.$duty_data[$y]['emp_name'].' id='.$duty_data[$y]['id'].'>'.$duty_data[$y]['emp_name'].'</option>">';
+    			$employee_data_str = $employee_data_str.'<option value='.$duty_data[$y]['emp_name'].' id='.$duty_data[$y]['id'].'>'.$duty_data[$y]['emp_name'].'</option>';
     		}
+            $employee_data_str = $employee_data_str.'">';
     	}
     	$this->assign('department_data_str', $department_data_str);
     	$this->assign('employee_data_str', $employee_data_str);
@@ -126,10 +184,92 @@ class PerformanceController extends Controller {
     	$this->success('新建考勤档案成功！', 'attendence_list');
     }
 
+    public function attendence_edit() {
+        if($_POST['id']) {
+            session_start();
+            $_SESSION['newFileId'] = $_POST['id'];
+        }
+
+        $attendence_info = M('Attendence_info');
+        $attendence_data = $attendence_info->where('id='.$_SESSION['newFileId'])->select();
+        
+        if($attendence_data[0]['department'] != '') {
+            $data['department'] = $attendence_data[0]['department'];
+            $this->assign('department', $data['department']);
+        }
+
+        if($attendence_data[0]['employee'] != '') {
+            $data['employee'] = $attendence_data[0]['employee'];
+            $this->assign('employee', $data['employee']);
+        }
+
+        if($attendence_data[0]['emp_id'] != '') {
+            $data['emp_id'] = $attendence_data[0]['emp_id'];
+            $this->assign('emp_id', $data['emp_id']);
+        }
+
+        if($attendence_data[0]['attendence_status'] != '') {
+            $data['attendence_status'] = $attendence_data[0]['attendence_status'];
+            $this->assign('attendence_status', $data['attendence_status']);
+        }
+
+        if($attendence_data[0]['attendence_reason'] != '') {
+            $data['attendence_reason'] = $attendence_data[0]['attendence_reason'];
+            $this->assign('attendence_reason', $data['attendence_reason']);
+        }
+
+        if($attendence_data[0]['attendence_money'] != '') {
+            $data['attendence_money'] = $attendence_data[0]['attendence_money'];
+            $this->assign('attendence_money', $data['attendence_money']);
+        }
+
+        if($attendence_data[0]['attendence_start_date'] != '') {
+            $data['attendence_start_date'] = $attendence_data[0]['attendence_start_date'];
+            $this->assign('attendence_start_date', $data['attendence_start_date']);
+        }
+
+        if($attendence_data[0]['attendence_end_date'] != '') {
+            $data['attendence_end_date'] = $attendence_data[0]['attendence_end_date'];
+            $this->assign('attendence_end_date', $data['attendence_end_date']);
+        }
+
+        if($attendence_data[0]['manage_person'] != '') {
+            $data['manage_person'] = $attendence_data[0]['manage_person'];
+            $this->assign('manage_person', $data['manage_person']);
+        }
+
+        if($attendence_data[0]['manage_date'] != '') {
+            $data['manage_date'] = $attendence_data[0]['manage_date'];
+            $this->assign('manage_date', $data['manage_date']);
+        }
+
+        if($attendence_data[0]['attendence_content'] != '') {
+            $data['attendence_content'] = $attendence_data[0]['attendence_content'];
+            $this->assign('attendence_content', $data['attendence_content']);
+        }
+
+        $this->assign('id', $_SESSION['newFileId']);
+        $this->assign('fm_num', $attendence_data[0]['fm_num']);
+        $this->display('attendence_edit');
+
+    }
+
+    public function attendence_edit_save() {
+        $attendence_info = M('Attendence_info');
+        $attendence_info->where('id='.$_POST['id'])->delete();
+        $attendence_info->create();
+        $attendence_info->add();
+        $this->success('修改档案成功！', 'attendence_show');
+    }
+
     public function attendence_delete() {
     	$id = $_POST['id'];
     	$attendence_info = M('Attendence_info');
     	$res = $attendence_info->where('id='.$id)->delete();
+        unset($_SESSION['newFileId']);
+        if($res) {
+            $this->success('档案删除成功！', 'attendence_list');
+        }
     }
 
 }

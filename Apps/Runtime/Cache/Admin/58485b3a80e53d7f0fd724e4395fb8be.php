@@ -93,7 +93,7 @@
 					<form action="/Files_manage_system/Admin/BaseInfo/baseInfo_edit" method="post">
 						<div class="single-row">
 							<button id="save" class="btn btn-primary">保存</button>
-							<a id="cancel" class="btn btn-default" href="/Files_manage_system/Admin/BaseInfo/show">取消</a>
+							<a id="cancel" class="btn btn-default" href="check">取消</a>
 						</div>
 						<input type="hidden" name="id" value="<?php echo ($id); ?>">
 						<div id="emp_photo">
@@ -102,7 +102,7 @@
 						<div class="single-row">
 							<label>
 								<span>档案编号：</span>
-								<input type="text" name="fm_num" class="short" value="<?php echo ($fm_num); ?>">
+								<input type="text" name="fm_num" class="short" value="<?php echo ($fm_num); ?>" readonly>
 							</label>
 						</div>
 						<div class="single-row">

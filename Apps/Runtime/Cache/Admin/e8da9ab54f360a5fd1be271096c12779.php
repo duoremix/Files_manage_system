@@ -91,16 +91,18 @@
 					</ul>
 				</div>
 				<div>
-					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
+					<form action="/Files_manage_system/Admin/Performance/attendence_edit_save" method="post" id="form_attendence">
 						<div class="single-row">
-							<button id="save" class="btn btn-primary">保存</button>
-							<a id="cancel" class="btn btn-default" href="/Files_manage_system/Admin/Performance/attendence_check">取消</a>
+							<a id="save" class="btn btn-primary">保存</a>
+							<a id="cancel" class="btn btn-default" href="attendence_show">取消</a>
 						</div>
 						<div class="single-row">
+							<input type="hidden" name="id" id="id" value="<?php echo ($id); ?>">
+							<input type="hidden" name="fm_num" id="fm_num" value="<?php echo ($fm_num); ?>">
 							<label>
 								<span>部门：</span>
 								<select name="department" id="department">
-									<?php echo ($department_data_str); ?>
+									<option value="<?php echo ($department); ?>"><?php echo ($department); ?></option>
 									<!-- <option value="Java项目组">Java项目组</option>
 									<option value="Php项目组">Php项目组</option>
 									<option value="IOS项目组">IOS项目组</option> -->
@@ -109,6 +111,7 @@
 							<label>
 								<span>员工：</span>
 								<select name="employee" id="employee">
+									<option value="<?php echo ($employee); ?>"><?php echo ($employee); ?></option>
 									<!-- <option value="刘汝佳">刘汝佳</option>
 									<option value="刘汝剑">刘汝剑</option>
 									<option value="刘汝城">刘汝城</option> -->
@@ -130,43 +133,46 @@
 							</label>
 							<label>
 								<span>原因：</span>
-								<input type="text" name="attendence_reason" class="short">
+								<input type="text" name="attendence_reason" class="short" value="<?php echo ($attendence_reason); ?>">
 							</label>
 							<label>
 								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00">
+								<input type="number" name="attendence_money" class="short" placeholder="0.00" value="<?php echo ($attendence_money); ?>">
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>开始日期：</span>
-								<input type="text" name="attendence_start_date" class="short datepick">
+								<input type="text" name="attendence_start_date" class="short datepick" value="<?php echo ($attendence_start_date); ?>">
 							</label>
 							<label>
 								<span>结束日期：</span>
-								<input type="text" name="attendence_end_date" class="short datepick">
+								<input type="text" name="attendence_end_date" class="short datepick" value="<?php echo ($attendence_end_date); ?>">
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>审批人：</span>
-								<input type="text" name="manage_person" class="short">
+								<input type="text" name="manage_person" class="short" value="<?php echo ($manage_person); ?>">
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick">
+								<input type="text" name="manage_date" class="short datepick" value="<?php echo ($manage_date); ?>">
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span style="float:left">具体内容：</span>
-								<textarea name="attendence_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:5px;"></textarea>
+								<textarea name="attendence_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:10px;"><?php echo ($attendence_content); ?></textarea>
 							</label>
 						</div>
 					</form>
-					<div>
+					<div id="init_data">
 						<?php echo ($employee_data_str); ?>
+					</div>
+					<div>
 						<input type="hidden" id="emp_data" value="<?php echo ($emp_data_str); ?>">
+						<input type="hidden" id='hidden_attendence_status' value="<?php echo ($attendence_status); ?>">
 					</div>
 				</div>
 			</div>
@@ -182,7 +188,8 @@
 				dateFormat: "yy-mm-dd"
 			});
 			main_nav.init();
-			attendence_initData.init();
+			attendence_save.init();
+			attendence_putin.init();
 		}
 	</script>
 </body>

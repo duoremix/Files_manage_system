@@ -93,8 +93,8 @@
 				<div>
 					<form action="__URL__/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
-							<button id="save" class="btn btn-primary">保存</button>
-							<a id="cancel" class="btn btn-default" href="attendence_list">取消</a>
+							<a id="save" class="btn btn-primary">保存</a>
+							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
 							<label>
@@ -164,9 +164,12 @@
 							</label>
 						</div>
 					</form>
-					<div>
+					<div id="init_data">
 						{$employee_data_str}
+					</div>
+					<div>
 						<input type="hidden" id="emp_data" value="{$emp_data_str}">
+						<input type="hidden" id="hidden_emp_id" value="{$emp_id}">
 					</div>
 				</div>
 			</div>
@@ -183,6 +186,7 @@
 			});
 			main_nav.init();
 			attendence_initData.init();
+			attendence_save.init();
 		}
 	</script>
 </body>

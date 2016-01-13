@@ -94,7 +94,7 @@
 					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
 							<button id="save" class="btn btn-primary">保存</button>
-							<a id="cancel" class="btn btn-default" href="/Files_manage_system/Admin/Performance/attendence_check">取消</a>
+							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
 							<label>
@@ -164,9 +164,12 @@
 							</label>
 						</div>
 					</form>
-					<div>
+					<div id="init_data">
 						<?php echo ($employee_data_str); ?>
+					</div>
+					<div>
 						<input type="hidden" id="emp_data" value="<?php echo ($emp_data_str); ?>">
+						<input type="hidden" id="hidden_emp_id" value="<?php echo ($emp_id); ?>">
 					</div>
 				</div>
 			</div>

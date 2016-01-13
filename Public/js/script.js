@@ -70,6 +70,8 @@ var baseInfo_multiDelete = {
 						},
 						success: function(data) {
 							console.log(data);
+							alert('删除成功!');
+							window.location = '../BaseInfo/check'
 						}
 					});
 				}
@@ -185,14 +187,23 @@ var attendence_initData = {
 			var $data = $('input#emp_data').val().split(',');
 			$('select#department').val($data[1]);
 			var $index = $('select#department').find('option:checked').index();
-			$('select#employee').html($('input[type=hidden]').eq($index).val());
+			$('select#employee').html($('div#init_data>input[type=hidden]').eq($index).val());
 			$('select#employee').val($data[0]);
 		} else {
-			$('select#employee').html($('input[type=hidden]').eq(0).val());
+			$('select#employee').html($('div#init_data>input[type=hidden]').eq(0).val());
 		}
 		$('select#department').change(function(event) {
 			var $index = $(this).find('option:checked').index();
-			$('select#employee').html($('input[type=hidden]').eq($index).val());
+			$('select#employee').html($('div#init_data>input[type=hidden]').eq($index).val());
+			$('input[name=emp_id]').val('');
+		});
+		$('a#cancel').on('click', function(event) {
+			var $id = $('input#hidden_emp_id').val();
+			if($id) {
+				window.location = 'attendence_list';
+			} else {
+				window.location = 'attendence_check';
+			}
 		});
 	}
 }
@@ -222,9 +233,9 @@ var attendence_list = {
 
 var attendence_delete = {
 	init: function() {
-		$('a.delete').on('click', function(event) {
+		$('a#delete').on('click', function(event) {
 			if(confirm('确定要删除此档案吗？')) {
-				$id = $(this).parents('tr').prop('id');
+				$id = $('input#fileId').val();
 				$.ajax({
 					url: '../Performance/attendence_delete',
 					type: 'POST',
@@ -233,6 +244,7 @@ var attendence_delete = {
 					},
 					success: function(data) {
 						console.log(data);
+						alert('档案删除成功！');
 						window.location = '../Performance/attendence_list'
 					}
 				});
@@ -252,12 +264,53 @@ var attendence_list_operation = {
 				type: 'POST',
 				data: {
 					id: $id
-				}
-				success: function() {
-
+				},
+				success: function(data) {
+					console.log(data);
+					window.location = 'attendence_show';
 				}
 			});
-			
 		});
+
+		$('a.edit').on('click', function(event) {
+			$id = $(this).parents('tr').prop('id');
+			$.ajax({
+				url: '../Performance/attendence_edit',
+				type: 'POST',
+				data: {
+					id: $id
+				},
+				success: function(data) {
+					console.log(data);
+					window.location = 'attendence_edit';
+				}
+			});
+		});
+
+		$('a.delete').on('click', function(event) {
+			if(confirm('确定要删除此档案吗？')) {
+				$id = $(this).parents('tr').prop('id');
+				$.ajax({
+					url: '../Performance/attendence_delete',
+					type: 'POST',
+					data: {
+						id: $id
+					},
+					success: function(data) {
+						console.log(data);
+						alert('档案删除成功！');
+						window.location = '../Performance/attendence_list'
+					}
+				});
+			}
+		});
+	}
+}
+
+//考勤档案列表上的操作
+
+var attendence_putin = {
+	init: function() {
+		$('select#attendence_status').val($('input#hidden_attendence_status').val());
 	}
 }

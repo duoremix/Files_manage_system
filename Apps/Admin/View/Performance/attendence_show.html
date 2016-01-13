@@ -93,14 +93,15 @@
 				<div>
 					<form action="__URL__/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
-							<button id="save" class="btn btn-primary">保存</button>
-							<a id="cancel" class="btn btn-default" href="attendence_list">取消</a>
+							<a id="save" class="btn btn-primary" href="attendence_edit">修改档案</a>
+							<a id="delete" class="btn btn-danger">删除档案</a>
+							<a id="cancel" class="btn btn-default" href="attendence_list">返回</a>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>部门：</span>
-								<select name="department" id="department">
-									{$department_data_str}
+								<select name="department" id="department" disabled>
+									<option value="{$department}">{$department}</option>
 									<!-- <option value="Java项目组">Java项目组</option>
 									<option value="Php项目组">Php项目组</option>
 									<option value="IOS项目组">IOS项目组</option> -->
@@ -108,7 +109,8 @@
 							</label>
 							<label>
 								<span>员工：</span>
-								<select name="employee" id="employee">
+								<select name="employee" id="employee" disabled>
+									<option value="{$employee}">{$employee}</option>
 									<!-- <option value="刘汝佳">刘汝佳</option>
 									<option value="刘汝剑">刘汝剑</option>
 									<option value="刘汝城">刘汝城</option> -->
@@ -116,13 +118,13 @@
 							</label>
 							<label>
 								<span>员工编号：</span>
-								<input type="text" name="emp_id" class="short" style="width:50px;" value="{$emp_id}">
+								<input type="text" name="emp_id" class="short" style="width:50px;" value="{$emp_id}" readonly>
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>考勤状况：</span>
-								<select name="attendence_status" id="attendence_status">
+								<select name="attendence_status" id="attendence_status" disabled>
 									<option value="缺勤">缺勤</option>
 									<option value="迟到">迟到</option>
 									<option value="请假">请假</option>
@@ -130,43 +132,47 @@
 							</label>
 							<label>
 								<span>原因：</span>
-								<input type="text" name="attendence_reason" class="short">
+								<input type="text" name="attendence_reason" class="short" value="{$attendence_reason}" readonly>
 							</label>
 							<label>
 								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00">
+								<input type="number" name="attendence_money" class="short" placeholder="0.00" value="{$attendence_money}" readonly>
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>开始日期：</span>
-								<input type="text" name="attendence_start_date" class="short datepick">
+								<input type="text" name="attendence_start_date" class="short datepick" value="{$attendence_start_date}" readonly>
 							</label>
 							<label>
 								<span>结束日期：</span>
-								<input type="text" name="attendence_end_date" class="short datepick">
+								<input type="text" name="attendence_end_date" class="short datepick" value="{$attendence_end_date}" readonly>
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>审批人：</span>
-								<input type="text" name="manage_person" class="short">
+								<input type="text" name="manage_person" class="short" value="{$manage_person}" readonly>
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick">
+								<input type="text" name="manage_date" class="short datepick" value="{$manage_date}" readonly>
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span style="float:left">具体内容：</span>
-								<textarea name="attendence_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:5px;"></textarea>
+								<textarea name="attendence_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:10px;" readonly>{$attendence_content}</textarea>
 							</label>
 						</div>
 					</form>
-					<div>
+					<div id="init_data">
 						{$employee_data_str}
+					</div>
+					<div>
 						<input type="hidden" id="emp_data" value="{$emp_data_str}">
+						<input type="hidden" id="fileId" value="{$fileId}">
+						<input type="hidden" id='hidden_attendence_status' value="{$attendence_status}">
 					</div>
 				</div>
 			</div>
@@ -178,11 +184,9 @@
 	<script src="__PUBLIC__/js/script.js"></script>
 	<script>
 		window.onload = function() {
-			$(".datepick").datepicker({
-				dateFormat: "yy-mm-dd"
-			});
 			main_nav.init();
-			attendence_initData.init();
+			attendence_delete.init();
+			attendence_putin.init();
 		}
 	</script>
 </body>
