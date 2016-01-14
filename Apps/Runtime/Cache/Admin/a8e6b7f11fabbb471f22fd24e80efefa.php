@@ -85,53 +85,73 @@
 				<div class="single-row">
 					<ul class="mybreadcrumb">
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
-						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">绩效档案管理</a></li>
-						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a></li>
-						<li><?php echo ($emp_name); ?>的考勤档案</li>
+						<li>绩效档案管理</li>
+						<li>奖惩档案管理</li>
 					</ul>
 				</div>
 				<div class="single-row">
-					<a class="btn btn-primary" href="attendence_create">新建档案</a>
-					<a class="btn btn-default" href="attendence_check">返回</a>
+					<a class="btn btn-primary" href="/Files_manage_system/Admin/Performance/rnp_create">新建档案</a>
 				</div>
-				<p class="form-title"><?php echo ($emp_name); ?>的考勤档案</p>
+				<div class="single-row">
+					<label>
+						<span>选择部门：</span>
+						<select name="department" id="department">
+							<option value="全部">全部</option>
+							<option value="Java项目组">Java项目组</option>
+							<option value="Php项目组">Php项目组</option>
+							<option value="IOS项目组">IOS项目组</option>
+						</select>
+					</label>
+				</div>
 				<div class="single-row">
 					<?php echo ($infoData); ?>
 					<!-- <table class="table table-striped">
 						<tr>
 							<td>档案编号</td>
-							<td>考勤状况</td>
-							<td>原因</td>
-							<td>开始日期</td>
-							<td>结束日期</td>
-							<td>审批人</td>
-							<td>审批日期</td>
+							<td>姓名</td>
+							<td>性别</td>
+							<td>部门</td>
+							<td>职务</td>
 							<td>操作</td>
 						</tr>
 						<tr>
-							<td>J30001</td>
-							<td>迟到</td>
-							<td>无</td>
-							<td>2016-01-07</td>	
-							<td>2016-01-07</td>	
-							<td>郭富城</td>
-							<td>2016-01-07</td>
+							<td>J00001</td>
+							<td>刘汝佳</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
 							<td>
-								<a href="/Files_manage_system/Admin/Performance/attendence_show">查看详细</a>
-								<a href="">删除</a>
+								<a href="/Files_manage_system/Admin/Performance/attendence_list">查看考勤档案</a>
 							</td>
 						</tr>
 						<tr>
-							<td>J30001</td>
-							<td>请假</td>
-							<td>病假</td>
-							<td>2016-01-08</td>	
-							<td>2016-01-08</td>
-							<td>郭富城</td>
-							<td>2016-01-08</td>
+							<td>J00002</td>
+							<td>刘汝剑</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
 							<td>
-								<a href="show">查看详细</a>
-								<a href="">删除</a>
+								<a href="">查看考勤档案</a>
+							</td>
+						</tr>
+						<tr>
+							<td>J00003</td>
+							<td>刘汝城</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
+							<td>
+								<a href="">查看考勤档案</a>
+							</td>
+						</tr>
+						<tr>
+							<td>J00004</td>
+							<td>刘汝楚</td>
+							<td>男</td>
+							<td>Java项目组</td>
+							<td>Java工程师</td>
+							<td>
+								<a href="">查看考勤档案</a>
 							</td>
 						</tr>
 					</table> -->
@@ -145,7 +165,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			attendence_list_operation.init();
+			rnp_list.init();
 		}
 	</script>
 </body>

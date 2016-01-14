@@ -85,16 +85,16 @@
 				<div class="single-row">
 					<ul class="mybreadcrumb">
 						<li><a href="__APP__/Admin/Index">主页</a></li>
-						<li><a href="__URL__/attendence_check">绩效档案管理</a></li>
-						<li><a href="__URL__/attendence_check">考勤档案管理</a></li>
-						<li>{$emp_name}的考勤档案</li>
+						<li><a href="#">绩效档案管理</a></li>
+						<li><a href="__URL__/rnp_check">奖惩档案管理</a></li>
+						<li>{$emp_name}的奖惩档案</li>
 					</ul>
 				</div>
 				<div class="single-row">
-					<a class="btn btn-primary" href="attendence_create">新建档案</a>
-					<a class="btn btn-default" href="attendence_check">返回</a>
+					<a class="btn btn-primary" href="rnp_create">新建档案</a>
+					<a class="btn btn-default" href="rnp_check">返回</a>
 				</div>
-				<p class="form-title">{$emp_name}的考勤档案</p>
+				<p class="form-title">{$emp_name}的奖惩档案</p>
 				<div class="single-row">
 					{$infoData}
 					<!-- <table class="table table-striped">
@@ -145,7 +145,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			attendence_list_operation.init();
+			rnp_list_operation.init();
 		}
 	</script>
 </body>

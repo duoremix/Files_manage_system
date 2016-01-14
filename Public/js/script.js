@@ -181,7 +181,7 @@ var attendence_save = {
 
 //保存考勤档案
 
-var attendence_initData = {
+var department_initData = {
 	init: function() {
 		if($('input#emp_data').val()) {
 			var $data = $('input#emp_data').val().split(',');
@@ -197,6 +197,13 @@ var attendence_initData = {
 			$('select#employee').html($('div#init_data>input[type=hidden]').eq($index).val());
 			$('input[name=emp_id]').val('');
 		});
+	}
+}
+
+//初始化档案的部门和员工数据
+
+var attendence_cancel = {
+	init: function() {
 		$('a#cancel').on('click', function(event) {
 			var $id = $('input#hidden_emp_id').val();
 			if($id) {
@@ -208,7 +215,7 @@ var attendence_initData = {
 	}
 }
 
-//初始化考勤档案的部门和员工
+//考勤档案的取消按钮路径
 
 var attendence_list = {
 	init: function() {
@@ -314,3 +321,129 @@ var attendence_putin = {
 		$('select#attendence_status').val($('input#hidden_attendence_status').val());
 	}
 }
+
+//考勤档案select数据的导入
+
+var rnp_list = {
+	init: function() {
+		$('a.list').on('click', function(event) {
+			$id = $(this).parents('tr').prop('id');
+			$.ajax({
+				url: '../Performance/rnp_list',
+				type: 'POST',
+				data: {
+					id: $id
+				},
+				success: function(data) {
+					console.log(data);
+					window.location = '../Performance/rnp_list'
+				}
+			});			
+		});
+	}
+}
+
+//查看特定员工的奖惩档案
+
+var rnp_list_operation = {
+	init: function() {
+		$('a.show').on('click', function(event) {
+			$id = $(this).parents('tr').prop('id');
+			$.ajax({
+				url: '../Performance/rnp_show',
+				type: 'POST',
+				data: {
+					id: $id
+				},
+				success: function(data) {
+					console.log(data);
+					window.location = 'rnp_show';
+				}
+			});
+		});
+
+		$('a.edit').on('click', function(event) {
+			$id = $(this).parents('tr').prop('id');
+			$.ajax({
+				url: '../Performance/rnp_edit',
+				type: 'POST',
+				data: {
+					id: $id
+				},
+				success: function(data) {
+					console.log(data);
+					window.location = 'rnp_edit';
+				}
+			});
+		});
+
+		$('a.delete').on('click', function(event) {
+			if(confirm('确定要删除此档案吗？')) {
+				$id = $(this).parents('tr').prop('id');
+				$.ajax({
+					url: '../Performance/rnp_delete',
+					type: 'POST',
+					data: {
+						id: $id
+					},
+					success: function(data) {
+						console.log(data);
+						alert('档案删除成功！');
+						window.location = '../Performance/rnp_list'
+					}
+				});
+			}
+		});
+	}
+}
+
+//考勤档案列表上的操作
+
+var rnp_cancel = {
+	init: function() {
+		$('a#cancel').on('click', function(event) {
+			var $id = $('input#hidden_emp_id').val();
+			if($id) {
+				window.location = 'rnp_list';
+			} else {
+				window.location = 'rnp_check';
+			}
+		});
+	}
+}
+
+//奖惩档案的取消按钮路径
+
+var rnp_save = {
+	init: function() {
+		$('a#save').on('click', function(event) {
+			$('#form_rnp').submit();
+		});
+	}
+}
+
+//奖惩档案的保存
+
+var rnp_delete = {
+	init: function() {
+		$('a#delete').on('click', function(event) {
+			if(confirm('确定要删除此档案吗？')) {
+				$id = $('input#fileId').val();
+				$.ajax({
+					url: '../Performance/rnp_delete',
+					type: 'POST',
+					data: {
+						id: $id
+					},
+					success: function(data) {
+						console.log(data);
+						alert('档案删除成功！');
+						window.location = '../Performance/rnp_list'
+					}
+				});
+			}
+		});
+	}
+}
+
+//奖惩档案查看页面的删除按钮

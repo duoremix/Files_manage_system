@@ -85,16 +85,16 @@
 				<div class="single-row">
 					<ul class="mybreadcrumb">
 						<li><a href="__APP__/Admin/Index">主页</a></li>
-						<li><a href="#">绩效档案管理</a></li>
-						<li><a href="__URL__/attendence_check">考勤档案管理</a></li>
-						<li>新建档案</li>
+						<li><a href="__URL__/attendence_check">绩效档案管理</a></li>
+						<li><a href="__URL__/attendence_check">奖惩档案管理</a></li>
+						<li>修改档案</li>
 					</ul>
 				</div>
 				<div>
-					<form action="__URL__/attendence_edit_save" method="post" id="form_attendence">
+					<form action="__URL__/rnp_edit_save" method="post" id="form_rnp">
 						<div class="single-row">
 							<a id="save" class="btn btn-primary">保存</a>
-							<a id="cancel" class="btn btn-default" href="attendence_list">取消</a>
+							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
 							<input type="hidden" name="id" id="id" value="{$id}">
@@ -119,35 +119,34 @@
 							</label>
 							<label>
 								<span>员工编号：</span>
-								<input type="text" name="emp_id" class="short" style="width:50px;" value="{$emp_id}">
+								<input type="text" name="emp_id" class="short" style="width:50px;" value="{$emp_id}" readonly>
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
-								<span>考勤状况：</span>
-								<select name="attendence_status" id="attendence_status">
-									<option value="缺勤">缺勤</option>
-									<option value="迟到">迟到</option>
-									<option value="请假">请假</option>
-								</select>
-							</label>
-							<label>
-								<span>原因：</span>
-								<input type="text" name="attendence_reason" class="short" value="{$attendence_reason}">
+								<span>奖惩状况：</span>
+								<label class="normal">
+									<span>奖励</span>
+									<input type="radio" name="rnp_status" value="奖励" {$rnp_reward}>
+								</label>
+								<label class="normal">
+									<span>惩罚</span>
+									<input type="radio" name="rnp_status" value="惩罚" {$rnp_punish}>
+								</label>
 							</label>
 							<label>
 								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00" value="{$attendence_money}">
+								<input type="number" name="rnp_money" class="short" placeholder="0.00" value="{$rnp_money}">
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
-								<span>开始日期：</span>
-								<input type="text" name="attendence_start_date" class="short datepick" value="{$attendence_start_date}">
+								<span>原因：</span>
+								<input type="text" name="rnp_reason" class="short" value="{$rnp_reason}">
 							</label>
 							<label>
-								<span>结束日期：</span>
-								<input type="text" name="attendence_end_date" class="short datepick" value="{$attendence_end_date}">
+								<span>落实日期：</span>
+								<input type="text" name="rnp_date" class="short datepick" value="{$rnp_date}">
 							</label>
 						</div>
 						<div class="single-row">
@@ -163,7 +162,7 @@
 						<div class="single-row">
 							<label>
 								<span style="float:left">具体内容：</span>
-								<textarea name="attendence_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:10px;">{$attendence_content}</textarea>
+								<textarea name="rnp_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:5px;">{$rnp_content}</textarea>
 							</label>
 						</div>
 					</form>
@@ -172,7 +171,7 @@
 					</div>
 					<div>
 						<input type="hidden" id="emp_data" value="{$emp_data_str}">
-						<input type="hidden" id='hidden_attendence_status' value="{$attendence_status}">
+						<input type="hidden" id="hidden_emp_id" value="{$emp_id}">
 					</div>
 				</div>
 			</div>
@@ -188,8 +187,9 @@
 				dateFormat: "yy-mm-dd"
 			});
 			main_nav.init();
-			attendence_save.init();
-			attendence_putin.init();
+			department_initData.init();
+			rnp_cancel.init();
+			rnp_save.init();
 		}
 	</script>
 </body>

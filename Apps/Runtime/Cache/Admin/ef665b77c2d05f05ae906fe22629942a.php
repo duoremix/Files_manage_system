@@ -112,7 +112,6 @@
 									<span>姓名：</span>
 									<input type="text" name="emp_name" class="short">
 								</label>
-								<span>性别：</span>
 								<label>
 									<span>性别：</span>
 									<label class="normal">
@@ -310,7 +309,7 @@
 								</label>
 								<label>
 									<span>公积金号：</span>
-									<input type="text" name="emp_reseverd_fund" class="short">
+									<input type="text" name="emp_resevered_fund" class="short">
 								</label>
 							</div>
 						</div>

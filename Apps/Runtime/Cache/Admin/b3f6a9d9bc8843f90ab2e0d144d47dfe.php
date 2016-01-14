@@ -85,17 +85,17 @@
 				<div class="single-row">
 					<ul class="mybreadcrumb">
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
-						<li><a href="#">绩效档案管理</a></li>
-						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a></li>
-						<li>新建档案</li>
+						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">绩效档案管理</a></li>
+						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">奖惩档案管理</a></li>
+						<li>查看档案</li>
 					</ul>
 				</div>
 				<div>
-					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
+					<form action="/Files_manage_system/Admin/Performance/rnp_save" method="post" id="form_rnp">
 						<div class="single-row">
-							<a id="save" class="btn btn-primary" href="attendence_edit">修改档案</a>
+							<a id="save" class="btn btn-primary" href="rnp_edit">修改档案</a>
 							<a id="delete" class="btn btn-danger">删除档案</a>
-							<a id="cancel" class="btn btn-default" href="attendence_list">返回</a>
+							<a id="cancel" class="btn btn-default" href="rnp_list">返回</a>
 						</div>
 						<div class="single-row">
 							<label>
@@ -123,30 +123,29 @@
 						</div>
 						<div class="single-row">
 							<label>
-								<span>考勤状况：</span>
-								<select name="attendence_status" id="attendence_status" disabled>
-									<option value="缺勤">缺勤</option>
-									<option value="迟到">迟到</option>
-									<option value="请假">请假</option>
-								</select>
-							</label>
-							<label>
-								<span>原因：</span>
-								<input type="text" name="attendence_reason" class="short" value="<?php echo ($attendence_reason); ?>" readonly>
+								<span>奖惩状况：</span>
+								<label class="normal">
+									<span>奖励</span>
+									<input type="radio" name="rnp_status" value="奖励" <?php echo ($rnp_reward); ?> onclick="return fasle">
+								</label>
+								<label class="normal">
+									<span>惩罚</span>
+									<input type="radio" name="rnp_status" value="惩罚" <?php echo ($rnp_punish); ?> onclick="return fasle">
+								</label>
 							</label>
 							<label>
 								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00" value="<?php echo ($attendence_money); ?>" readonly>
+								<input type="number" name="rnp_money" class="short" placeholder="0.00" value="<?php echo ($rnp_money); ?>" readonly>
 							</label>
 						</div>
 						<div class="single-row">
 							<label>
-								<span>开始日期：</span>
-								<input type="text" name="attendence_start_date" class="short datepick" value="<?php echo ($attendence_start_date); ?>" readonly>
+								<span>原因：</span>
+								<input type="text" name="rnp_reason" class="short" value="<?php echo ($rnp_reason); ?>" readonly>
 							</label>
 							<label>
-								<span>结束日期：</span>
-								<input type="text" name="attendence_end_date" class="short datepick" value="<?php echo ($attendence_end_date); ?>" readonly>
+								<span>落实日期：</span>
+								<input type="text" name="rnp_date" class="short datepick" value="<?php echo ($rnp_date); ?>" readonly>
 							</label>
 						</div>
 						<div class="single-row">
@@ -162,7 +161,7 @@
 						<div class="single-row">
 							<label>
 								<span style="float:left">具体内容：</span>
-								<textarea name="attendence_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:10px;" readonly><?php echo ($attendence_content); ?></textarea>
+								<textarea name="rnp_content" id="attendence_content" cols="40" rows="10" style="margin-left:5px;padding:5px;" readonly><?php echo ($rnp_content); ?></textarea>
 							</label>
 						</div>
 					</form>
@@ -172,7 +171,7 @@
 					<div>
 						<input type="hidden" id="emp_data" value="<?php echo ($emp_data_str); ?>">
 						<input type="hidden" id="fileId" value="<?php echo ($fileId); ?>">
-						<input type="hidden" id='hidden_attendence_status' value="<?php echo ($attendence_status); ?>">
+						<input type="hidden" id="hidden_emp_id" value="<?php echo ($emp_id); ?>">
 					</div>
 				</div>
 			</div>
@@ -185,8 +184,10 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			attendence_delete.init();
-			attendence_putin.init();
+			department_initData.init();
+			rnp_cancel.init();
+			rnp_save.init();
+			rnp_delete.init();
 		}
 	</script>
 </body>

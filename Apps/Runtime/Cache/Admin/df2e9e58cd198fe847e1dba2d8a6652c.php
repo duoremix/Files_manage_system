@@ -36,7 +36,7 @@
 								<a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a>
 							</li>
 							<li>
-								<a href="">奖惩档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
 								<a href="">培训档案管理</a>
@@ -93,7 +93,7 @@
 				<div>
 					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
-							<button id="save" class="btn btn-primary">保存</button>
+							<a id="save" class="btn btn-primary">保存</a>
 							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
@@ -186,6 +186,7 @@
 			});
 			main_nav.init();
 			attendence_initData.init();
+			attendence_save.init();
 		}
 	</script>
 </body>

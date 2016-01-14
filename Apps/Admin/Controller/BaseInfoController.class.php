@@ -28,7 +28,7 @@ class BaseInfoController extends Controller {
         while($auto_id/10 >= 1) {
             $count++;
         }
-        $auto_fm_num = 'J';
+        $auto_fm_num = 'B';
         for($x=0;$x<5-$count;$x++) {
             $auto_fm_num = $auto_fm_num.'0';
         }
@@ -44,22 +44,26 @@ class BaseInfoController extends Controller {
         $duty_info = M('duty_info');
         $duty_data = $duty_info->select();
         $arraylength = count($person_data);
-        for($x=0;$x<$arraylength;$x++) {
-            if($person_data[$x]['id'] == $duty_data[$x]['id']) {
-                $data[$x]['id'] = $person_data[$x]['id'];
-                $data[$x]['fm_num'] = $person_data[$x]['fm_num'];
-                $data[$x]['emp_name'] = $person_data[$x]['emp_name'];
-                $data[$x]['emp_sex'] = $person_data[$x]['emp_sex'];
-                $data[$x]['emp_department'] = $duty_data[$x]['emp_department'];
-                $data[$x]['emp_job'] = $duty_data[$x]['emp_job'];
+        if($arraylength) {
+            for($x=0;$x<$arraylength;$x++) {
+                if($person_data[$x]['id'] == $duty_data[$x]['id']) {
+                    $data[$x]['id'] = $person_data[$x]['id'];
+                    $data[$x]['fm_num'] = $person_data[$x]['fm_num'];
+                    $data[$x]['emp_name'] = $person_data[$x]['emp_name'];
+                    $data[$x]['emp_sex'] = $person_data[$x]['emp_sex'];
+                    $data[$x]['emp_department'] = $duty_data[$x]['emp_department'];
+                    $data[$x]['emp_job'] = $duty_data[$x]['emp_job'];
+                }
             }
+            $arraylength = count($data);
+            $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>操作</td></tr>';
+            for($x=0;$x<$arraylength;$x++) {
+                $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td><a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a></td></tr>';
+            }
+            $infoData = $infoData.'</table>';
+        } else {
+            $infoData = '<div>尚未有员工档案</div>';
         }
-        $arraylength = count($data);
-        $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>操作</td></tr>';
-        for($x=0;$x<$arraylength;$x++) {
-            $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td><a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a></td></tr>';
-        }
-        $infoData = $infoData.'</table>';
         $this->assign('infoData', $infoData);
     	$this->display('check');
     }
@@ -274,9 +278,9 @@ class BaseInfoController extends Controller {
             $this->assign('emp_hurt_insu', $emp_hurt_insu);
         }
 
-        if($duty_data[0]['emp_reseverd_fund'] != '') {
-            $emp_reseverd_fund = $duty_data[0]['emp_reseverd_fund'];
-            $this->assign('emp_reseverd_fund', $emp_reseverd_fund);
+        if($duty_data[0]['emp_resevered_fund'] != '') {
+            $emp_resevered_fund = $duty_data[0]['emp_resevered_fund'];
+            $this->assign('emp_resevered_fund', $emp_resevered_fund);
         }
 
     	$this->display('show');
@@ -492,9 +496,9 @@ class BaseInfoController extends Controller {
             $this->assign('emp_hurt_insu', $emp_hurt_insu);
         }
 
-        if($duty_data[0]['emp_reseverd_fund'] != '') {
-            $emp_reseverd_fund = $duty_data[0]['emp_reseverd_fund'];
-            $this->assign('emp_reseverd_fund', $emp_reseverd_fund);
+        if($duty_data[0]['emp_resevered_fund'] != '') {
+            $emp_resevered_fund = $duty_data[0]['emp_resevered_fund'];
+            $this->assign('emp_resevered_fund', $emp_resevered_fund);
         }
 
         $this->display('edit');

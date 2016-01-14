@@ -94,7 +94,7 @@
 					<form action="/Files_manage_system/Admin/Performance/attendence_edit_save" method="post" id="form_attendence">
 						<div class="single-row">
 							<a id="save" class="btn btn-primary">保存</a>
-							<a id="cancel" class="btn btn-default" href="attendence_show">取消</a>
+							<a id="cancel" class="btn btn-default" href="attendence_list">取消</a>
 						</div>
 						<div class="single-row">
 							<input type="hidden" name="id" id="id" value="<?php echo ($id); ?>">

@@ -310,7 +310,7 @@
 								</label>
 								<label>
 									<span>公积金号：</span>
-									<input type="text" name="emp_reseverd_fund" class="short" value="<?php echo ($emp_reseverd_fund); ?>" readonly>
+									<input type="text" name="emp_resevered_fund" class="short" value="<?php echo ($emp_resevered_fund); ?>" readonly>
 								</label>
 							</div>
 						</div>
