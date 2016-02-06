@@ -21,7 +21,7 @@
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
@@ -39,7 +39,7 @@
 								<a href="/Files_manage_system/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
-								<a href="">培训档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/train_check">培训档案管理</a>
 							</li>
 						</ul>
 					</li>
@@ -61,21 +61,24 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
 							</li>
 							<li>
-								<a href="">基本资料设置</a>
+								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
 							</li>
 							<li>
-								<a href="">初始化系统</a>
+								<a href="/Files_manage_system/Admin/System/system_init">初始化系统</a>
 							</li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
+							<li class="super">
+								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+							</li>
 							<li>
-								<a href="">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
 							</li>
 						</ul>
 					</li>
@@ -91,12 +94,14 @@
 					</ul>
 				</div>
 				<div class="single-row">
-					<a class="btn btn-primary" href="attendence_create">新建档案</a>
+					<a class="btn btn-primary super" href="attendence_create">新建档案</a>
 					<a class="btn btn-default" href="attendence_check">返回</a>
 				</div>
 				<p class="form-title"><?php echo ($emp_name); ?>的考勤档案</p>
 				<div class="single-row">
-					<?php echo ($infoData); ?>
+					<div class="table_scroll long">
+						<?php echo ($infoData); ?>
+					</div>
 					<!-- <table class="table table-striped">
 						<tr>
 							<td>档案编号</td>
@@ -136,6 +141,7 @@
 						</tr>
 					</table> -->
 				</div>
+				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
 		</div>
 	</section>

@@ -21,7 +21,7 @@
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
@@ -39,7 +39,7 @@
 								<a href="/Files_manage_system/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
-								<a href="">培训档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/train_check">培训档案管理</a>
 							</li>
 						</ul>
 					</li>
@@ -64,18 +64,21 @@
 								<a href="">企业架构设置</a>
 							</li>
 							<li>
-								<a href="">基本资料设置</a>
+								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
 							</li>
 							<li>
-								<a href="">初始化系统</a>
+								<a href="/Files_manage_system/Admin/System/system_init">初始化系统</a>
 							</li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
+							<li class="super">
+								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+							</li>
 							<li>
-								<a href="">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
 							</li>
 						</ul>
 					</li>
@@ -93,7 +96,7 @@
 				<div>
 					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
-							<a id="save" class="btn btn-primary">保存</a>
+							<a id="save" class="btn btn-primary super">保存</a>
 							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
@@ -172,6 +175,7 @@
 						<input type="hidden" id="hidden_emp_id" value="<?php echo ($emp_id); ?>">
 					</div>
 				</div>
+				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
 		</div>
 	</section>
@@ -185,7 +189,8 @@
 				dateFormat: "yy-mm-dd"
 			});
 			main_nav.init();
-			attendence_initData.init();
+			department_initData.init();
+			attendence_cancel.init();
 			attendence_save.init();
 		}
 	</script>

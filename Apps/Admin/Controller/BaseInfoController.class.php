@@ -10,6 +10,7 @@ class BaseInfoController extends Controller {
 	}
 
     public function index() {
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('index');
     }
 
@@ -35,6 +36,7 @@ class BaseInfoController extends Controller {
         $auto_fm_num = $auto_fm_num.$auto_id;
         $this->assign('auto_id', $auto_id);
         $this->assign('auto_fm_num', $auto_fm_num);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('create');
     }
 
@@ -58,13 +60,14 @@ class BaseInfoController extends Controller {
             $arraylength = count($data);
             $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>操作</td></tr>';
             for($x=0;$x<$arraylength;$x++) {
-                $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td><a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a></td></tr>';
+                $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td><a class="show" href="#">查看</a><a class="edit super" href="#">修改</a><a class="delete super" href="#">删除</a></td></tr>';
             }
             $infoData = $infoData.'</table>';
         } else {
             $infoData = '<div>尚未有员工档案</div>';
         }
         $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('check');
     }
 
@@ -283,6 +286,7 @@ class BaseInfoController extends Controller {
             $this->assign('emp_resevered_fund', $emp_resevered_fund);
         }
 
+        $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('show');
     }
 
@@ -501,6 +505,7 @@ class BaseInfoController extends Controller {
             $this->assign('emp_resevered_fund', $emp_resevered_fund);
         }
 
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('edit');
     }
 

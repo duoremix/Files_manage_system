@@ -39,7 +39,7 @@
 								<a href="/Files_manage_system/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
-								<a href="">培训档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/train_check">培训档案管理</a>
 							</li>
 						</ul>
 					</li>

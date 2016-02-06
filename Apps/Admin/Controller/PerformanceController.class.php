@@ -36,6 +36,7 @@ class PerformanceController extends Controller {
             $infoData = '<div>尚未有考勤档案</div>';
         }
 	    $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('attendence_check');
     }
 
@@ -53,13 +54,14 @@ class PerformanceController extends Controller {
     		$infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>考勤状况</td><td>原因</td><td>开始日期</td><td>结束日期</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
     		$arraylength = count($attendence_data);
     		for($x=0;$x<$arraylength;$x++) {
-    			$infoData = $infoData.'<tr id='.$attendence_data[$x]['id'].'><td>'.$attendence_data[$x]['fm_num'].'</td><td>'.$attendence_data[$x]['attendence_status'].'</td><td>'.$attendence_data[$x]['attendence_reason'].'</td><td>'.$attendence_data[$x]['attendence_start_date'].'</td><td>'.$attendence_data[$x]['attendence_end_date'].'</td><td>'.$attendence_data[$x]['manage_person'].'</td><td>'.$attendence_data[$x]['manage_date'].'</td><td><a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a></td></tr>';
+    			$infoData = $infoData.'<tr id='.$attendence_data[$x]['id'].'><td>'.$attendence_data[$x]['fm_num'].'</td><td>'.$attendence_data[$x]['attendence_status'].'</td><td>'.$attendence_data[$x]['attendence_reason'].'</td><td>'.$attendence_data[$x]['attendence_start_date'].'</td><td>'.$attendence_data[$x]['attendence_end_date'].'</td><td>'.$attendence_data[$x]['manage_person'].'</td><td>'.$attendence_data[$x]['manage_date'].'</td><td><a class="show" href="#">查看</a><a class="edit super" href="#">修改</a><a class="delete super" href="#">删除</a></td></tr>';
     		}
     		$infoData = $infoData.'</table>';
     	} else {
     		$infoData = '<div>该员工暂无考勤档案</div>';
     	}
     	$this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('attendence_list');
     }
 
@@ -127,6 +129,7 @@ class PerformanceController extends Controller {
         }
 
         $this->assign('fileId', $_SESSION['newFileId']);
+        $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('attendence_show');
     }
 
@@ -254,6 +257,7 @@ class PerformanceController extends Controller {
 
         $this->assign('id', $_SESSION['newFileId']);
         $this->assign('fm_num', $attendence_data[0]['fm_num']);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('attendence_edit');
 
     }
@@ -303,6 +307,7 @@ class PerformanceController extends Controller {
             $infoData = '<div>尚未有考勤档案</div>';
         }
         $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('rnp_check');
     }
 
@@ -320,13 +325,14 @@ class PerformanceController extends Controller {
             $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>奖惩状况</td><td>原因</td><td>落实日期</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
             $arraylength = count($rnp_data);
             for($x=0;$x<$arraylength;$x++) {
-                $infoData = $infoData.'<tr id='.$rnp_data[$x]['id'].'><td>'.$rnp_data[$x]['fm_num'].'</td><td>'.$rnp_data[$x]['rnp_status'].'</td><td>'.$rnp_data[$x]['rnp_reason'].'</td><td>'.$rnp_data[$x]['rnp_date'].'</td><td>'.$rnp_data[$x]['manage_person'].'</td><td>'.$rnp_data[$x]['manage_date'].'</td><td><a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a></td></tr>';
+                $infoData = $infoData.'<tr id='.$rnp_data[$x]['id'].'><td>'.$rnp_data[$x]['fm_num'].'</td><td>'.$rnp_data[$x]['rnp_status'].'</td><td>'.$rnp_data[$x]['rnp_reason'].'</td><td>'.$rnp_data[$x]['rnp_date'].'</td><td>'.$rnp_data[$x]['manage_person'].'</td><td>'.$rnp_data[$x]['manage_date'].'</td><td><a class="show" href="#">查看</a><a class="edit super" href="#">修改</a><a class="delete super" href="#">删除</a></td></tr>';
             }
             $infoData = $infoData.'</table>';
         } else {
             $infoData = '<div>该员工暂无奖惩档案</div>';
         }
         $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('rnp_list');
     }
 
@@ -356,6 +362,7 @@ class PerformanceController extends Controller {
         }
         $this->assign('department_data_str', $department_data_str);
         $this->assign('employee_data_str', $employee_data_str);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('rnp_create');
     }
 
@@ -455,6 +462,7 @@ class PerformanceController extends Controller {
         }
 
         $this->assign('fileId', $_SESSION['newFileId']);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('rnp_show');
     }
 
@@ -526,6 +534,7 @@ class PerformanceController extends Controller {
 
         $this->assign('id', $_SESSION['newFileId']);
         $this->assign('fm_num', $rnp_data[0]['fm_num']);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('rnp_edit');
     }
 
@@ -545,6 +554,272 @@ class PerformanceController extends Controller {
         if($res) {
             $this->success('档案删除成功！', 'rnp_list');
         }
+    }
+
+    public function train_check() {
+        unset($_SESSION['newFileId']);
+        $train_info = M('train_info');
+        $train_data = $train_info->field('id, fm_num, train_name, train_start_date, train_end_date, train_unit, train_lecture')->select();
+        $arraylength = count($train_data);
+        if($arraylength) {
+            $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>培训名称</td><td>培训单位</td><td>培训讲师</td><td>开始时间</td><td>结束时间</td><td>操作</td></tr>';
+            for($x=0;$x<$arraylength;$x++) {
+                $infoData = $infoData.'<tr id='.$train_data[$x]['id'].'><td>'.$train_data[$x]['fm_num'].'</td><td>'.$train_data[$x]['train_name'].'</td><td>'.$train_data[$x]['train_unit'].'</td><td>'.$train_data[$x]['train_lecture'].'</td><td>'.$train_data[$x]['train_start_date'].'</td><td>'.$train_data[$x]['train_end_date'].'</td><td><a class="train_show" href="#">查看</a><a class="train_edit super" href="#">修改</a><a class="train_delete super" href="#">删除</a></td></tr>';
+            }
+            $infoData = $infoData.'</table>';
+        } else {
+            $infoData = '暂无培训档案';
+        }
+        $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
+        $this->display('train_check');
+    }
+
+    public function train_create() {
+        $personal_info = M('personal_info');
+        $duty_info = M('duty_info');
+        $person_data = $personal_info->field('id, fm_num, emp_name, emp_sex')->select();
+        $duty_data = $duty_info->field('id, emp_department, emp_job')->select();
+        $arraylength2 = count($person_data);
+        if($arraylength2) {
+            $infoData2 = '<table class="table table-striped multi_choose"><tr><td><input type="checkbox"></td><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td></tr>';
+            for($x=0;$x<$arraylength2;$x++) {
+                if($person_data[$x]['id'] == $duty_data[$x]['id']) {
+                    $infoData2 = $infoData2.'<tr id='.$person_data[$x]['id'].'><td><input type="checkbox"></td><td>'.$person_data[$x]['fm_num'].'</td><td>'.$person_data[$x]['emp_name'].'</td><td>'.$person_data[$x]['emp_sex'].'</td><td>'.$duty_data[$x]['emp_department'].'</td><td>'.$duty_data[$x]['emp_job'].'</td></tr>';
+                }
+            }
+            $infoData2 = $infoData2.'</table>';
+        } else {
+            $infoData2 = '尚未创建员工档案';
+        }
+        $this->assign('infoData2', $infoData2);
+        $this->assign('usertype', $_SESSION['usertype']);
+        $this->display('train_create');
+    }
+
+    public function train_show() {
+        if($_POST['id']) {
+            session_start();
+            $_SESSION['newFileId'] = $_POST['id'];
+        }
+        $train_info = M('train_info');
+        $train_person = M('train_person');
+        $personal_info = M('personal_info');
+        $duty_info = M('duty_info');
+        $train_data = $train_info->where('id='.$_SESSION['newFileId'])->select();
+
+        if($train_data[0]['id'] != '') {
+            $this->assign('id', $train_data[0]['id']);
+        }
+
+        if($train_data[0]['fm_num'] != '') {
+            $this->assign('fm_num', $train_data[0]['fm_num']);
+        }
+
+        if($train_data[0]['train_name'] != '') {
+            $this->assign('train_name', $train_data[0]['train_name']);
+        }
+
+        if($train_data[0]['train_content'] != '') {
+            $this->assign('train_content', $train_data[0]['train_content']);
+        }
+
+        if($train_data[0]['train_unit'] != '') {
+            $this->assign('train_unit', $train_data[0]['train_unit']);
+        }
+
+        if($train_data[0]['train_lecture'] != '') {
+            $this->assign('train_lecture', $train_data[0]['train_lecture']);
+        }
+
+        if($train_data[0]['train_place'] != '') {
+            $this->assign('train_place', $train_data[0]['train_place']);
+        }
+
+        if($train_data[0]['train_start_date'] != '') {
+            $this->assign('train_start_date', $train_data[0]['train_start_date']);
+        }
+
+        if($train_data[0]['train_end_date'] != '') {
+            $this->assign('train_end_date', $train_data[0]['train_end_date']);
+        }
+
+        $emp_ids = $train_person->field('emp_id')->where('train_id='.$_SESSION['newFileId'])->select();
+        $arraylength = count($emp_ids);  
+        if($arraylength) {
+            $infoData = '<table class="table table-striped chose"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td></tr>';
+            for($x=0;$x<$arraylength;$x++) {
+                $person_data = $personal_info->field('fm_num, emp_name, emp_sex')->where('id='.$emp_ids[$x]['emp_id'])->select();
+                $duty_data = $duty_info->field('emp_department, emp_job')->where('id='.$emp_ids[$x]['emp_id'])->select();
+                $infoData = $infoData.'<tr id='.$emp_ids[$x]['emp_id'].'><td>'.$person_data[0]['fm_num'].'</td><td>'.$person_data[0]['emp_name'].'</td><td>'.$person_data[0]['emp_sex'].'</td><td>'.$duty_data[0]['emp_department'].'</td><td>'.$duty_data[0]['emp_job'].'</td></tr>';
+            }
+            $infoData = $infoData.'</table>';
+        } else {
+            $infoData = '<p>尚未添加参训人员</p>';
+        }
+
+        $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
+        $this->display('train_show');
+    }
+
+    public function train_edit() {
+        if($_POST['id']) {
+            session_start();
+            $_SESSION['newFileId'] = $_POST['id'];
+        }
+        $train_info = M('train_info');
+        $train_person = M('train_person');
+        $personal_info = M('personal_info');
+        $duty_info = M('duty_info');
+        $train_data = $train_info->where('id='.$_SESSION['newFileId'])->select();
+
+        if($train_data[0]['id'] != '') {
+            $this->assign('id', $train_data[0]['id']);
+        }
+
+        if($train_data[0]['fm_num'] != '') {
+            $this->assign('fm_num', $train_data[0]['fm_num']);
+        }
+
+        if($train_data[0]['train_name'] != '') {
+            $this->assign('train_name', $train_data[0]['train_name']);
+        }
+
+        if($train_data[0]['train_content'] != '') {
+            $this->assign('train_content', $train_data[0]['train_content']);
+        }
+
+        if($train_data[0]['train_unit'] != '') {
+            $this->assign('train_unit', $train_data[0]['train_unit']);
+        }
+
+        if($train_data[0]['train_lecture'] != '') {
+            $this->assign('train_lecture', $train_data[0]['train_lecture']);
+        }
+
+        if($train_data[0]['train_place'] != '') {
+            $this->assign('train_place', $train_data[0]['train_place']);
+        }
+
+        if($train_data[0]['train_start_date'] != '') {
+            $this->assign('train_start_date', $train_data[0]['train_start_date']);
+        }
+
+        if($train_data[0]['train_end_date'] != '') {
+            $this->assign('train_end_date', $train_data[0]['train_end_date']);
+        }
+
+        $emp_ids = $train_person->field('emp_id')->where('train_id='.$_SESSION['newFileId'])->select();
+        $arraylength = count($emp_ids);  
+        $infoData = '<table class="table table-striped chose"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td></tr>';
+        for($x=0;$x<$arraylength;$x++) {
+            $person_data = $personal_info->field('fm_num, emp_name, emp_sex')->where('id='.$emp_ids[$x]['emp_id'])->select();
+            $duty_data = $duty_info->field('emp_department, emp_job')->where('id='.$emp_ids[$x]['emp_id'])->select();
+            $infoData = $infoData.'<tr id='.$emp_ids[$x]['emp_id'].'><td>'.$person_data[0]['fm_num'].'</td><td>'.$person_data[0]['emp_name'].'</td><td>'.$person_data[0]['emp_sex'].'</td><td>'.$duty_data[0]['emp_department'].'</td><td>'.$duty_data[0]['emp_job'].'</td></tr>';
+        }
+        $infoData = $infoData.'</table>';
+        $person_data = $personal_info->field('id, fm_num, emp_name, emp_sex')->select();
+        $duty_data = $duty_info->field('id, emp_department, emp_job')->select();
+        $arraylength2 = count($person_data);
+        if($arraylength2) {
+            $infoData2 = '<table class="table table-striped multi_choose"><tr><td><input type="checkbox"></td><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td></tr>';
+            for($x=0;$x<$arraylength2;$x++) {
+                if($person_data[$x]['id'] == $duty_data[$x]['id']) {
+                    $infoData2 = $infoData2.'<tr id='.$person_data[$x]['id'].'><td><input type="checkbox"></td><td>'.$person_data[$x]['fm_num'].'</td><td>'.$person_data[$x]['emp_name'].'</td><td>'.$person_data[$x]['emp_sex'].'</td><td>'.$duty_data[$x]['emp_department'].'</td><td>'.$duty_data[$x]['emp_job'].'</td></tr>';
+                }
+            }
+            $infoData2 = $infoData2.'</table>';
+        } else {
+            $infoData2 = '尚未创建员工档案';
+        }
+        $this->assign('infoData', $infoData);
+        $this->assign('infoData2', $infoData2);
+        $this->assign('usertype', $_SESSION['usertype']);
+        $this->display('train_edit');
+    }
+
+    public function train_delete() {
+        if($_POST['id']) {
+            session_start();
+            $_SESSION['newFileId'] = $_POST['id'];
+        }
+        $train_info = M('train_info');
+        $train_data = $train_info->where('id='.$_SESSION['newFileId'])->delete();
+    }
+
+    public function train_save() {
+        $train_info = M('train_info');
+        $train_person = M('train_person');
+        $mysql_data = $train_info->field('id')->select();
+        $auto_id = 1;
+        $arraylength = count($mysql_data);
+        for($x=0;$x<$arraylength;$x++) {
+            $ids[$x] = $mysql_data[$x]['id'];
+        }
+        while(in_array($auto_id, $ids)) {
+            $auto_id++;
+        }
+        $count = 1;
+        while($auto_id/10 >= 1) {
+            $count++;
+        }
+        $auto_fm_num = 'T';
+        for($x=0;$x<5-$count;$x++) {
+            $auto_fm_num = $auto_fm_num.'0';
+        }
+        $auto_fm_num = $auto_fm_num.$auto_id;
+        $_POST['id'] = $auto_id;
+        $_POST['fm_num'] = $auto_fm_num;
+        $train_info->create();
+        $train_info->add();
+        $train_person_data = explode(',', $_POST['train_person']);
+        $arraylength2 = count($train_person_data);
+        $data['train_id'] = $_POST['id'];
+        for($x=0;$x<$arraylength2;$x++) {
+            $mysql_data2 = $train_person->field('id')->select();
+            $auto_id2 = 1;
+            $arraylength3 = count($mysql_data2);
+            for($y=0;$y<$arraylength3;$y++) {
+                $ids2[$y] = $mysql_data2[$y]['id'];
+            }
+            while(in_array($auto_id2, $ids2)) {
+                $auto_id2++;
+            }
+            $data['id'] = $auto_id2;
+            $data['emp_id'] = $train_person_data[$x];
+            $train_person->add($data);
+        }
+        session_start();
+        $_SESSION['newFileId'] = $auto_id;
+        $this->success('新建档案成功！', 'train_check');
+    }
+
+    public function train_edit_save() {
+        $train_info = M('train_info');
+        $train_person = M('train_person');
+        $train_info->where('id='.$_SESSION['newFileId'])->delete();
+        $train_info->create();
+        $train_info->add();
+        $train_person->where('train_id='.$_SESSION['newFileId'])->delete();
+        $train_person_data = explode(',', $_POST['train_person']);
+        $arraylength2 = count($train_person_data);
+        $data['train_id'] = $_POST['id'];
+        for($x=0;$x<$arraylength2;$x++) {
+            $mysql_data2 = $train_person->field('id')->select();
+            $auto_id2 = 1;
+            $arraylength3 = count($mysql_data2);
+            for($y=0;$y<$arraylength3;$y++) {
+                $ids2[$y] = $mysql_data2[$y]['id'];
+            }
+            while(in_array($auto_id2, $ids2)) {
+                $auto_id2++;
+            }
+            $data['id'] = $auto_id2;
+            $data['emp_id'] = $train_person_data[$x];
+            $train_person->add($data);
+        }
+        $this->success('修改档案成功！', 'train_show');
     }
 
 }

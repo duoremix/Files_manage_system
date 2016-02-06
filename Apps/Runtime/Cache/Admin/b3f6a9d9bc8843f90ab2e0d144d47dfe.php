@@ -21,7 +21,7 @@
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
@@ -39,7 +39,7 @@
 								<a href="/Files_manage_system/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
-								<a href="">培训档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/train_check">培训档案管理</a>
 							</li>
 						</ul>
 					</li>
@@ -74,8 +74,11 @@
 					<li class="dropdown">
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
+							<li class="super">
+								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+							</li>
 							<li>
-								<a href="">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
 							</li>
 						</ul>
 					</li>
@@ -93,8 +96,8 @@
 				<div>
 					<form action="/Files_manage_system/Admin/Performance/rnp_save" method="post" id="form_rnp">
 						<div class="single-row">
-							<a id="save" class="btn btn-primary" href="rnp_edit">修改档案</a>
-							<a id="delete" class="btn btn-danger">删除档案</a>
+							<a id="save" class="btn btn-primary super" href="rnp_edit">修改档案</a>
+							<a id="delete" class="btn btn-danger super">删除档案</a>
 							<a id="cancel" class="btn btn-default" href="rnp_list">返回</a>
 						</div>
 						<div class="single-row">
@@ -126,11 +129,11 @@
 								<span>奖惩状况：</span>
 								<label class="normal">
 									<span>奖励</span>
-									<input type="radio" name="rnp_status" value="奖励" <?php echo ($rnp_reward); ?> onclick="return fasle">
+									<input type="radio" name="rnp_status" value="奖励" <?php echo ($rnp_reward); ?> onclick="return false">
 								</label>
 								<label class="normal">
 									<span>惩罚</span>
-									<input type="radio" name="rnp_status" value="惩罚" <?php echo ($rnp_punish); ?> onclick="return fasle">
+									<input type="radio" name="rnp_status" value="惩罚" <?php echo ($rnp_punish); ?> onclick="return false">
 								</label>
 							</label>
 							<label>
@@ -174,6 +177,7 @@
 						<input type="hidden" id="hidden_emp_id" value="<?php echo ($emp_id); ?>">
 					</div>
 				</div>
+				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
 		</div>
 	</section>

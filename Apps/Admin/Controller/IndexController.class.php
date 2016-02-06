@@ -10,6 +10,7 @@ class IndexController extends Controller {
 	}
 
     public function index(){
+    	$this->assign('usertype', $_SESSION['usertype']);
         $this->display('index');
     }
 }

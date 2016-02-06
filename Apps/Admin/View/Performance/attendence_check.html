@@ -21,7 +21,7 @@
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="__APP__/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
@@ -39,7 +39,7 @@
 								<a href="__APP__/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
-								<a href="">培训档案管理</a>
+								<a href="__APP__/Admin/Performance/train_check">培训档案管理</a>
 							</li>
 						</ul>
 					</li>
@@ -61,21 +61,24 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">企业架构设置</a>
+								<a href="__APP__/Admin/System/company_frame">企业架构设置</a>
 							</li>
 							<li>
-								<a href="">基本资料设置</a>
+								<a href="__APP__/Admin/System/basedata_setting">基本资料设置</a>
 							</li>
 							<li>
-								<a href="">初始化系统</a>
+								<a href="__APP__/Admin/System/system_init">初始化系统</a>
 							</li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
+							<li class="super">
+								<a href="__APP__/Admin/User/user_add">新增用户</a>
+							</li>
 							<li>
-								<a href="">新增用户</a>
+								<a href="__APP__/Admin/User/password_edit">修改密码</a>
 							</li>
 						</ul>
 					</li>
@@ -89,7 +92,7 @@
 						<li>考勤档案管理</li>
 					</ul>
 				</div>
-				<div class="single-row">
+				<div class="single-row super">
 					<button class="btn btn-primary" onclick="window.location='__URL__/attendence_create'">新建档案</button>
 				</div>
 				<div class="single-row">
@@ -104,7 +107,9 @@
 					</label>
 				</div>
 				<div class="single-row">
-					{$infoData}
+					<div class="table_scroll long">
+						{$infoData}
+					</div>
 					<!-- <table class="table table-striped">
 						<tr>
 							<td>档案编号</td>
@@ -156,6 +161,7 @@
 						</tr>
 					</table> -->
 				</div>
+				<input id="user_type" type="hidden" value="{$usertype}">
 			</div>
 		</div>
 	</section>

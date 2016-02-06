@@ -21,7 +21,7 @@
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
@@ -36,10 +36,10 @@
 								<a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a>
 							</li>
 							<li>
-								<a href="">奖惩档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/rnp_check">奖惩档案管理</a>
 							</li>
 							<li>
-								<a href="">培训档案管理</a>
+								<a href="/Files_manage_system/Admin/Performance/train_check">培训档案管理</a>
 							</li>
 						</ul>
 					</li>
@@ -61,21 +61,24 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
 							</li>
 							<li>
-								<a href="">基本资料设置</a>
+								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
 							</li>
 							<li>
-								<a href="">初始化系统</a>
+								<a href="/Files_manage_system/Admin/System/system_init">初始化系统</a>
 							</li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
+							<li class="super">
+								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+							</li>
 							<li>
-								<a href="">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
 							</li>
 						</ul>
 					</li>
@@ -92,8 +95,8 @@
 				<div>
 					<form action="/Files_manage_system/Admin/BaseInfo/baseInfo_delete" method="post" id="form_baseInfo">
 						<div class="single-row">
-							<a class="btn btn-primary" href="/Files_manage_system/Admin/BaseInfo/edit">修改档案</a>
-							<a id="delete" class="btn btn-danger">删除档案</a>
+							<a class="btn btn-primary super" href="/Files_manage_system/Admin/BaseInfo/edit">修改档案</a>
+							<a id="delete" class="btn btn-danger super">删除档案</a>
 							<a class="btn btn-default" href="/Files_manage_system/Admin/BaseInfo/check">返回</a>
 						</div>
 						<input type="hidden" name="id" value="<?php echo ($id); ?>">
@@ -323,6 +326,7 @@
 						<input type="hidden" name="hidden_use_form" id="hidden_use_form" value="<?php echo ($emp_use_form); ?>">
 					</div>
 				</div>
+				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
 		</div>
 	</section>
