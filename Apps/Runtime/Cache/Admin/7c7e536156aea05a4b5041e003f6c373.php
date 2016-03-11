@@ -21,7 +21,7 @@
 					<li class="dropdown">
 						<a href="#" class="level1">基本档案管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/BaseInfo/create">新建档案</a>
 							</li>
 							<li>
@@ -47,7 +47,7 @@
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">账套档案管理</a>
+								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li>
 								<a href="">人员设置</a>
@@ -61,21 +61,24 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
 							</li>
 							<li>
-								<a href="">基本资料设置</a>
+								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
 							</li>
 							<li>
-								<a href="">初始化系统</a>
+								<a href="/Files_manage_system/Admin/System/system_init">初始化系统</a>
 							</li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+							</li>
+							<li>
+								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
 							</li>
 						</ul>
 					</li>
@@ -93,9 +96,9 @@
 				<div>
 					<form action="/Files_manage_system/Admin/Performance/train_edit_save" method="post" id="form_train">
 						<div class="single-row">
-							<a id="save" class="btn btn-primary">保存</a>
-							<a id="add" class="btn btn-info">添加参训人员</a>
-							<a id="delete" class="btn btn-warning">移除参训人员</a>
+							<a id="save" class="btn btn-primary super">保存</a>
+							<a id="add" class="btn btn-info super">添加参训人员</a>
+							<a id="delete" class="btn btn-warning super">移除参训人员</a>
 							<a class="btn btn-default" href="train_check">取消</a>
 						</div>
 						<div class="single-row">
@@ -177,6 +180,7 @@
 						</tr>
 					</table> -->
 				</div>
+				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
 			<div class="white-bg">
 				<div class="float-content">

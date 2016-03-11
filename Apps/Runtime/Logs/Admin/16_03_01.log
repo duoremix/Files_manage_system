@@ -1,0 +1,668 @@
+[ 2016-03-01T19:45:38+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.066173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.024084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024260s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 573 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 7 行.
+
+[ 2016-03-01T19:45:39+08:00 ] ::1 /Files_manage_system/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001435s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.146181s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.146381s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005818s ]
+
+[ 2016-03-01T19:45:50+08:00 ] ::1 /Files_manage_system/Admin/User/redir_consultation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.0429s ]
+SQL: SELECT `id` FROM `fm_user`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_user` WHERE `username` = 'duo' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.0016s ]
+SQL: SELECT * FROM `fm_user` WHERE `usertype` = '超级管理员' AND `username` = 'duo'  [ RunTime:0.0002s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\UserController.class.php 第 31 行.
+
+[ 2016-03-01T19:45:50+08:00 ] ::1 /Files_manage_system/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000326s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000848s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054066s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000704s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000805s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001064s ]
+
+[ 2016-03-01T19:48:41+08:00 ] ::1 /Files_manage_system/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000354s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007865s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008040s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2016-03-01T19:50:06+08:00 ] ::1 /Files_manage_system/Admin/System/company_frame
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0378s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0004s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=4 )  [ RunTime:0.0010s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=4 )  [ RunTime:0.0002s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=4 )  [ RunTime:0.0002s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=0 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 0 F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SystemController.class.php 第 100 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3e4971c3d57ff6ad28ba081801baf1a.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046055s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046212s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2016-03-01T22:12:13+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 573 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 7 行.
+
+[ 2016-03-01T22:12:13+08:00 ] ::1 /Files_manage_system/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000812s ]
+
+[ 2016-03-01T22:12:18+08:00 ] ::1 /Files_manage_system/Admin/User/redir_consultation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.1326s ]
+SQL: SELECT `id` FROM `fm_user`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `fm_user` WHERE `username` = 'duo' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fm_user` WHERE `usertype` = '超级管理员' AND `username` = 'duo'  [ RunTime:0.0005s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\UserController.class.php 第 31 行.
+
+[ 2016-03-01T22:12:18+08:00 ] ::1 /Files_manage_system/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014583s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000580s ]
+
+[ 2016-03-01T22:12:21+08:00 ] ::1 /Files_manage_system/Admin/System/company_frame
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0453s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0003s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=4 )  [ RunTime:0.0003s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=4 )  [ RunTime:0.0002s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=4 )  [ RunTime:0.0003s ]
+SQL: SELECT `department` FROM `fm_department` WHERE ( id=0 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 0 F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SystemController.class.php 第 100 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3e4971c3d57ff6ad28ba081801baf1a.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018254s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2016-03-01T22:12:25+08:00 ] ::1 /Files_manage_system/Admin/System/basedata_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000090s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000308s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018396s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-03-01T22:12:27+08:00 ] ::1 /Files_manage_system/Admin/System/basedata_init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.1349s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000657s ]
+
+[ 2016-03-01T22:12:30+08:00 ] ::1 /Files_manage_system/Admin/System/system_init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020206s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020393s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000579s ]
+
+[ 2016-03-01T22:12:37+08:00 ] ::1 /Files_manage_system/Admin/System/system_init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000644s ]
+
+[ 2016-03-01T22:12:40+08:00 ] ::1 /Files_manage_system/Admin/Performance/attendence_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0280s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0198s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000275s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059259s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059430s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000439s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000570s ]
+
+[ 2016-03-01T22:15:23+08:00 ] ::1 /Files_manage_system/Admin/Performance/attendence_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000418s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009071s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2016-03-01T22:15:25+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045574s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000600s ]
+
+[ 2016-03-01T22:15:26+08:00 ] ::1 /Files_manage_system/Admin/Performance/train_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `fm_train_info` [ RunTime:0.0828s ]
+SQL: SELECT `id`,`fm_num`,`train_name`,`train_start_date`,`train_end_date`,`train_unit`,`train_lecture` FROM `fm_train_info`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042463s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2016-03-01T22:15:27+08:00 ] ::1 /Files_manage_system/Admin/Performance/attendence_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008060s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2016-03-01T22:15:28+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000373s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008958s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009124s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000624s ]
+
+[ 2016-03-01T22:15:29+08:00 ] ::1 /Files_manage_system/Admin/Performance/train_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001635s ]
+SQL: SHOW COLUMNS FROM `fm_train_info` [ RunTime:0.0092s ]
+SQL: SELECT `id`,`fm_num`,`train_name`,`train_start_date`,`train_end_date`,`train_unit`,`train_lecture` FROM `fm_train_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000521s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2016-03-01T22:15:31+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000276s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000727s ]
+
+[ 2016-03-01T22:15:32+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\PerformanceController.class.php 第 316 行.
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.1787s ]
+SQL: SELECT `emp_name` FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0006s ]
+SQL: SELECT `id`,`fm_num`,`rnp_status`,`rnp_reason`,`rnp_date`,`manage_person`,`manage_date` FROM `fm_rnp_info` WHERE ( emp_id=1 )  [ RunTime:0.0129s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000340s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000632s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.112981s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.113335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000689s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000944s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001196s ]
+
+[ 2016-03-01T22:15:32+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\PerformanceController.class.php 第 315 行.
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0044s ]
+SQL: SELECT `emp_name` FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`fm_num`,`rnp_status`,`rnp_reason`,`rnp_date`,`manage_person`,`manage_date` FROM `fm_rnp_info` WHERE ( emp_id=1 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000300s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007903s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000464s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2016-03-01T22:15:33+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\PerformanceController.class.php 第 400 行.
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( id=1 )  [ RunTime:0.0268s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined variable: rnp_content F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3f6a9d9bc8843f90ab2e0d144d47dfe.php 第 167 行.
+NOTIC: [8] Undefined variable: employee_data_str F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3f6a9d9bc8843f90ab2e0d144d47dfe.php 第 172 行.
+NOTIC: [8] Undefined variable: emp_data_str F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3f6a9d9bc8843f90ab2e0d144d47dfe.php 第 175 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.203045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.203192s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2016-03-01T22:15:33+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000775s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\PerformanceController.class.php 第 399 行.
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000323s ]
+NOTIC: [8] Undefined variable: rnp_content F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3f6a9d9bc8843f90ab2e0d144d47dfe.php 第 167 行.
+NOTIC: [8] Undefined variable: employee_data_str F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3f6a9d9bc8843f90ab2e0d144d47dfe.php 第 172 行.
+NOTIC: [8] Undefined variable: emp_data_str F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\b3f6a9d9bc8843f90ab2e0d144d47dfe.php 第 175 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009554s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000600s ]
+
+[ 2016-03-01T22:15:37+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\PerformanceController.class.php 第 315 行.
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0067s ]
+SQL: SELECT `emp_name` FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`fm_num`,`rnp_status`,`rnp_reason`,`rnp_date`,`manage_person`,`manage_date` FROM `fm_rnp_info` WHERE ( emp_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000347s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009132s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009289s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000603s ]
+
+[ 2016-03-01T22:18:19+08:00 ] ::1 /Files_manage_system/Admin/Performance/rnp_list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\PerformanceController.class.php 第 315 行.
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0068s ]
+SQL: SELECT `emp_name` FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`fm_num`,`rnp_status`,`rnp_reason`,`rnp_date`,`manage_person`,`manage_date` FROM `fm_rnp_info` WHERE ( emp_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2016-03-01T22:45:44+08:00 ] ::1 /Files_manage_system/Admin/System/basedata_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000302s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013367s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2016-03-01T22:45:45+08:00 ] ::1 /Files_manage_system/Admin/System/basedata_init
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_type` [ RunTime:0.1618s ]
+SQL: SELECT * FROM `fm_attendence_type`  [ RunTime:0.0374s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000706s ]
+
+[ 2016-03-01T22:45:50+08:00 ] ::1 /Files_manage_system/Admin/System/basedata_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008701s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+

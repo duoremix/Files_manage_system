@@ -281,7 +281,7 @@ input[type="text"], input[type="number"] {
 	border: 1px solid #aaa;
 	border-radius: 3px;
 }
-
+input[type="number"].shortest, input[type="number"].shorter,
 input[type="text"].short, input[type="number"].short,
 input[type="text"].middle,
 input[type="text"].long,
@@ -289,6 +289,14 @@ input[type="text"].longer {
   padding: 2px 5px;
   height: 21px;
   font-size: 14px;
+}
+
+input[type="number"].shortest {
+  width: 35px;
+}
+
+input[type="number"].shorter {
+  width: 65px;
 }
 
 input[type="text"].short, input[type="number"].short {
@@ -385,6 +393,11 @@ div.table_scroll.short{
 
 div.table_scroll.long {
   max-height: 300px;
+}
+
+a.used, a.shown {
+  color: black;
+  cursor: text;
 }
 
 /*通用*/

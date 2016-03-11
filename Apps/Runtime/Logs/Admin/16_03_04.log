@@ -1,0 +1,2323 @@
+[ 2016-03-04T14:05:31+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.038104s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008541s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 573 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 7 行.
+
+[ 2016-03-04T14:05:31+08:00 ] ::1 /Files_manage_system/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.114008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.114245s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013701s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013996s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007539s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007818s ]
+
+[ 2016-03-04T14:05:31+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 573 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 7 行.
+
+[ 2016-03-04T14:05:31+08:00 ] ::1 /Files_manage_system/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000429s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000682s ]
+
+[ 2016-03-04T14:05:37+08:00 ] ::1 /Files_manage_system/Admin/User/redir_consultation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.0136s ]
+SQL: SELECT `id` FROM `fm_user`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fm_user` WHERE `username` = 'duo' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_user` WHERE `usertype` = '超级管理员' AND `username` = 'duo'  [ RunTime:0.0003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\UserController.class.php 第 31 行.
+
+[ 2016-03-04T14:05:37+08:00 ] ::1 /Files_manage_system/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000373s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000692s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059068s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-03-04T14:05:58+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021331s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021475s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000463s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2016-03-04T14:09:20+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: ids F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SalaryController.class.php 第 48 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SalaryController.class.php 第 48 行.
+SQL: INSERT INTO `fm_account_info` (`account_name`,`id`,`use_status`) VALUES ('笑口股份有限公司','1','off') [ RunTime:0.1725s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2016-03-04T14:10:14+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0008s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.0051s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.1458s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on') [ RunTime:0.0390s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000703s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000844s ]
+
+[ 2016-03-04T14:16:20+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001183s ]
+
+[ 2016-03-04T14:17:00+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000420s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001313s ]
+
+[ 2016-03-04T14:18:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001689s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000462s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011809s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011997s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000962s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001431s ]
+
+[ 2016-03-04T14:20:28+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009851s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000910s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001182s ]
+
+[ 2016-03-04T14:20:29+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.1447s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0005s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','off') [ RunTime:0.1976s ]
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on')
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on')
+
+[ 2016-03-04T14:20:30+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0393s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on') [ RunTime:0.0399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2016-03-04T14:21:08+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001859s ]
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SalaryController.class.php 第 93 行.
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `fm_account_info` WHERE ( id= ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `fm_account_info` WHERE ( id= ) 
+
+[ 2016-03-04T14:21:15+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_delete
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001004s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0074s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0496s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001586s ]
+
+[ 2016-03-04T14:21:22+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: ids F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SalaryController.class.php 第 48 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given F:\wamp\www\Files_manage_system\Apps\Admin\Controller\SalaryController.class.php 第 48 行.
+SQL: INSERT INTO `fm_account_info` (`account_name`,`id`,`use_status`) VALUES ('笑口股份有限公司','1','off') [ RunTime:0.1695s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001360s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001710s ]
+
+[ 2016-03-04T14:22:02+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.1168s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.0003s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0408s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on') [ RunTime:0.0414s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002323s ]
+
+[ 2016-03-04T21:14:50+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035053s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007177s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000341s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061826s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004875s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010352s ]
+
+[ 2016-03-04T21:16:43+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000638s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010479s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000916s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001189s ]
+
+[ 2016-03-04T21:16:43+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000292s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008980s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001462s ]
+
+[ 2016-03-04T21:17:10+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009641s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001340s ]
+
+[ 2016-03-04T21:17:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000128s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000745s ]
+
+[ 2016-03-04T21:23:05+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000268s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000610s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010368s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010515s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002317s ]
+
+[ 2016-03-04T21:23:05+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000745s ]
+
+[ 2016-03-04T21:23:13+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001685s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000486s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031799s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000927s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001210s ]
+
+[ 2016-03-04T21:23:14+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000585s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2016-03-04T21:23:59+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000633s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000293s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000616s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011460s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011636s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001139s ]
+
+[ 2016-03-04T21:23:59+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009874s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000886s ]
+
+[ 2016-03-04T21:24:00+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001283s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010451s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000959s ]
+
+[ 2016-03-04T21:24:00+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2016-03-04T21:24:14+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000306s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008826s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009049s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001294s ]
+
+[ 2016-03-04T21:24:15+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009062s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000845s ]
+
+[ 2016-03-04T21:24:15+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000877s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2016-03-04T21:35:08+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000320s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000903s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001174s ]
+
+[ 2016-03-04T21:35:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000748s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009191s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009333s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000882s ]
+
+[ 2016-03-04T21:35:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010982s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2016-03-04T21:35:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012170s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000776s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-03-04T21:35:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001489s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000321s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000630s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000786s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001074s ]
+
+[ 2016-03-04T21:35:21+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001159s ]
+
+[ 2016-03-04T21:35:22+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001052s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001300s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000309s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000613s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013975s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014234s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001415s ]
+
+[ 2016-03-04T21:35:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000672s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000808s ]
+
+[ 2016-03-04T21:35:29+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.0634s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0003s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','off') [ RunTime:0.0703s ]
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on')
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on')
+
+[ 2016-03-04T21:37:54+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001035s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009547s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000892s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2016-03-04T21:37:55+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008914s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000800s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001118s ]
+
+[ 2016-03-04T21:38:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000991s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001278s ]
+
+[ 2016-03-04T21:38:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009362s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009510s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000836s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001120s ]
+
+[ 2016-03-04T21:38:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001067s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009359s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009581s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001191s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001437s ]
+
+[ 2016-03-04T21:38:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008584s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008730s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2016-03-04T21:38:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010035s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000877s ]
+
+[ 2016-03-04T21:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010163s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2016-03-04T21:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000319s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010589s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010807s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001176s ]
+
+[ 2016-03-04T21:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008975s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001614s ]
+
+[ 2016-03-04T21:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000361s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009965s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2016-03-04T21:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009020s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000801s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001054s ]
+
+[ 2016-03-04T21:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000577s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009738s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000970s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001197s ]
+
+[ 2016-03-04T21:38:13+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000072s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009574s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000808s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001060s ]
+
+[ 2016-03-04T21:38:13+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000322s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009023s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009167s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001703s ]
+
+[ 2016-03-04T21:38:13+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0779s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on') [ RunTime:0.1171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001388s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001676s ]
+
+[ 2016-03-04T21:38:15+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2016-03-04T21:45:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000259s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000516s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000986s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001278s ]
+
+[ 2016-03-04T21:45:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000596s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011540s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011689s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000942s ]
+
+[ 2016-03-04T21:45:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001623s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000302s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000682s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010447s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010606s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001335s ]
+
+[ 2016-03-04T21:45:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000324s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010179s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000850s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001123s ]
+
+[ 2016-03-04T21:45:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000368s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013786s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000907s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001108s ]
+
+[ 2016-03-04T21:45:40+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+SQL: INSERT INTO `fm_account_info` (`account_name`,`id`,`use_status`) VALUES ('你好','2','off') [ RunTime:0.1363s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001106s ]
+
+[ 2016-03-04T21:47:01+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000320s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000811s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001106s ]
+
+[ 2016-03-04T21:47:02+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009541s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000956s ]
+
+[ 2016-03-04T21:47:42+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001078s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010866s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001320s ]
+
+[ 2016-03-04T21:47:44+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_delete
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002023s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0110s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=2 ) [ RunTime:0.0459s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001019s ]
+
+[ 2016-03-04T21:47:48+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+SQL: INSERT INTO `fm_account_info` (`account_name`,`id`,`use_status`) VALUES ('你好','2','off') [ RunTime:0.1502s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2016-03-04T21:47:49+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=2 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2016-03-04T21:47:54+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.1405s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=2 ) [ RunTime:0.0817s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','off') [ RunTime:0.0888s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('2','你好','on') [ RunTime:0.0632s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001960s ]
+
+[ 2016-03-04T21:47:56+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000613s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.2071s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.0928s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('2','你好','off') [ RunTime:0.0494s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on') [ RunTime:0.0475s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002219s ]
+
+[ 2016-03-04T21:47:56+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-03-04T21:48:59+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.1289s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=2 ) [ RunTime:0.0410s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','off') [ RunTime:0.0895s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('2','你好','on') [ RunTime:0.1002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001940s ]
+
+[ 2016-03-04T21:49:00+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=2 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000704s ]
+
+[ 2016-03-04T21:49:02+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2016-03-04T21:49:02+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=2 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2016-03-04T21:49:03+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000676s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2016-03-04T21:49:03+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=2 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2016-03-04T21:49:04+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000910s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001245s ]
+
+[ 2016-03-04T21:49:04+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=2 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000692s ]
+
+[ 2016-03-04T21:49:06+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_delete
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000521s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0083s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=2 ) [ RunTime:0.1153s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001779s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002148s ]
+
+[ 2016-03-04T21:49:07+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001212s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0500s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-03-04T21:50:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/use_status_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000625s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `fm_account_info` WHERE `use_status` = 'on'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_account_info` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE `use_status` = 'on' [ RunTime:0.0002s ]
+SQL: DELETE FROM `fm_account_info` WHERE ( id=1 ) [ RunTime:0.1328s ]
+SQL: INSERT INTO `fm_account_info` (`id`,`account_name`,`use_status`) VALUES ('1','笑口股份有限公司','on') [ RunTime:0.0809s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001635s ]
+
+[ 2016-03-04T22:27:46+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023975s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001323s ]
+
+[ 2016-03-04T22:28:10+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000505s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000883s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001072s ]
+
+[ 2016-03-04T22:28:48+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000339s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010091s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000852s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001146s ]
+
+[ 2016-03-04T22:28:49+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001123s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001638s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-03-04T22:29:31+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001250s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000319s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009400s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000930s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000892s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001185s ]
+
+[ 2016-03-04T22:29:32+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-03-04T22:30:42+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001191s ]
+
+[ 2016-03-04T22:30:55+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000923s ]
+
+[ 2016-03-04T22:31:22+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008665s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008843s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000879s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001213s ]
+
+[ 2016-03-04T22:31:47+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009040s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000891s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001168s ]
+
+[ 2016-03-04T22:32:08+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000281s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000589s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010733s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001639s ]
+
+[ 2016-03-04T22:33:08+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000341s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019624s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001219s ]
+
+[ 2016-03-04T22:33:30+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008943s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001523s ]
+
+[ 2016-03-04T22:33:31+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-03-04T22:33:38+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010187s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010388s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001135s ]
+
+[ 2016-03-04T22:33:39+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000934s ]
+
+[ 2016-03-04T22:34:13+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000334s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009081s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009365s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001086s ]
+
+[ 2016-03-04T22:34:16+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001149s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-03-04T22:35:00+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001250s ]
+
+[ 2016-03-04T22:35:02+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2016-03-04T22:35:22+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000325s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000571s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011299s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011446s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001230s ]
+
+[ 2016-03-04T22:35:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000928s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001154s ]
+
+[ 2016-03-04T22:35:54+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009455s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001106s ]
+
+[ 2016-03-04T22:35:56+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000917s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001408s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000941s ]
+
+[ 2016-03-04T22:36:36+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000718s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000838s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000579s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011430s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2016-03-04T22:36:37+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001051s ]
+
+[ 2016-03-04T22:37:09+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008831s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008971s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000885s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001170s ]
+
+[ 2016-03-04T22:37:10+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-03-04T22:37:23+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010210s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000997s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001333s ]
+
+[ 2016-03-04T22:37:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000612s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000735s ]
+
+[ 2016-03-04T22:38:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001368s ]
+
+[ 2016-03-04T22:38:12+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2016-03-04T22:41:05+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000330s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 230 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022550s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001386s ]
+
+[ 2016-03-04T22:41:08+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000990s ]
+
+[ 2016-03-04T22:41:11+08:00 ] ::1 /Files_manage_system/Admin/Salary/project_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001195s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `fm_account_project`  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000866s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001145s ]
+

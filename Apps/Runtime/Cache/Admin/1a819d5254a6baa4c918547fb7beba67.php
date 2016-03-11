@@ -88,63 +88,137 @@
 				<div class="single-row">
 					<ul class="mybreadcrumb">
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
-						<li>系统维护</li>
-						<li>企业架构设置</li>
+						<li>工资等级管理</li>
+						<li>人员设置</li>
 					</ul>
 				</div>
-				<div class="single-row">
-					<input id="new_department" type="text" class="short" placeholder="新添加的部门">
-					<select name="superior_department" id="superior_department">
-						<?php echo ($department_init); ?>
-					</select>
-					<a id="add" class="btn btn-primary">添加</a>
+				<div class="single-row super">
+					<a class="btn btn-primary edit" href="#">编辑</a>
 				</div>
 				<div class="single-row">
 					<div class="table_scroll long">
 						<?php echo ($infoData); ?>
 						<!-- <table class="table table-striped">
 							<tr>
-								<td>部门名称</td>
-								<td>所属上级部门</td>
-								<td>操作</td>
+								<td>档案编号</td>
+								<td>姓名</td>
+								<td>性别</td>
+								<td>部门</td>
+								<td>职务</td>
+								<td>工资/月</td>
 							</tr>
 							<tr>
+								<td>B00001</td>
+								<td>张学友</td>
+								<td>男</td>
 								<td>Java项目组</td>
+								<td>歌手</td>
+								<td>1000元</td>
 								<td>
-									<select name="" id="">
-										<option value="Java项目组">Java项目组</option>
-									</select>
-								</td>
-								<td>
-									<a class="delete" href="#">删除</a>
-								</td>
-							</tr>
-							<tr>
-								<td>Php项目组</td>
-								<td>
-									<select name="" id="">
-										<option value="Java项目组" checked>Java项目组</option>
-										<option value="Php项目组">Php项目组</option>
-									</select>
-								</td>
-								<td>
-									<a class="delete" href="#">删除</a>
-								</td>
-							</tr>
-							<tr>
-								<td>IOS项目组</td>
-								<td>
-									<select name="" id="">
-										<option value="IOS项目组">IOS项目组</option>
-									</select>
-								</td>
-								<td>
+									<a class="use" href="#">使用</a>
+									<a class="show" href="#">查看</a>
 									<a class="delete" href="#">删除</a>
 								</td>
 							</tr>
 						</table> -->
 					</div>
 				</div>
+				<!-- <div class="single-row">
+					<p class="form-title account-title">账套内容 尚未选定账套</p>
+					<div class="single-row super">
+						<a class="btn btn-primary project_add" href="#">添加项目</a>
+					</div>
+					<div class="table_scroll short">
+						<?php echo ($infoData); ?>
+						<table class="table table-striped">
+							<tr>
+								<td>编号</td>
+								<td>项目名称</td>
+								<td>项目单位</td>
+								<td>项目类型</td>
+								<td>金额</td>
+								<td>操作</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>缺勤</td>
+								<td>次</td>
+								<td>扣除</td>
+								<td>100元</td>
+								<td>
+									<a class="show" href="#">修改</a>
+									<a class="delete" href="#">删除</a>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>请假</td>
+								<td>次</td>
+								<td>扣除</td>
+								<td>100元</td>
+								<td>
+									<a class="show" href="#">修改</a>
+									<a class="delete" href="#">删除</a>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>培训</td>
+								<td>次</td>
+								<td>发放</td>
+								<td>1000元</td>
+								<td>
+									<a class="show" href="#">修改</a>
+									<a class="delete" href="#">删除</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="white-bg">
+						<div class="float-content">
+							<p class="form-title">请填写账套项目内容：</p>
+							<div class="single-row"></div>
+							<form id="project_add" action="project_add" method="post">
+								<div class="single-row">
+									<input type="hidden" id="account_id" name="account_id">
+									<input type="hidden" id="project_id" name="project_id">
+									<label>
+										<span>项目名称：</span>
+										<input type="text" class="short" name="project_name">
+									</label>
+									<label>
+										<span>项目单位：</span>
+										<select name="project_unit">
+											<option value="次">次</option>
+											<option value="天">天</option>
+											<option value="月">月</option>
+											<option value="季度">季度</option>
+											<option value="年">年</option>
+										</select>
+									</label>
+								</div>
+								<div class="single-row"></div>
+								<div class="single-row">
+									<label>
+										<span>项目类型：</span>
+										<select name="project_type">
+											<option value="扣除">扣除</option>
+											<option value="发放">发放</option>
+										</select>
+									</label>
+									<label>
+										<span>金额：</span>
+										<input type="number" class="short" name="project_money">
+										<span>元</span>
+									</label>
+								</div>
+								<div class="single-row"></div>
+							</form>
+							<a class="btn btn-primary project_add_confirm">保存</a>
+							<a class="btn btn-default cancel">取消</a>
+						</div>
+					</div>
+				</div> -->
 				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
 		</div>
@@ -155,7 +229,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
-			company_frame.init();
+			salary_setting.init();
 		}
 	</script>
 </body>

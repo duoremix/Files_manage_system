@@ -47,13 +47,13 @@
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">账套档案管理</a>
+								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li>
-								<a href="">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
-								<a href="">统计报表</a>
+								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
 							</li>
 						</ul>
 					</li>
@@ -93,7 +93,7 @@
 					</ul>
 				</div>
 				<div class="single-row super">
-					<button class="btn btn-primary" onclick="window.location='/Files_manage_system/Admin/Performance/attendence_create'">新建档案</button>
+					<a class="btn btn-primary" href="/Files_manage_system/Admin/Performance/attendence_create">新建档案</a>
 				</div>
 				<div class="single-row">
 					<label>

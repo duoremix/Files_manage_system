@@ -1,0 +1,702 @@
+[ 2016-03-11T22:35:47+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000331s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028224s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003123s ]
+
+[ 2016-03-11T22:35:48+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001067s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_info` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=1 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=2 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=3 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=4 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="缺勤" )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="迟到" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=5 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=6 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=7 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=8 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000828s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001025s ]
+
+[ 2016-03-11T22:35:49+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000331s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026399s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026544s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000695s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2016-03-11T22:35:50+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000968s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026344s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001852s ]
+
+[ 2016-03-11T22:35:53+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_info` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=1 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=2 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=3 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=4 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=5 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="迟到" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=6 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=7 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=8 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-03-11T22:35:54+08:00 ] ::1 /Files_manage_system/Admin/Salary/account_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `fm_account_info`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000410s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\2ca6a4dcf1e493112118aefe030d6a1d.php 第 239 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022901s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000709s ]
+
+[ 2016-03-11T22:35:55+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001578s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001183s ]
+
+[ 2016-03-11T22:36:23+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001258s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000341s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000672s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024982s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025170s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004215s ]
+
+[ 2016-03-11T22:36:24+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_info` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="缺勤" )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=1 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=2 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=3 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="请假" )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=4 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=5 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=6 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=7 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=8 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000719s ]
+
+[ 2016-03-11T22:36:36+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000507s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026786s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004059s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004427s ]
+
+[ 2016-03-11T22:36:37+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0540s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0284s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_info` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="缺勤" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="迟到" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="请假" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=1 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="请假" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=2 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=3 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=4 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=5 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=6 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=7 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=8 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000893s ]
+
+[ 2016-03-11T22:36:39+08:00 ] ::1 /Files_manage_system/Admin/Salary/salary_setting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0105s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT `project_id`,`project_name`,`project_unit` FROM `fm_account_project` WHERE ( account_id=1 and project_id>3 ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=1 ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=2 ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=3 ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=4 ) ORDER BY project_id asc  [ RunTime:0.0006s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=5 ) ORDER BY project_id asc  [ RunTime:0.0005s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=6 ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=7 ) ORDER BY project_id asc  [ RunTime:0.0005s ]
+SQL: SELECT `count` FROM `fm_project_person` WHERE ( emp_id=8 ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000382s ]
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\1a819d5254a6baa4c918547fb7beba67.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025871s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026020s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000839s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001064s ]
+
+[ 2016-03-11T22:36:41+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060708s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060843s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000725s ]
+
+[ 2016-03-11T22:36:47+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000232s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000611s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026728s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001178s ]
+
+[ 2016-03-11T22:36:48+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000925s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.1106s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_info` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=1 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=2 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=3 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=4 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=5 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="缺勤" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=6 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="缺勤" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=7 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="请假" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=8 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000784s ]
+
+[ 2016-03-11T22:37:36+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001675s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000358s ]
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 164 行.
+NOTIC: [8] Undefined variable: infoData F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 196 行.
+NOTIC: [8] Undefined variable: usertype F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\7a79f7af982a3061178793b59cfe744c.php 第 286 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001520s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001893s ]
+
+[ 2016-03-11T22:37:37+08:00 ] ::1 /Files_manage_system/Admin/Salary/statistic_change
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `fm_attendence_info` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `fm_rnp_info` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `fm_salary` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_project_person` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `fm_account_info` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `fm_account_project` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_salary`  [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `fm_account_info` WHERE ( use_status="on" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_account_project` WHERE ( account_id=1 ) ORDER BY project_id asc  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="缺勤" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=1 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=1 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=1 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=2 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=2 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=2 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=3 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=3 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=3 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="缺勤" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="迟到" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=4 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=4 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=4 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=5 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=5 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=5 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=6 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=6 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=6 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=7 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=7 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=7 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="缺勤" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="迟到" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_attendence_info` WHERE ( emp_id=8 and attendence_status="请假" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_project_person` WHERE ( emp_id=8 and account_id=1 and update_time like "2016-01%" ) ORDER BY project_id asc  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="奖励" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_rnp_info` WHERE ( emp_id=8 and rnp_status="惩罚" and rnp_date like "2016-01%" )  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+

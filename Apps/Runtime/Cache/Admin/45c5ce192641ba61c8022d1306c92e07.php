@@ -47,13 +47,13 @@
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">账套档案管理</a>
+								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li>
-								<a href="">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
-								<a href="">统计报表</a>
+								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
 							</li>
 						</ul>
 					</li>
@@ -61,13 +61,13 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
 							</li>
 							<li>
-								<a href="">基本资料设置</a>
+								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
 							</li>
 							<li>
-								<a href="">初始化系统</a>
+								<a href="/Files_manage_system/Admin/System/system_init">初始化系统</a>
 							</li>
 						</ul>
 					</li>

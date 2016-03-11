@@ -847,6 +847,8 @@ var basedata_setting = {
 	}
 }
 
+//基本资料设置
+
 var company_frame = {
 	init: function() {
 		$('select').each(function(index, el) {
@@ -933,6 +935,354 @@ var company_frame = {
 			} else {
 				alert('没有进行任何更改');
 			}
+		});
+	}
+}
+
+//企业架构设置
+
+var account_setting = {
+	init: function() {
+		$('.project_add').on('click', function(event) {
+			$('a.project_edit_confirm').addClass('project_add_confirm').removeClass('project_edit_confirm');
+			if($('.shown').length) {
+				$('.white-bg input').each(function(index, el) {
+					$(this).val('');
+				});
+				$('.white-bg').fadeIn();
+				$('.white-bg .btn-default').on('click', function(event) {
+					$('.white-bg').fadeOut();
+				});
+			} else {
+				alert('尚未选定查看的账套！');
+			}
+
+			return false;
+		});
+
+		$('.account_add').on('click', function(event) {
+			var $account_name = $(this).prev().val();
+			$.ajax({
+				url: '../Salary/account_add',
+				type: 'POST',
+				data: {
+					account_name: $account_name
+				},
+				success: function(data) {
+					$('.table_scroll.short').eq(0).html(data);
+					$('.account_add').prev().val('');
+				}
+			});
+		});
+
+		$(document).on('click', 'a.use', function(event) {
+			$_this = $(this);
+			$id = parseInt($_this.parents('tr').attr('id'));
+			$.ajax({
+				url: '../Salary/use_status_change',
+				type: 'POST',
+				data: {
+					id: $id
+				},
+				success: function(data) {
+					$('tr').each(function(index, el) {
+						if($(this).find('td').eq(2).text() == '正在使用') {
+							$(this).find('td').eq(2).text('未使用');
+						}
+					});
+					$_this.parents('tr').find('td').eq(2).text('正在使用');
+					$('.used').removeClass('used').addClass('use');
+					$_this.removeClass('use').addClass('used');
+				}
+			});
+		});
+
+		$(document).on('click', 'a.show', function(event) {
+			$_this = $(this);
+			$id = parseInt($_this.parents('tr').attr('id'));
+			$.ajax({
+				url: '../Salary/account_show',
+				type: 'POST',
+				data: {
+					id: $id
+				},
+				success: function(data) {
+					$('.table_scroll.short').eq(1).html(data);
+					$('.account-title').text('账套内容 ' + $_this.parents('tr').find('td').eq(1).text());
+					$('.shown').removeClass('shown').addClass('show');
+					$_this.removeClass('show').addClass('shown');
+				}
+			});
+		});
+
+		$(document).on('click', 'a.account_delete', function(event) {
+			var $_this = $(this);
+			var $id = parseInt($_this.parents('tr').attr('id'));
+			var $text = '确定要删除此账套吗？'
+			if($_this.parents('tr').find('td').eq(2).text() == '正在使用') {
+				$text = '此账套正在使用，确定要删除此账套吗？';
+			}
+			if(confirm($text)) {
+				$.ajax({
+					url: '../Salary/account_delete',
+					type: 'POST',
+					data: {
+						id: $id
+					},
+					success: function(data) {
+						$_this.parents('tr').remove();
+						if($('a.shown').length == 0) {
+							$('.account-title').text('账套内容 尚未选定账套');
+							$('.table_scroll.short').eq(1).html('');
+						}
+					}
+				});
+			}
+		});
+
+		$(document).on('click', 'a.project_add_confirm', function(event) {
+			$('input#account_id').val(parseInt($('a.shown').parents('tr').attr('id')));
+			if($('.table_scroll.short').eq(1).find('table').length == 1) {
+				$('input#project_id').val(parseInt($('.table_scroll.short').eq(1).find('tr').eq($('.table_scroll.short').eq(1).find('tr').length - 1).find('td').eq(0).text()) + 1);
+			} else {
+				$('input#project_id').val(1);
+			}
+			$.ajax({
+				url: '../Salary/project_add',
+				type: 'POST',
+				data: {
+					account_id: $('input[name=account_id]').val(),
+					project_id: $('input[name=project_id]').val(),
+					project_name: $('input[name=project_name]').val(),
+					project_unit: $('select[name=project_unit]').val(),
+					project_type: $('select[name=project_type]').val(),
+					project_money: $('input[name=project_money]').val()
+				},
+				success: function(data) {
+					$('.table_scroll.short').eq(1).html(data);
+					$('.white-bg').fadeOut();
+				}
+			});
+		});
+
+		$(document).on('click', '.project_delete', function(event) {
+			$_this = $(this);
+			if(confirm('确定要删除此项目吗？')) {
+				$.ajax({
+					url: '../Salary/project_delete',
+					type: 'POST',
+					data: {
+						account_id: parseInt($('a.shown').parents('tr').attr('id')),
+						project_id: parseInt($_this.parents('tr').find('td').eq(0).text())
+					},
+					success: function(data) {
+						$('.table_scroll.short').eq(1).html(data);
+					}
+				});
+			}
+		});
+
+		$(document).on('click', '.project_edit', function(event) {
+			$('.white-bg').fadeIn();
+			$('.white-bg .btn-default').on('click', function(event) {
+				$('.white-bg').fadeOut();
+			});
+			$('input[name=project_id]').val(parseInt($(this).parents('tr').find('td').eq(0).text()));
+			$('input[name=project_name]').val($(this).parents('tr').find('td').eq(1).text());
+			$('select[name=project_unit]').val($(this).parents('tr').find('td').eq(2).text());
+			$('select[name=project_type]').val($(this).parents('tr').find('td').eq(3).text());
+			$('input[name=project_money]').val(parseInt($(this).parents('tr').find('td').eq(4).text()));
+			$('a.project_add_confirm').addClass('project_edit_confirm').removeClass('project_add_confirm');
+		});
+
+		$(document).on('click', '.project_edit_confirm', function(event) {
+			$('input[name=account_id]').val(parseInt($('a.shown').parents('tr').attr('id')));
+			$.ajax({
+				url: '../Salary/project_edit',
+				type: 'POST',
+				data: {
+					account_id: $('input[name=account_id]').val(),
+					project_id: $('input[name=project_id]').val(),
+					project_name: $('input[name=project_name]').val(),
+					project_unit: $('select[name=project_unit]').val(),
+					project_type: $('select[name=project_type]').val(),
+					project_money: $('input[name=project_money]').val()
+				},
+				success: function(data) {
+					$('.table_scroll.short').eq(1).html(data);
+					$('.white-bg').fadeOut();
+				}
+			});
+		});
+	}
+}
+
+//账套设置
+
+var salary_setting = {
+	init: function() {
+		$(document).on('click', '.edit', function(event) {
+			$('table tr').each(function(index, el) {
+				$_this = $(this);
+				if($_this.index() != 0){
+					$_this.find('td').each(function(index, el) {
+						if($(this).index() > 4) {
+							var $text = $(this).text();
+							var $len = $text.length;
+							var $content;
+							if($text[$len-2] >= '0' && $text[$len-2] <= '9') {
+								$content = $text.substring(0, $len-1);
+								$unit = $text.substring($len-1, $len);
+							}
+							if($(this).index() == 5) {
+								$(this).html('<input type="number" class="shorter" value=' + $content + '>' + '<span>' + $unit + '</span>');
+							} else {
+								$(this).html('<input type="number" class="shortest" value=' + $content + '>' + '<span>' + $unit + '</span>');
+							}
+						}
+					});
+				}
+				
+			});
+			$(this).text('保存');
+			$(this).addClass('save').removeClass('edit');
+			$(this).parent().append('<span>&nbsp;</span><a class="btn btn-default cancel" href="#">取消</a>')
+		});
+
+		$(document).on('click', '.cancel', function(event) {
+			$(this).prev().remove();
+			$(this).remove();
+			$('.save').addClass('edit').removeClass('save');
+			$('.edit').text('编辑');
+			// $('table tr').each(function(index, el) {
+			// 	if($(this).index($('table tr')) != 0){
+			// 		$(this).find('td').eq(5).html($(this).find('input').val() + '元');
+			// 	}
+				
+			// });
+			$('table tr').each(function(index, el) {
+				$_this = $(this);
+				if($_this.index() != 0){
+					$_this.find('td').each(function(index, el) {
+						if($(this).index() > 4) {
+							var $text = $(this).text();
+							var $len = $text.length;
+							var $content = $(this).find('input').val();
+							var $unit = $(this).find('input').next().text();
+							$(this).html($(this).find('input').val() + $unit);
+						}
+					});
+				}
+				
+			});
+		});
+
+		$(document).on('click', '.save', function(event) {
+			var $id = [];
+			var $salary = [];
+			var $x = 0;
+			$('tr.change').each(function(index, el) {
+				$id.push($(this).attr('id'));
+				$salary[$x] = [];
+				$(this).find('input').each(function(index, el) {
+					$salary[$x][parseInt($(this).parents('td').index()) - 5] = $(this).val();
+				});
+				$x++;
+			});
+			if(confirm('确定保存修改吗？')) {
+				$.ajax({
+					url: '../Salary/salary_edit',
+					type: 'POST',
+					data: {
+						id: $id,
+						salary: $salary
+					},
+					success: function(data) {
+						// console.log(data);
+						$('.cancel').prev().remove();
+						$('.cancel').remove();
+						$('.save').addClass('edit').removeClass('save');
+						$('.edit').text('编辑');
+						// $('table tr').each(function(index, el) {
+						// 	if($(this).index($('table tr')) != 0){
+						// 		$(this).find('td').eq(5).html($(this).find('input').val() + '元');
+						// 	}
+							
+						// });
+						$('table tr').each(function(index, el) {
+							$_this = $(this);
+							if($_this.index() != 0){
+								$_this.find('td').each(function(index, el) {
+									if($(this).index() > 4) {
+										var $text = $(this).text();
+										var $len = $text.length;
+										var $content = $(this).find('input').val();
+										var $unit = $(this).find('input').next().text();
+										$(this).html($(this).find('input').val() + $unit);
+									}
+								});
+							}
+							
+						});
+						$('.change').removeClass('change');
+					}
+				});
+			}
+		});
+
+		$(document).on('change', 'input', function(event) {
+			$(this).parents('tr').addClass('change');
+		});
+	}
+}
+
+//人员设置
+
+var statistic = {
+	init: function() {
+		$('select#statistic_season').attr('disabled', true);
+		$('select#statistic_halfyear').attr('disabled', true);
+		$(document).on('change', 'input[name=statistic_time]', function(event) {
+			$('select').each(function(index, el) {
+				$(this).attr('disabled', true);
+			});
+			$('select#statistic_year').attr('disabled', false);
+			if($(this).val() == '月') {
+				$('select#statistic_month').attr('disabled', false);
+			} else if($(this).val() == '季'){
+				$('select#statistic_season').attr('disabled', false);
+			} else if($(this).val() == '半年'){
+				$('select#statistic_halfyear').attr('disabled', false);
+			} else if($(this).val() == '年'){
+			}
+		});
+
+		$(document).on('click', '.submit', function(event) {
+			var $year = $('select#statistic_year').val();
+			var $alternative;
+			if($('input[name=statistic_time]:checked').val() == '月') {
+				$alternative = $('select#statistic_month').val();
+
+			} else if($('input[name=statistic_time]:checked').val() == '季'){
+				$alternative = $('select#statistic_season').val();
+			} else if($('input[name=statistic_time]:checked').val() == '半年'){
+				$alternative = $('select#statistic_halfyear').val();
+			} else if($('input[name=statistic_time]:checked').val() == '年'){
+				$alternative = '';
+			}
+			$.ajax({
+				url: '../Salary/statistic_change',
+				type: 'POST',
+				data: {
+					year: $year,
+					alternative: $alternative
+				},
+				success: function(data) {
+					// console.log(data);
+					$('.table_scroll').html(data);
+				}
+			});
+
 		});
 	}
 }
