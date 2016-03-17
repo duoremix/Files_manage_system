@@ -1,6 +1,6 @@
 var main_nav = {
 	init: function() {
-		if($('#user_type').val() == '普通用户') {
+		if($('#user_type').val() != '超级管理员') {
 			$('.super').remove();
 		} else {
 			$('.super').removeClass('super');
@@ -89,8 +89,110 @@ var baseInfo_multiDelete = {
 
 var baseInfo_save = {
 	init: function() {
-		$('#save').on('click', function(event) {
-			$('#form_baseInfo').submit();
+		$('input[name=emp_email]').on('change', function(event) {
+			if(!(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/g.test($(this).val()))) {
+				$(this).parent().append('<span class="error">格式错误</span>');
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).parent().find('.error').remove();
+				$(this).css('border', '1px solid #aaa');
+			}
+		});	//邮箱格式验证
+
+		$('input[name=emp_qq], input[name=emp_postcode], input[name=emp_phone]').on('change', function(event) {
+			if(!(/^\d+$/g.test($(this).val()))) {
+				$(this).parent().append('<span class="error">格式错误</span>');
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).parent().find('.error').remove();
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
+
+		$('input[name=emp_idnum]').on('change', function(event) {
+			$(this).val($(this).val().toUpperCase());
+			if(!(/^[0-9]+X?$/g).test($(this).val()) || $(this).val().length != 18) {
+				$(this).parent().append('<span class="error">格式错误</span>');
+				alert('f00');
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).parent().find('.error').remove();
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
+
+		$('input.datepick').on('change', function(event) {
+			if(!(/^\d{4}-\d{2}-\d{2}/g).test($(this).val())) {
+				$(this).parent().append('<span class="error">格式错误</span>');
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).parent().find('.error').remove();
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
+		
+
+		$('div.tips').on('click', function(event) {
+			$('input[type=file]').click();
+		});
+
+		$('input[type=file]').on('change', function(event) {
+			var files = this.files ? this.files : [];
+			    if (/^image/.test( files[0].type)) {
+			        var reader = new FileReader();
+			        reader.readAsDataURL(files[0]);
+			        reader.onloadend = function() {
+			   			$('#emp_photo img').attr('src', this.result);  
+			    	}
+			    }
+		});
+
+		$('form input').on('blur change', function(event) {
+			if($(this).val() == '') {
+				if(	$(this).parent().parent().parent().find('p.form-title').text() == '个人信息'
+					|| $(this).attr('name') == 'emp_job' 
+					|| $(this).attr('name') == 'emp_entry_date'
+					|| $(this).attr('name') == 'emp_cont_start'
+					|| $(this).attr('name') == 'emp_cont_end') {
+					$(this).css('border', '1px solid #f00');
+				}
+			} else if($(this).parent().find('.error').length) {
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
+
+		$('#save').on('click', function(event) {	
+			var $flag = false;		
+			$('form input').each(function(index, el) {
+				if($(this).val() == '') {
+					if($(this).parent().parent().parent().find('p.form-title').text() == '个人信息') {
+						$flag = true;
+						$(this).css('border', '1px solid #f00');
+					} else if($(this).parent().parent().parent().find('p.form-title').text() == '职务信息') {
+						if(	$(this).attr('name') == 'emp_job' 
+							|| $(this).attr('name') == 'emp_entry_date'
+							|| $(this).attr('name') == 'emp_cont_start'
+							|| $(this).attr('name') == 'emp_cont_end') {
+							$flag = true;
+							$(this).css('border', '1px solid #f00');
+						}
+					}
+				} else {
+					if($('span.error').length) {
+						$('span.error').each(function(index, el) {
+							$(this).parent().find('input').css('border', '1px solid #f00');
+						});
+						$flag = true;
+					}
+				}
+			});
+			if(!$flag) {
+				$('#form_baseInfo').submit();
+			} else {
+				alert('信息尚未填写完整或填写格式不正确！');
+			}
 		});
 	}
 }
@@ -166,6 +268,10 @@ var baseInfo_list_operation = {
 
 var baseInfo_putin = {
 	init: function() {
+		if($('input[name=have_photo]').val()) {
+			$('#emp_photo img').attr('src', '../../Apps/Admin/Uploads/' + $('input[name=fm_num]').val()+ '.' + $('input[name=have_photo]').val());
+		}
+		
 		$('select#emp_folk').val($('#hidden_folk').val());
 		$('select#emp_native').val($('#hidden_native').val());
 		$('select#emp_edu').val($('#hidden_edu').val());
@@ -178,8 +284,36 @@ var baseInfo_putin = {
 
 var attendence_save = {
 	init: function() {
+		if($('input#user_type').val() != '超级管理员') {
+			$('select#attendence_status').find('option').remove();
+			$('select#attendence_status').append('<option value="请假">请假</option>');
+
+		}
+		$('form input, textarea').on('blur change', function(event) {
+			if($(this).val() == '') {
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
 		$('a#save').on('click', function(event) {
-			$('#form_attendence').submit();
+			$flag = false;
+			$('form input').each(function(index, el) {
+				if($(this).val() == '') {
+					$flag = true;
+					$(this).css('border', '1px solid #f00');
+				}
+			});
+			if($('textarea').val() == '') {
+				$flag = true;
+				$('textarea').css('border', '1px solid #f00');
+			}
+			if(!$flag) {
+				$('#form_attendence').submit();
+			} else {
+				alert('信息尚未填写完整！');
+			}
+			
 		});
 	}
 }
@@ -221,6 +355,19 @@ var attendence_cancel = {
 }
 
 //考勤档案的取消按钮路径
+
+var attendence_check = {
+	init: function() {
+		$('ul.choose-tab li a').on('click', function(event) {
+			$(this).parent().parent().find('.active').removeClass('active');
+			$(this).parent().addClass('active');
+			$('.tab').hide();
+			$('.tab').eq($(this).parent().index()).show();
+		});
+	}
+}
+
+//考勤档案主页初始化
 
 var attendence_list = {
 	init: function() {
@@ -421,8 +568,31 @@ var rnp_cancel = {
 
 var rnp_save = {
 	init: function() {
+		$('form input, textarea').on('blur change', function(event) {
+			if($(this).val() == '') {
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
 		$('a#save').on('click', function(event) {
-			$('#form_rnp').submit();
+			$flag = false;
+			$('form input').each(function(index, el) {
+				if($(this).val() == '') {
+					$flag = true;
+					$(this).css('border', '1px solid #f00');
+				}
+			});
+			if($('textarea').val() == '') {
+				$flag = true;
+				$('textarea').css('border', '1px solid #f00');
+			}
+			if(!$flag) {
+				$('#form_rnp').submit();
+			} else {
+				alert('信息尚未填写完整！');
+			}
+			
 		});
 	}
 }
@@ -459,15 +629,34 @@ var train_save = {
 			$('table.chose').parent().prev().show();
 			$('table.chose').hide();
 		}
+		$('form input').on('blur change', function(event) {
+			if($(this).val() == '') {
+				$(this).css('border', '1px solid #f00');
+			} else {
+				$(this).css('border', '1px solid #aaa');
+			}
+		});
 		$('a#save').on('click', function(event) {
-			var $ids = [];
-			$('table.chose tr').each(function(index, el) {
-				if($(this).attr('id')) {
-					$ids.push($(this).attr('id'));
+			$flag = false;
+			$('form input').each(function(index, el) {
+				if($(this).val() == '') {
+					$flag = true;
+					$(this).css('border', '1px solid #f00');
 				}
 			});
-			$('#train_person').val($ids);
-			$('#form_train').submit();
+			if(!$flag) {
+				var $ids = [];
+				$('table.chose tr').each(function(index, el) {
+					if($(this).attr('id')) {
+						$ids.push($(this).attr('id'));
+					}
+				});
+				$('#train_person').val($ids);
+				$('#form_train').submit();
+			} else {
+				alert('信息尚未填写完整！');
+			}
+			
 		});
 	}
 }
@@ -869,17 +1058,21 @@ var company_frame = {
 		$('a#add').on('click', function(event) {
 			$new_department = $('input#new_department').val();
 			$superior_department = $('select#superior_department option:checked').val();
-			$.ajax({
-				url: '../System/department_add',
-				type: 'POST',
-				data: {
-					new_department: $new_department,
-					superior_department: $superior_department
-				},
-				success: function(data) {
-					window.location = 'company_frame';
-				}
-			});
+			if($new_department) {
+				$.ajax({
+					url: '../System/department_add',
+					type: 'POST',
+					data: {
+						new_department: $new_department,
+						superior_department: $superior_department
+					},
+					success: function(data) {
+						window.location = 'company_frame';
+					}
+				});
+			} else {
+				alert('请输入新部门名称！');
+			}
 		});
 
 		$(document).on('click', 'a.delete', function(event) {
@@ -941,6 +1134,31 @@ var company_frame = {
 
 //企业架构设置
 
+var system_init = {
+	init: function() {
+		$('a.system_init').on('click', function(event) {
+			if(confirm('即将初始化系统，此操作将清空系统所有数据，是否确定继续？')) {
+				$.ajax({
+					url: '../System/systemInit',
+					type: 'POST',
+					data: {
+						password: $('input#password').val()
+					},
+					success: function(data) {
+						if(data == 'error') {
+							alert('密码错误！');
+						} else if(data == 'success') {
+							alert(data);
+						}
+					}
+				});
+			}
+		});
+	}
+}
+
+//初始化系统
+
 var account_setting = {
 	init: function() {
 		$('.project_add').on('click', function(event) {
@@ -962,17 +1180,21 @@ var account_setting = {
 
 		$('.account_add').on('click', function(event) {
 			var $account_name = $(this).prev().val();
-			$.ajax({
-				url: '../Salary/account_add',
-				type: 'POST',
-				data: {
-					account_name: $account_name
-				},
-				success: function(data) {
-					$('.table_scroll.short').eq(0).html(data);
-					$('.account_add').prev().val('');
-				}
-			});
+			if($account_name != '') {
+				$.ajax({
+					url: '../Salary/account_add',
+					type: 'POST',
+					data: {
+						account_name: $account_name
+					},
+					success: function(data) {
+						$('.table_scroll.short').eq(0).html(data);
+						$('.account_add').prev().val('');
+					}
+				});
+			} else {
+				alert('请输入账套名称！');
+			}
 		});
 
 		$(document).on('click', 'a.use', function(event) {
@@ -1047,22 +1269,30 @@ var account_setting = {
 			} else {
 				$('input#project_id').val(1);
 			}
-			$.ajax({
-				url: '../Salary/project_add',
-				type: 'POST',
-				data: {
-					account_id: $('input[name=account_id]').val(),
-					project_id: $('input[name=project_id]').val(),
-					project_name: $('input[name=project_name]').val(),
-					project_unit: $('select[name=project_unit]').val(),
-					project_type: $('select[name=project_type]').val(),
-					project_money: $('input[name=project_money]').val()
-				},
-				success: function(data) {
-					$('.table_scroll.short').eq(1).html(data);
-					$('.white-bg').fadeOut();
-				}
-			});
+			if($('input[name=project_money]').val() == '') {
+				$('input[name=project_money]').val(0);
+			}
+			if($('input[name=project_name]').val() == '') {
+				alert('请输入项目名称！');
+			} else {
+				$.ajax({
+					url: '../Salary/project_add',
+					type: 'POST',
+					data: {
+						account_id: $('input[name=account_id]').val(),
+						project_id: $('input[name=project_id]').val(),
+						project_name: $('input[name=project_name]').val(),
+						project_unit: $('select[name=project_unit]').val(),
+						project_type: $('select[name=project_type]').val(),
+						project_money: $('input[name=project_money]').val()
+					},
+					success: function(data) {
+						$('.table_scroll.short').eq(1).html(data);
+						$('.white-bg').fadeOut();
+					}
+				});
+			}
+			
 		});
 
 		$(document).on('click', '.project_delete', function(event) {
@@ -1286,3 +1516,84 @@ var statistic = {
 		});
 	}
 }
+
+//统计报表
+
+var info_select = {
+	init: function() {
+		$('select#department').on('change', function(event) {
+			var $department_val = $(this).val();
+			var $name_val = $('input#select_name').val();
+			if($department_val == '全部') {
+				$('.hide').removeClass('hide');
+				if($name_val != '') {
+					$(this).parent().parent().parent().find('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if($(this).find('td').eq(1).text().indexOf($name_val) == -1) {
+								$(this).addClass('hide');
+							} 
+						}
+					});
+				}
+
+			} else {
+				$('.hide').removeClass('hide');
+				if($name_val != '') {
+					$(this).parent().parent().parent().find('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if($(this).find('td').eq(3).text() != $department_val || $(this).find('td').eq(1).text().indexOf($name_val) == -1) {
+								$(this).addClass('hide');
+							} 
+						}
+					});
+				} else {
+					$(this).parent().parent().parent().find('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if($(this).find('td').eq(3).text() != $department_val) {
+								$(this).addClass('hide');
+							} 
+						}
+					});
+				}
+			}
+		});
+
+		$('input#select_name').on('change', function(event) {
+			var $name_val = $(this).val();
+			var $department_val = $('select#department').val();
+			if($department_val == '全部') {
+				$('.hide').removeClass('hide');
+				if($name_val != '') {
+					$(this).parent().parent().parent().find('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if($(this).find('td').eq(1).text().indexOf($name_val) == -1) {
+								$(this).addClass('hide');
+							} 
+						}
+					});
+				}
+			} else {
+				$('.hide').removeClass('hide');
+				if($name_val != '') {
+					$(this).parent().parent().parent().find('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if($(this).find('td').eq(3).text() != $department_val || $(this).find('td').eq(1).text().indexOf($name_val) == -1) {
+								$(this).addClass('hide');
+							} 
+						}
+					});
+				} else {
+					$(this).parent().parent().parent().find('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if($(this).find('td').eq(3).text() != $department_val) {
+								$(this).addClass('hide');
+							} 
+						}
+					});
+				}
+			}
+		});
+	}
+}
+
+//筛选信息功能

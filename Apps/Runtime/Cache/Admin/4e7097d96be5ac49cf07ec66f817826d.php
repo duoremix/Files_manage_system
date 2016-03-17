@@ -43,21 +43,21 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li>
-								<a href="">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
-								<a href="">统计报表</a>
+								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -128,11 +128,11 @@
 						<div class="single-row">
 							<label>
 								<span>开始日期：</span>
-								<input type="text" name="train_start_date" class="short datepick">
+								<input type="text" name="train_start_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 							<label>
 								<span>结束日期：</span>
-								<input type="text" name="train_end_date" class="short datepick">
+								<input type="text" name="train_end_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 							<input type="hidden" id="train_person" name='train_person'>
 						</div>

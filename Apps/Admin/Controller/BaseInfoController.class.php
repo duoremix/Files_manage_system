@@ -16,6 +16,10 @@ class BaseInfoController extends Controller {
 
     public function create() {
         $personal_info = M('Personal_info');
+        $department = M('department');
+        $folk_type = M('folk_type');
+        $native_type = M('native_type');
+        $use_form = M('use_form');
         $mysql_id = $personal_info->field('id')->select();
         $arraylength = count($mysql_id);
         for($x=0;$x<$arraylength;$x++){
@@ -26,24 +30,63 @@ class BaseInfoController extends Controller {
             $auto_id++;
         }
         $count = 1;
-        while($auto_id/10 >= 1) {
+        $temp_id = $auto_id;
+        while($temp_id/10 >= 1) {
             $count++;
+            $temp_id = $auto_id/10;
         }
         $auto_fm_num = 'B';
         for($x=0;$x<5-$count;$x++) {
             $auto_fm_num = $auto_fm_num.'0';
         }
         $auto_fm_num = $auto_fm_num.$auto_id;
+        $department_data = $department->select();
+        $department_data_str = '';
+        if($department_data) {
+            $arraylength = count($department_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            }
+        }
+        $folk_data = $folk_type->select();
+        $folk_data_str = '';
+        if($folk_data) {
+            $arraylength = count($folk_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $folk_data_str = $folk_data_str.'<option value="'.$folk_data[$x]['content'].'">'.$folk_data[$x]['content'].'</option>';
+            }
+        }
+       $native_data = $native_type->select();
+        $native_data_str = '';
+        if($native_data) {
+            $arraylength = count($native_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $native_data_str = $native_data_str.'<option value="'.$native_data[$x]['content'].'">'.$native_data[$x]['content'].'</option>';
+            }
+        }
+        $use_form_data = $use_form->select();
+        $use_form_str = '';
+        if($use_form_data) {
+            $arraylength = count($use_form_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $use_form_str = $use_form_str.'<option value="'.$use_form_data[$x]['content'].'">'.$use_form_data[$x]['content'].'</option>';
+            }
+        }
         $this->assign('auto_id', $auto_id);
         $this->assign('auto_fm_num', $auto_fm_num);
+        $this->assign('department_data_str', $department_data_str);
+        $this->assign('folk_data_str', $folk_data_str);
+        $this->assign('native_data_str', $native_data_str);
+        $this->assign('use_form_str', $use_form_str);
         $this->assign('usertype', $_SESSION['usertype']);
         $this->display('create');
     }
 
     public function check() {
         $personal_info = M('personal_info');
-        $person_data = $personal_info->select();
         $duty_info = M('duty_info');
+        $department = M('department');
+        $person_data = $personal_info->select();
         $duty_data = $duty_info->select();
         $arraylength = count($person_data);
         if($arraylength) {
@@ -66,7 +109,16 @@ class BaseInfoController extends Controller {
         } else {
             $infoData = '<div>尚未有员工档案</div>';
         }
+        $department_data = $department->select();
+        $department_data_str = '';
+        if($department_data) {
+            $arraylength = count($department_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            }
+        }
         $this->assign('infoData', $infoData);
+        $this->assign('department_data_str', $department_data_str);
         $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('check');
     }
@@ -80,8 +132,13 @@ class BaseInfoController extends Controller {
             $this->assign('id', $id);
         }
         $personal_info = M('personal_info');
-        $person_data = $personal_info->where('id='.$id)->select();
         $duty_info = M('duty_info');
+        $department = M('department');
+        $folk_type = M('folk_type');
+        $native_type = M('native_type');
+        $use_form = M('use_form');
+
+        $person_data = $personal_info->where('id='.$id)->select();
         $duty_data = $duty_info->where('id='.$id)->select();
 
         if($person_data[0]['fm_num'] != '') {
@@ -196,6 +253,11 @@ class BaseInfoController extends Controller {
             $this->assign('emp_addr', $emp_addr);
         }
 
+        if($person_data[0]['have_photo'] != '') {
+            $have_photo = $person_data[0]['have_photo'];
+            $this->assign('have_photo', $have_photo);
+        }
+
         if($duty_data[0]['emp_department'] != '') {
             $emp_department = $duty_data[0]['emp_department'];
             $this->assign('emp_department', $emp_department);
@@ -286,6 +348,43 @@ class BaseInfoController extends Controller {
             $this->assign('emp_resevered_fund', $emp_resevered_fund);
         }
 
+        $department_data = $department->select();
+        $department_data_str = '';
+        if($department_data) {
+            $arraylength = count($department_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            }
+        }
+        $folk_data = $folk_type->select();
+        $folk_data_str = '';
+        if($folk_data) {
+            $arraylength = count($folk_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $folk_data_str = $folk_data_str.'<option value="'.$folk_data[$x]['content'].'">'.$folk_data[$x]['content'].'</option>';
+            }
+        }
+        $native_data = $native_type->select();
+        $native_data_str = '';
+        if($native_data) {
+            $arraylength = count($native_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $native_data_str = $native_data_str.'<option value="'.$native_data[$x]['content'].'">'.$native_data[$x]['content'].'</option>';
+            }
+        }
+        $use_form_data = $use_form->select();
+        $use_form_str = '';
+        if($use_form_data) {
+            $arraylength = count($use_form_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $use_form_str = $use_form_str.'<option value="'.$use_form_data[$x]['content'].'">'.$use_form_data[$x]['content'].'</option>';
+            }
+        }
+
+        $this->assign('department_data_str', $department_data_str);
+        $this->assign('folk_data_str', $folk_data_str);
+        $this->assign('native_data_str', $native_data_str);
+        $this->assign('use_form_str', $use_form_str);
         $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('show');
     }
@@ -299,8 +398,13 @@ class BaseInfoController extends Controller {
             $this->assign('id', $id);
         }
         $personal_info = M('personal_info');
-        $person_data = $personal_info->where('id='.$id)->select();
         $duty_info = M('duty_info');
+        $department = M('department');
+        $folk_type = M('folk_type');
+        $native_type = M('native_type');
+        $use_form = M('use_form');
+
+        $person_data = $personal_info->where('id='.$id)->select();
         $duty_data = $duty_info->where('id='.$id)->select();
 
         if($person_data[0]['fm_num'] != '') {
@@ -415,6 +519,11 @@ class BaseInfoController extends Controller {
             $this->assign('emp_addr', $emp_addr);
         }
 
+        if($person_data[0]['have_photo'] != '') {
+            $have_photo = $person_data[0]['have_photo'];
+            $this->assign('have_photo', $have_photo);
+        }
+
         if($duty_data[0]['emp_department'] != '') {
             $emp_department = $duty_data[0]['emp_department'];
             $this->assign('emp_department', $emp_department);
@@ -505,19 +614,79 @@ class BaseInfoController extends Controller {
             $this->assign('emp_resevered_fund', $emp_resevered_fund);
         }
 
+        $department_data = $department->select();
+        $department_data_str = '';
+        if($department_data) {
+            $arraylength = count($department_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            }
+        }
+        $folk_data = $folk_type->select();
+        $folk_data_str = '';
+        if($folk_data) {
+            $arraylength = count($folk_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $folk_data_str = $folk_data_str.'<option value="'.$folk_data[$x]['content'].'">'.$folk_data[$x]['content'].'</option>';
+            }
+        }
+        $native_data = $native_type->select();
+        $native_data_str = '';
+        if($native_data) {
+            $arraylength = count($native_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $native_data_str = $native_data_str.'<option value="'.$native_data[$x]['content'].'">'.$native_data[$x]['content'].'</option>';
+            }
+        }
+        $use_form_data = $use_form->select();
+        $use_form_str = '';
+        if($use_form_data) {
+            $arraylength = count($use_form_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $use_form_str = $use_form_str.'<option value="'.$use_form_data[$x]['content'].'">'.$use_form_data[$x]['content'].'</option>';
+            }
+        }
+
+        $this->assign('department_data_str', $department_data_str);
+        $this->assign('folk_data_str', $folk_data_str);
+        $this->assign('native_data_str', $native_data_str);
+        $this->assign('use_form_str', $use_form_str);
         $this->assign('usertype', $_SESSION['usertype']);
         $this->display('edit');
     }
 
     public function BaseInfo_save() {
         $personal_info = M('personal_info');
+        $duty_info = M('duty_info');
+        
+        $upload = new \Think\Upload();
+        $upload->exts = array('jpg', 'gif', 'png', 'jpeg');
+        $upload->rootPath = './Apps/Admin/Uploads/';
+        $upload->savePath = '';
+        $upload->autoSub = false;
+        $upload->saveName = $_POST['fm_num'];
+        $upload->exts = array('jpg', 'gif', 'png', 'jpeg');
+        $upload->replace = true;
+        $info = $upload->upload();
+        if($info) {
+            foreach($info as $file){
+                $_POST['have_photo'] =  $file['ext'];
+            }
+        }
+
         $personal_info->create();
         $res = $personal_info->add();
-        $duty_info = M('duty_info');
         $duty_info->create();
         $res2 = $duty_info->add();
+
         session_start();
         $_SESSION['newEmpId'] = $_POST['id'];
+
+        // if(!$info) {// 上传错误提示错误信息
+        //     $this->error($upload->getError());
+        // } else {// 上传成功
+        //     $this->success('上传成功！');
+        // }
         if($res&&$res2) {
             $this->success('新建档案成功!', 'show');
         }
@@ -532,15 +701,31 @@ class BaseInfoController extends Controller {
             $this->assign('id', $id);
         }
         $personal_info = M('personal_info');
-        $personal_info->where('id='.$id)->delete();
         $duty_info = M('duty_info');
+        $personal_info->where('id='.$id)->delete();
         $duty_info->where('id='.$id)->delete();
+        $upload = new \Think\Upload();
+        $upload->exts = array('jpg', 'gif', 'png', 'jpeg');
+        $upload->rootPath = './Apps/Admin/Uploads/';
+        $upload->savePath = '';
+        $upload->autoSub = false;
+        $upload->saveName = $_POST['fm_num'];
+        $upload->exts = array('jpg', 'gif', 'png', 'jpeg');
+        $upload->replace = true;
+        $info = $upload->upload();
+        if($info) {
+            foreach($info as $file){
+                $_POST['have_photo'] =  $file['ext'];
+            }
+        }
+
         $personal_info->create();
         $res = $personal_info->add();
         $duty_info->create();
         $res2 = $duty_info->add();
         session_start();
         $_SESSION['newEmpId'] = $_POST['id'];
+        
         if($res&&$res2) {
             $this->success('修改档案成功!', 'show');
         }
@@ -549,11 +734,22 @@ class BaseInfoController extends Controller {
     public function BaseInfo_delete() {
         $id = $_POST['id'];
         $personal_info = M('personal_info');
-        $res = $personal_info->where('id='.$id)->delete();
         $duty_info = M('duty_info');
+        $attendence_info = M('attendence_info');
+        $project_person = M('project_person');
+        $rnp_info = M('rnp_info');
+        $salary = M('salary');
+        $train_person = M('train_person');
+
+        $res = $personal_info->where('id='.$id)->delete();
         $res2 = $duty_info->where('id='.$id)->delete();
+        $res3 = $attendence_info->where('emp_id='.$id)->delete();
+        $res4 = $project_person->where('emp_id='.$id)->delete();
+        $res5 = $rnp_info->where('emp_id='.$id)->delete();
+        $res6 = $salary->where('id='.$id)->delete();
+        $res7 = $train_person->where('emp_id='.$id)->delete();
         unset($_SESSION['newEmpId']);
-        if($res&&$res2) {
+        if($res&&$res2&&$res3&&$res4&&$res5&&$res6&&$res7) {
             $this->success('删除档案成功!', 'check');
         }
     }
@@ -563,9 +759,20 @@ class BaseInfoController extends Controller {
         $arraylength = count($ids);
         $personal_info = M('personal_info');
         $duty_info = M('duty_info');
+        $attendence_info = M('attendence_info');
+        $project_person = M('project_person');
+        $rnp_info = M('rnp_info');
+        $salary = M('salary');
+        $train_person = M('train_person');
+        
         for($x=0;$x<$arraylength;$x++) {
             $personal_info->where('id='.$ids[$x])->delete();
             $duty_info->where('id='.$ids[$x])->delete();
+            $attendence_info->where('emp_id='.$id)->delete();
+            $project_person->where('emp_id='.$id)->delete();
+            $rnp_info->where('emp_id='.$id)->delete();
+            $salary->where('id='.$id)->delete();
+            $train_person->where('emp_id='.$id)->delete();
         }
         echo "删除成功";
     }

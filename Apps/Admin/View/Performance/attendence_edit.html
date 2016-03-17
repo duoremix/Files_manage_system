@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -138,19 +138,15 @@
 								<span>原因：</span>
 								<input type="text" name="attendence_reason" class="short" value="{$attendence_reason}">
 							</label>
-							<label>
-								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00" value="{$attendence_money}">
-							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>开始日期：</span>
-								<input type="text" name="attendence_start_date" class="short datepick" value="{$attendence_start_date}">
+								<input type="text" name="attendence_start_date" class="short datepick" value="{$attendence_start_date}" placeholder="YYYY-M-d">
 							</label>
 							<label>
 								<span>结束日期：</span>
-								<input type="text" name="attendence_end_date" class="short datepick" value="{$attendence_end_date}">
+								<input type="text" name="attendence_end_date" class="short datepick" value="{$attendence_end_date}" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">
@@ -160,7 +156,7 @@
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick" value="{$manage_date}">
+								<input type="text" name="manage_date" class="short datepick" value="{$manage_date}" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">

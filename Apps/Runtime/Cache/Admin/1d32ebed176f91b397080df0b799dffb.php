@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -93,7 +93,7 @@
 					</ul>
 				</div>
 				<div id="form-wrapper">
-					<form id="password_edit" action="/Files_manage_system/Admin/User/addUser" method="post">
+					<form id="password_edit" action="/Files_manage_system/Admin/User/editPassword" method="post">
 						<div class="form-field">
 							<input id="old_password" type="password" name="password" placeholder="请输入旧密码">
 						</div>

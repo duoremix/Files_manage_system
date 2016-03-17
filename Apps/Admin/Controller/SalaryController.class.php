@@ -37,6 +37,7 @@ class SalaryController extends Controller {
             $infoData = '<p class="form-title">尚未建立账套</p>';
         }
         $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('account_setting');
     }
 
@@ -273,10 +274,13 @@ class SalaryController extends Controller {
 
     public function project_delete() {
         $account_project = M('account_project');
+        $project_person = M('project_person');
         $account_project_data = $account_project->where('account_id='.$_POST['account_id'])->select();
         $arraylength = count($account_project_data);
         $select_data = $account_project->where("account_id=%d and project_id=%d", $_POST['account_id'], $_POST['project_id'])->select();
         $account_project->where("account_id=%d and project_id=%d", $_POST['account_id'], $_POST['project_id'])->delete();
+        $project_person->where("account_id=%d and project_id=%d", $_POST['account_id'], $_POST['project_id'])->delete();
+        
         for($x=$_POST['project_id']+1;$x<=$arraylength;$x++) {
             $data = $account_project->where("account_id=%d and project_id=%d", $_POST['account_id'], $x)->select();
             $account_project->where("account_id=%d and project_id=%d", $_POST['account_id'], $x)->delete();
@@ -331,6 +335,10 @@ class SalaryController extends Controller {
         $account_info = M('account_info');
         $account_project = M('account_project');
         $project_person = M('project_person');
+        $department = M('department');
+        $folk_type = M('folk_type');
+        $native_type = M('native_type');
+        $use_form = M('use_form');
 
         $person_data = $personal_info->select();
         $duty_data = $duty_info->select();
@@ -369,13 +377,20 @@ class SalaryController extends Controller {
             }
             $infoData = $infoData.'</tr>';
             for($x=0;$x<$arraylength;$x++) {
-                if($arraylength2) {
-                    $project_person_data = $project_person->where('emp_id='.$data[$x]['id'])->field('count')->order('project_id asc')->select();
+                if($table_title) {
+                    $project_person_data = $project_person->where('account_id='.$active_account[0]['id'].' and emp_id='.$data[$x]['id'])->field('count')->order('project_id asc')->select();
                     $arraylength2 = count($project_person_data);
                 }
                 $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'元</td>';
-                for($y=0;$y<$arraylength2;$y++) {
-                    $infoData = $infoData.'<td>'.$project_person_data[$y]['count'].$table_title[$y]['project_unit'].'</td>';
+                if($arraylength2) {
+                    for($y=0;$y<$arraylength2;$y++) {
+                        $infoData = $infoData.'<td>'.$project_person_data[$y]['count'].$table_title[$y]['project_unit'].'</td>';
+                    }
+                } else {
+                    $arraylength2 = count($table_title);
+                    for($y=0;$y<$arraylength2;$y++) {
+                        $infoData = $infoData.'<td>0'.$table_title[$y]['project_unit'].'</td>';
+                    }
                 }
                 $infoData = $infoData.'</tr>';
             }
@@ -383,7 +398,46 @@ class SalaryController extends Controller {
         } else {
             $infoData = '<div>尚未有员工档案</div>';
         }
+
+        $department_data = $department->select();
+        $department_data_str = '';
+        if($department_data) {
+            $arraylength = count($department_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            }
+        }
+        $folk_data = $folk_type->select();
+        $folk_data_str = '';
+        if($folk_data) {
+            $arraylength = count($folk_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $folk_data_str = $folk_data_str.'<option value="'.$folk_data[$x]['content'].'">'.$folk_data[$x]['content'].'</option>';
+            }
+        }
+        $native_data = $native_type->select();
+        $native_data_str = '';
+        if($native_data) {
+            $arraylength = count($native_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $native_data_str = $native_data_str.'<option value="'.$native_data[$x]['content'].'">'.$native_data[$x]['content'].'</option>';
+            }
+        }
+        $use_form_data = $use_form->select();
+        $use_form_str = '';
+        if($use_form_data) {
+            $arraylength = count($use_form_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $use_form_str = $use_form_str.'<option value="'.$use_form_data[$x]['content'].'">'.$use_form_data[$x]['content'].'</option>';
+            }
+        }
+
+        $this->assign('department_data_str', $department_data_str);
+        $this->assign('folk_data_str', $folk_data_str);
+        $this->assign('native_data_str', $native_data_str);
+        $this->assign('use_form_str', $use_form_str);
         $this->assign('infoData', $infoData);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('salary_setting');
     }
 
@@ -419,6 +473,49 @@ class SalaryController extends Controller {
     }
 
     public function statistic() {
+        $department = M('department');
+        $folk_type = M('folk_type');
+        $native_type = M('native_type');
+        $use_form = M('use_form');
+        
+        $department_data = $department->select();
+        $department_data_str = '';
+        if($department_data) {
+            $arraylength = count($department_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            }
+        }
+        $folk_data = $folk_type->select();
+        $folk_data_str = '';
+        if($folk_data) {
+            $arraylength = count($folk_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $folk_data_str = $folk_data_str.'<option value="'.$folk_data[$x]['content'].'">'.$folk_data[$x]['content'].'</option>';
+            }
+        }
+        $native_data = $native_type->select();
+        $native_data_str = '';
+        if($native_data) {
+            $arraylength = count($native_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $native_data_str = $native_data_str.'<option value="'.$native_data[$x]['content'].'">'.$native_data[$x]['content'].'</option>';
+            }
+        }
+        $use_form_data = $use_form->select();
+        $use_form_str = '';
+        if($use_form_data) {
+            $arraylength = count($use_form_data);
+            for($x=0;$x<$arraylength;$x++) {
+                $use_form_str = $use_form_str.'<option value="'.$use_form_data[$x]['content'].'">'.$use_form_data[$x]['content'].'</option>';
+            }
+        }
+
+        $this->assign('department_data_str', $department_data_str);
+        $this->assign('folk_data_str', $folk_data_str);
+        $this->assign('native_data_str', $native_data_str);
+        $this->assign('use_form_str', $use_form_str);
+        $this->assign('usertype', $_SESSION['usertype']);
         $this->display('statistic');
     }
 
@@ -435,34 +532,42 @@ class SalaryController extends Controller {
         if($_POST['alternative'] == '上') {
             $project_person_query = ' and (update_time like "'.$_POST['year'].'-01%" or update_time like "'.$_POST['year'].'-02%" or update_time like "'.$_POST['year'].'-03%" or update_time like "'.$_POST['year'].'-04%" or update_time like "'.$_POST['year'].'-05%" or update_time like "'.$_POST['year'].'-06%")';
             $rnp_query = ' and (rnp_date like "'.$_POST['year'].'-01%" or rnp_date like "'.$_POST['year'].'-02%" or rnp_date like "'.$_POST['year'].'-03%" or rnp_date like "'.$_POST['year'].'-04%" or rnp_date like "'.$_POST['year'].'-05%" or rnp_date like "'.$_POST['year'].'-06%")';
+            $attendence_query = ' and (attendence_start_date like "'.$_POST['year'].'-01%" or attendence_start_date like "'.$_POST['year'].'-02%" or attendence_start_date like "'.$_POST['year'].'-03%" or attendence_start_date like "'.$_POST['year'].'-04%" or attendence_start_date like "'.$_POST['year'].'-05%" or attendence_start_date like "'.$_POST['year'].'-06%")';
             $month_count = 6;
         } else if($_POST['alternative'] == '下') {
             $project_person_query = ' and (update_time like "'.$_POST['year'].'-07%" or update_time like "'.$_POST['year'].'-08%" or update_time like "'.$_POST['year'].'-09%" or update_time like "'.$_POST['year'].'-10%" or update_time like "'.$_POST['year'].'-11%" or update_time like "'.$_POST['year'].'-12%")';
             $rnp_query = ' and (rnp_date like "'.$_POST['year'].'-07%" or rnp_date like "'.$_POST['year'].'-08%" or rnp_date like "'.$_POST['year'].'-09%" or rnp_date like "'.$_POST['year'].'-10%" or rnp_date like "'.$_POST['year'].'-11%" or rnp_date like "'.$_POST['year'].'-12%")';
+            $attendence_query = ' and (attendence_start_date like "'.$_POST['year'].'-07%" or attendence_start_date like "'.$_POST['year'].'-08%" or attendence_start_date like "'.$_POST['year'].'-09%" or attendence_start_date like "'.$_POST['year'].'-10%" or attendence_start_date like "'.$_POST['year'].'-11%" or attendence_start_date like "'.$_POST['year'].'-12%")';
             $month_count = 6;
         } else if($_POST['alternative'] == '第一') {
             $project_person_query = ' and (update_time like "'.$_POST['year'].'-01%" or update_time like "'.$_POST['year'].'-02%" or update_time like "'.$_POST['year'].'-03%")';
             $rnp_query = ' and (rnp_date like "'.$_POST['year'].'-01%" or rnp_date like "'.$_POST['year'].'-02%" or rnp_date like "'.$_POST['year'].'-03%")';
+            $attendence_query = ' and (attendence_start_date like "'.$_POST['year'].'-01%" or attendence_start_date like "'.$_POST['year'].'-02%" or attendence_start_date like "'.$_POST['year'].'-03%")';
             $month_count = 3;
         } else if($_POST['alternative'] == '第二') {
             $project_person_query = ' and (update_time like "'.$_POST['year'].'-04%" or update_time like "'.$_POST['year'].'-05%" or update_time like "'.$_POST['year'].'-06%")';
             $rnp_query = ' and (rnp_date like "'.$_POST['year'].'-04%" or rnp_date like "'.$_POST['year'].'-05%" or rnp_date like "'.$_POST['year'].'-06%")';
+            $attendence_query = ' and (attendence_start_date like "'.$_POST['year'].'-04%" or attendence_start_date like "'.$_POST['year'].'-05%" or attendence_start_date like "'.$_POST['year'].'-06%")';
             $month_count = 3;
         } else if($_POST['alternative'] == '第三') {
             $project_person_query = ' and (update_time like "'.$_POST['year'].'-07%" or update_time like "'.$_POST['year'].'-08%" or update_time like "'.$_POST['year'].'-09%")';
             $rnp_query = ' and (rnp_date like "'.$_POST['year'].'-07%" or rnp_date like "'.$_POST['year'].'-08%" or rnp_date like "'.$_POST['year'].'-09%")';
+            $attendence_query = ' and (attendence_start_date like "'.$_POST['year'].'-07%" or attendence_start_date like "'.$_POST['year'].'-08%" or attendence_start_date like "'.$_POST['year'].'-09%")';
             $month_count = 3;
         } else if($_POST['alternative'] == '第四') {
             $project_person_query = ' and (update_time like "'.$_POST['year'].'-10%" or update_time like "'.$_POST['year'].'-11%" or update_time like "'.$_POST['year'].'-12%")';
             $rnp_query = ' and (rnp_date like "'.$_POST['year'].'-10%" or rnp_date like "'.$_POST['year'].'-11%" or rnp_date like "'.$_POST['year'].'-12%")';
+            $attendence_query = ' and (attendence_start_date like "'.$_POST['year'].'-10%" or attendence_start_date like "'.$_POST['year'].'-11%" or attendence_start_date like "'.$_POST['year'].'-12%")';
             $month_count = 3;
         } else if($_POST['alternative'] == '') {
             $project_person_query = '';
             $rnp_query = '';
+            $attendence_query = '';
             $month_count = 12;
         } else {
             $project_person_query = ' and update_time like "'.$_POST['year'].'-'.$_POST['alternative'].'%"';
             $rnp_query = ' and rnp_date like "'.$_POST['year'].'-'.$_POST['alternative'].'%"';
+            $attendence_query = ' and attendence_start_date like "'.$_POST['year'].'-'.$_POST['alternative'].'%"';
             $month_count = 1;
         }
         // echo $project_person_query.' jfjj '.$_POST['alternative'];
@@ -508,51 +613,54 @@ class SalaryController extends Controller {
             for($x=0;$x<$arraylength;$x++) {
                 $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'×'.$month_count.'元</td>';
                 if($active_account) {
-                    $first_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="缺勤"')->select());
-                    $second_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="迟到"')->select());
-                    $third_data = $attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="请假"')->select();
+                    $first_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="缺勤"'.$attendence_query)->select());
+                    $second_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="迟到"'.$attendence_query)->select());
+                    $third_data = $attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="请假"'.$attendence_query)->select();
                     if($third_data) {
-                        if($third_data[0]['attendence_start_date'] == $third_data[0]['attendence_end_date']) {
-                            $third_count = 1;
-                        } else {
-                            $third_count = 0;
-                            $attendence_start_date = explode('-', $third_data[0]['attendence_start_date']);
-                            $attendence_end_date = explode('-', $third_data[0]['attendence_end_date']);
-                            if((0 == $attendence_start_date[0]%4)&&(0 != $attendence_start_date[0]%100)||(0 == $attendence_start_date[0]%400)) {
-                                $Feb_days = 30;
+                        $arraylength2 = count($third_data);
+                        $third_count = 0;
+                        for($y=0;$y<$arraylength2;$y++) {
+                            if($third_data[$y]['attendence_start_date'] == $third_data[$y]['attendence_end_date'] || $third_data[$y]['attendence_end_date'] == '') {
+                                $third_count += 1;
                             } else {
-                                $Feb_days = 29;
-                            }
-                            while(  $attendence_start_date[0] != $attendence_end_date[0]
-                                    || $attendence_start_date[1] != $attendence_end_date[1]
-                                    || $attendence_start_date[2] != $attendence_end_date[2]) {
-                                $attendence_start_date[2]++;
-                                $third_count++;
-                                if($attendence_start_date[2] == $Feb_days && $attendence_start_date[1] == 2) {
-                                    $attendence_start_date[1]++;
-                                    $attendence_start_date[2] = 1;
-                                } else if(  $attendence_start_date[2] == 31
-                                            && ($attendence_start_date[1] == 4   
-                                            ||  $attendence_start_date[1] == 6
-                                            ||  $attendence_start_date[1] == 9
-                                            ||  $attendence_start_date[1] == 11)) {
-                                    $attendence_start_date[1]++;
-                                    $attendence_start_date[2] = 1;
-                                } else if(  $attendence_start_date[2] == 32
-                                            && ($attendence_start_date[1] == 1   
-                                            ||  $attendence_start_date[1] == 3
-                                            ||  $attendence_start_date[1] == 5
-                                            ||  $attendence_start_date[1] == 7
-                                            ||  $attendence_start_date[1] == 8
-                                            ||  $attendence_start_date[1] == 10
-                                            ||  $attendence_start_date[1] == 12)) {
-                                    $attendence_start_date[1]++;
-                                    $attendence_start_date[2] = 1;
+                                $attendence_start_date = explode('-', $third_data[$y]['attendence_start_date']);
+                                $attendence_end_date = explode('-', $third_data[$y]['attendence_end_date']);
+                                if((0 == $attendence_start_date[0]%4)&&(0 != $attendence_start_date[0]%100)||(0 == $attendence_start_date[0]%400)) {
+                                    $Feb_days = 30;
+                                } else {
+                                    $Feb_days = 29;
+                                }
+                                while(  $attendence_start_date[0] != $attendence_end_date[0]
+                                        || $attendence_start_date[1] != $attendence_end_date[1]
+                                        || $attendence_start_date[2] != $attendence_end_date[2]) {
+                                    $attendence_start_date[2]++;
+                                    $third_count++;
+                                    if($attendence_start_date[2] == $Feb_days && $attendence_start_date[1] == 2) {
+                                        $attendence_start_date[1]++;
+                                        $attendence_start_date[2] = 1;
+                                    } else if(  $attendence_start_date[2] == 31
+                                                && ($attendence_start_date[1] == 4   
+                                                ||  $attendence_start_date[1] == 6
+                                                ||  $attendence_start_date[1] == 9
+                                                ||  $attendence_start_date[1] == 11)) {
+                                        $attendence_start_date[1]++;
+                                        $attendence_start_date[2] = 1;
+                                    } else if(  $attendence_start_date[2] == 32
+                                                && ($attendence_start_date[1] == 1   
+                                                ||  $attendence_start_date[1] == 3
+                                                ||  $attendence_start_date[1] == 5
+                                                ||  $attendence_start_date[1] == 7
+                                                ||  $attendence_start_date[1] == 8
+                                                ||  $attendence_start_date[1] == 10
+                                                ||  $attendence_start_date[1] == 12)) {
+                                        $attendence_start_date[1]++;
+                                        $attendence_start_date[2] = 1;
+                                    }
                                 }
                             }
                         }
                     } else {
-                        $third_count = 0;
+                        $third_count += 0;
                     }
                     
                     $infoData = $infoData.'<td>'.$active_account_project[0]['project_money'].'×'.$first_count.'元</td>';

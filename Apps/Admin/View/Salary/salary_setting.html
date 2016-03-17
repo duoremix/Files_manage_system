@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -94,6 +94,19 @@
 				</div>
 				<div class="single-row super">
 					<a class="btn btn-primary edit" href="#">编辑</a>
+				</div>
+				<div class="single-row">
+					<label>
+						<span>部门：</span>
+						<select name="department" id="department">
+							<option value="全部">全部</option>
+							{$department_data_str}
+						</select>
+					</label>
+					<label>
+						<input type="text" class="short
+						" id="select_name" name="select_name" placeholder="输入姓名查询">
+					</label>
 				</div>
 				<div class="single-row">
 					<div class="table_scroll long">
@@ -230,6 +243,7 @@
 		window.onload = function() {
 			main_nav.init();
 			salary_setting.init();
+			info_select.init();
 		}
 	</script>
 </body>

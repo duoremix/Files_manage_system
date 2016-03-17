@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -146,7 +146,7 @@
 							</label>
 							<label>
 								<span>落实日期：</span>
-								<input type="text" name="rnp_date" class="short datepick">
+								<input type="text" name="rnp_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">
@@ -156,7 +156,7 @@
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick">
+								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">

@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -136,19 +136,13 @@
 								<label>
 									<span>民族：</span>
 									<select name="emp_folk" id="emp_folk" disabled>
-										<option value="汉族">汉族</option>
-										<option value="瑶族">瑶族</option>
-										<option value="回族">回族</option>
-										<option value="乌孜别克族">乌孜别克族</option>
+										<?php echo ($folk_data_str); ?>
 									</select>
 								</label>
 								<label>
 									<span>籍贯：</span>
 									<select name="emp_native" id="emp_native" disabled>
-										<option value="广东">广东</option>
-										<option value="上海">上海</option>
-										<option value="浙江">浙江</option>
-										<option value="吉林">吉林</option>
+										<?php echo ($native_data_str); ?>
 									</select>
 								</label>
 								<label>
@@ -230,9 +224,7 @@
 								<label>
 									<span>部门：</span>
 									<select name="emp_department" id="emp_department" disabled>
-										<option value="Java项目组">Java项目组</option>
-										<option value="Php项目组">Php项目组</option>
-										<option value="IOS项目组">IOS项目组</option>
+										<?php echo ($department_data_str); ?>
 									</select>
 								</label>
 								<label>
@@ -248,9 +240,7 @@
 								<label>
 									<span>用工形式：</span>
 									<select name="emp_use_form" id="emp_use_form" disabled>
-										<option value="实习">实习</option>
-										<option value="兼职">兼职</option>
-										<option value="全职">全职</option>
+										<?php echo ($use_form_str); ?>
 									</select>
 								</label>
 								<label>
@@ -315,6 +305,7 @@
 									<span>公积金号：</span>
 									<input type="text" name="emp_resevered_fund" class="short" value="<?php echo ($emp_resevered_fund); ?>" readonly>
 								</label>
+								<input type="hidden" name="have_photo" value="<?php echo ($have_photo); ?>">
 							</div>
 						</div>
 					</form>

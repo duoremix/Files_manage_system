@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -93,12 +93,14 @@
 					</ul>
 				</div>
 				<div>
-					<form action="/Files_manage_system/Admin/BaseInfo/BaseInfo_save" method="post" id="form_baseInfo">
+					<form action="/Files_manage_system/Admin/BaseInfo/BaseInfo_save" enctype="multipart/form-data" method="post" id="form_baseInfo">
 						<div class="single-row">
 							<a id="save" class="btn btn-primary super">保存</a>
 							<a id="cancel" class="btn btn-default" href='/Files_manage_system/Admin/BaseInfo/check'>取消</a>
 						</div>
 						<div id="emp_photo">
+							<input type="file" name="emp_photo">
+							<div class="tips">点此上传图片</div>
 							<img src="/Files_manage_system/Public/image/lin.jpeg" alt="">
 						</div>
 						<div class="single-row">
@@ -128,26 +130,20 @@
 								</label>
 								<label>
 									<span>出生日期：</span>
-									<input type="text" name="emp_borndate" class="short datepick">
+									<input type="text" name="emp_borndate" class="short datepick" placeholder="YYYY-M-d">
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>民族：</span>
 									<select name="emp_folk" id="emp_folk">
-										<option value="汉族">汉族</option>
-										<option value="瑶族">瑶族</option>
-										<option value="回族">回族</option>
-										<option value="乌孜别克族">乌孜别克族</option>
+										<?php echo ($folk_data_str); ?>
 									</select>
 								</label>
 								<label>
 									<span>籍贯：</span>
 									<select name="emp_native" id="emp_native">
-										<option value="广东">广东</option>
-										<option value="上海">上海</option>
-										<option value="浙江">浙江</option>
-										<option value="吉林">吉林</option>
+										<?php echo ($native_data_str); ?>
 									</select>
 								</label>
 								<label>
@@ -171,7 +167,7 @@
 								</label>
 								<label>
 									<span>毕业日期：</span>
-									<input type="text" name="emp_gra_date" class="short datepick">
+									<input type="text" name="emp_gra_date" class="short datepick" placeholder="YYYY-M-d">
 								</label>
 							</div>
 							<div class="single-row">
@@ -213,7 +209,7 @@
 								</label>
 								<label>
 									<span>电子邮箱：</span>
-									<input type="text" name="emp_email" class="middle">
+									<input type="text" name="emp_email" class="middle" placeholder="xx@xx.com">
 								</label>
 							</div>
 							<div class="single-row">
@@ -229,9 +225,7 @@
 								<label>
 									<span>部门：</span>
 									<select name="emp_department" id="emp_department">
-										<option value="Java项目组">Java项目组</option>
-										<option value="Php项目组">Php项目组</option>
-										<option value="IOS项目组">IOS项目组</option>
+										<?php echo ($department_data_str); ?>
 									</select>
 								</label>
 								<label>
@@ -242,78 +236,77 @@
 							<div class="single-row">
 								<label>
 									<span>入职时间：</span>
-									<input type="text" name="emp_entry_date" class="short datepick">
+									<input type="text" name="emp_entry_date" class="short datepick" placeholder="YYYY-M-d">
 								</label>
 								<label>
 									<span>用工形式：</span>
 									<select name="emp_use_form" id="emp_use_form">
-										<option value="实习">实习</option>
-										<option value="兼职">兼职</option>
-										<option value="全职">全职</option>
+										<?php echo ($use_form_str); ?>
 									</select>
 								</label>
 								<label>
 									<span>离职时间：</span>
-									<input type="text" name="emp_exit_date" class="short datepick">
+									<input type="text" name="emp_exit_date" class="short datepick" placeholder="YYYY-M-d 非必填">
 								</label>
 								<label>
 									<span>离职原因：</span>
-									<input type="text" name="emp_exit_reason" class="short">
+									<input type="text" name="emp_exit_reason" class="short" placeholder='非必填'>
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>合同开始：</span>
-									<input type="text" name="emp_cont_start" class="short datepick">
+									<input type="text" name="emp_cont_start" class="short datepick" placeholder="YYYY-M-d">
 								</label>
 								<label>
 									<span>合同结束：</span>
-									<input type="text" name="emp_cont_end" class="short datepick">
+									<input type="text" name="emp_cont_end" class="short datepick" placeholder="YYYY-M-d">
 								</label>
 								<label>
 									<span>转正时间：</span>
-									<input type="text" name="emp_full_date" class="short datepick">
+									<input type="text" name="emp_full_date" class="short datepick" placeholder='YYYY-M-d 非必填'>
 								</label>
 								<label>
 									<span>转正工龄：</span>
-									<input type="text" name="emp_full_age" class="short">
+									<input type="text" name="emp_full_age" class="short" placeholder='非必填'>
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>发卡银行：</span>
-									<input type="text" name="emp_bank_name" class="short">
+									<input type="text" name="emp_bank_name" class="short" placeholder='非必填'>
 								</label>
 								<label>
 									<span>社会保险：</span>
-									<input type="text" name="emp_sociaty_insu" class="short">
+									<input type="text" name="emp_sociaty_insu" class="short" placeholder='非必填'>
 								</label>
 								<label>
 									<span>失业保险：</span>
-									<input type="text" name="emp_lostjob_insu" class="short">
+									<input type="text" name="emp_lostjob_insu" class="short" placeholder='非必填'>
 								</label>
 								<label>
 									<span>养老保险：</span>
-									<input type="text" name="emp_old_insu" class="short">
+									<input type="text" name="emp_old_insu" class="short" placeholder='非必填'>
 								</label>
 							</div>
 							<div class="single-row">
 								<label>
 									<span>信用卡号：</span>
-									<input type="text" name="emp_bank_num" class="short">
+									<input type="text" name="emp_bank_num" class="short" placeholder='非必填'>
 								</label>
 								<label>
 									<span>医疗保险：</span>
-									<input type="text" name="emp_medical_insu" class="short">
+									<input type="text" name="emp_medical_insu" class="short" placeholder='非必填'>
 								</label>
 								<label>
 									<span>工伤保险：</span>
-									<input type="text" name="emp_hurt_insu" class="short">
+									<input type="text" name="emp_hurt_insu" class="short" placeholder='非必填'>
 								</label>
 								<label>
 									<span>公积金号：</span>
-									<input type="text" name="emp_resevered_fund" class="short">
+									<input type="text" name="emp_resevered_fund" class="short" placeholder='非必填'>
 								</label>
+								<input type="hidden" name="have_photo">
 							</div>
 						</div>
 					</form>

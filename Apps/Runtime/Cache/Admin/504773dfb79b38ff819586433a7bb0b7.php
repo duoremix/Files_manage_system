@@ -43,21 +43,21 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li>
-								<a href="">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
-								<a href="">统计报表</a>
+								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>

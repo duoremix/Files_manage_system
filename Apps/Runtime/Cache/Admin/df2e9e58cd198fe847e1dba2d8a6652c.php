@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -97,6 +97,7 @@
 					<form action="/Files_manage_system/Admin/Performance/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
 							<a id="save" class="btn btn-primary super">保存</a>
+							<a id="save" class="btn btn-primary">提交</a>
 							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
@@ -135,29 +136,25 @@
 								<span>原因：</span>
 								<input type="text" name="attendence_reason" class="short">
 							</label>
-							<label>
-								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00">
-							</label>
 						</div>
 						<div class="single-row">
 							<label>
 								<span>开始日期：</span>
-								<input type="text" name="attendence_start_date" class="short datepick">
+								<input type="text" name="attendence_start_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 							<label>
 								<span>结束日期：</span>
-								<input type="text" name="attendence_end_date" class="short datepick">
+								<input type="text" name="attendence_end_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 						</div>
-						<div class="single-row">
+						<div class="single-row super">
 							<label>
 								<span>审批人：</span>
 								<input type="text" name="manage_person" class="short">
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick">
+								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">

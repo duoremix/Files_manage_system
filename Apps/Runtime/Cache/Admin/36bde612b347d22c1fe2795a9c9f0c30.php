@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -92,74 +92,95 @@
 						<li>考勤档案管理</li>
 					</ul>
 				</div>
-				<div class="single-row super">
-					<a class="btn btn-primary" href="/Files_manage_system/Admin/Performance/attendence_create">新建档案</a>
-				</div>
 				<div class="single-row">
-					<label>
-						<span>选择部门：</span>
-						<select name="department" id="department">
-							<option value="全部">全部</option>
-							<option value="Java项目组">Java项目组</option>
-							<option value="Php项目组">Php项目组</option>
-							<option value="IOS项目组">IOS项目组</option>
-						</select>
-					</label>
+					<a class="btn btn-primary super" href="/Files_manage_system/Admin/Performance/attendence_create">新建档案</a>
+					<a class="btn btn-primary" href="/Files_manage_system/Admin/Performance/attendence_create">申请请假</a>
 				</div>
-				<div class="single-row">
-					<div class="table_scroll long">
-						<?php echo ($infoData); ?>
+				<div>
+					<ul class="choose-tab">
+						<li class="active"><a href="#">考勤档案</a></li>
+						<li><a href="#">待审批假条</a></li>
+					</ul>
+					<div style="clear:both"></div>
+				</div>
+				<div class="single-row tab-container">
+					<div class="singl-row tab">
+						<div class="single-row">
+							<label>
+								<span>选择部门：</span>
+								<select name="department" id="department">
+									<option value="全部">全部</option>
+									<?php echo ($department_data_str); ?>
+								</select>
+							</label>
+							<label>
+								<input type="text" class="short
+								" id="select_name" name="select_name" placeholder="输入姓名查询">
+							</label>
+						</div>
+						<div class="single-row">
+							<div class="table_scroll long">
+								<?php echo ($infoData); ?>
+							</div>
+							<!-- <table class="table table-striped">
+								<tr>
+									<td>档案编号</td>
+									<td>姓名</td>
+									<td>性别</td>
+									<td>部门</td>
+									<td>职务</td>
+									<td>操作</td>
+								</tr>
+								<tr>
+									<td>J00001</td>
+									<td>刘汝佳</td>
+									<td>男</td>
+									<td>Java项目组</td>
+									<td>Java工程师</td>
+									<td>
+										<a href="/Files_manage_system/Admin/Performance/attendence_list">查看考勤档案</a>
+									</td>
+								</tr>
+								<tr>
+									<td>J00002</td>
+									<td>刘汝剑</td>
+									<td>男</td>
+									<td>Java项目组</td>
+									<td>Java工程师</td>
+									<td>
+										<a href="">查看考勤档案</a>
+									</td>
+								</tr>
+								<tr>
+									<td>J00003</td>
+									<td>刘汝城</td>
+									<td>男</td>
+									<td>Java项目组</td>
+									<td>Java工程师</td>
+									<td>
+										<a href="">查看考勤档案</a>
+									</td>
+								</tr>
+								<tr>
+									<td>J00004</td>
+									<td>刘汝楚</td>
+									<td>男</td>
+									<td>Java项目组</td>
+									<td>Java工程师</td>
+									<td>
+										<a href="">查看考勤档案</a>
+									</td>
+								</tr>
+							</table> -->
+						</div>
 					</div>
-					<!-- <table class="table table-striped">
-						<tr>
-							<td>档案编号</td>
-							<td>姓名</td>
-							<td>性别</td>
-							<td>部门</td>
-							<td>职务</td>
-							<td>操作</td>
-						</tr>
-						<tr>
-							<td>J00001</td>
-							<td>刘汝佳</td>
-							<td>男</td>
-							<td>Java项目组</td>
-							<td>Java工程师</td>
-							<td>
-								<a href="/Files_manage_system/Admin/Performance/attendence_list">查看考勤档案</a>
-							</td>
-						</tr>
-						<tr>
-							<td>J00002</td>
-							<td>刘汝剑</td>
-							<td>男</td>
-							<td>Java项目组</td>
-							<td>Java工程师</td>
-							<td>
-								<a href="">查看考勤档案</a>
-							</td>
-						</tr>
-						<tr>
-							<td>J00003</td>
-							<td>刘汝城</td>
-							<td>男</td>
-							<td>Java项目组</td>
-							<td>Java工程师</td>
-							<td>
-								<a href="">查看考勤档案</a>
-							</td>
-						</tr>
-						<tr>
-							<td>J00004</td>
-							<td>刘汝楚</td>
-							<td>男</td>
-							<td>Java项目组</td>
-							<td>Java工程师</td>
-							<td>
-								<a href="">查看考勤档案</a>
-							</td>
-						</tr>
-					</table> -->
+					<div class="single-row tab" style="display:none">
+						<div class="single-row">
+							<div class="table_scroll long">
+								<?php echo ($uncheck_data_str); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
 			</div>
@@ -171,7 +192,9 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
+			attendence_check.init();
 			attendence_list.init();
+			info_select.init();
 		}
 	</script>
 </body>

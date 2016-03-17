@@ -1,0 +1,36 @@
+[ 2016-03-13T21:55:38+08:00 ] ::1 /Files_manage_system/Public/image/logo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000095s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001597s ]
+ERR: 无法加载模块:Public
+
+[ 2016-03-13T21:55:47+08:00 ] ::1 /Files_manage_system/Public/image/logo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000230s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+ERR: 无法加载模块:Public
+
+[ 2016-03-13T21:55:50+08:00 ] ::1 /Files_manage_system/Public/image/logo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000440s ]
+ERR: 无法加载模块:Public
+
+[ 2016-03-13T21:56:45+08:00 ] ::1 /Files_manage_system/Uploads/temp.jpeg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+ERR: 无法加载模块:Uploads
+
+[ 2016-03-13T22:03:43+08:00 ] ::1 /Files_manage_system/Apps/Admin/Uploads/temp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+ERR: 无法加载模块:Apps
+
+[ 2016-03-13T22:04:00+08:00 ] ::1 /Files_manage_system/Apps/Admin/Uploads/temp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+ERR: 无法加载模块:Apps
+

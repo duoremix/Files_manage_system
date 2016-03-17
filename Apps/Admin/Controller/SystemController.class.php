@@ -16,8 +16,10 @@ class SystemController extends Controller {
 
 	public function systemInit() {
 		if(md5($_POST['password']) == md5('admin')) {
-			echo 'yes';
-		}
+			echo 'success';
+		} else {
+            echo 'error';
+        }
 	}
 
 	public function basedata_setting() {

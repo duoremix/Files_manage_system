@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -136,10 +136,6 @@
 							<label>
 								<span>原因：</span>
 								<input type="text" name="attendence_reason" class="short" value="<?php echo ($attendence_reason); ?>" readonly>
-							</label>
-							<label>
-								<span>金额：</span>
-								<input type="number" name="attendence_money" class="short" placeholder="0.00" value="<?php echo ($attendence_money); ?>" readonly>
 							</label>
 						</div>
 						<div class="single-row">

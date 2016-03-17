@@ -43,7 +43,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -93,12 +93,12 @@
 					</ul>
 				</div>
 				<div class="single-row super">
-					<form id="system_init" action="systemInit" method="post">
+					<form id="system_init">
 						<div class="form-field">
 							<input id="password" type="password" name="password" placeholder="请输入默认管理员密码">
 						</div>
 						<div class="form-field">
-							<button id="submit" class="system_init" href="#">初始化系统</button>
+							<a id="submit" class="system_init" href="#">初始化系统</a>
 						</div>
 					</form>
 				</div>
@@ -113,6 +113,7 @@
 		window.onload = function() {
 			main_nav.init();
 			basedata_setting.init();
+			system_init.init();
 		}
 	</script>
 </body>
