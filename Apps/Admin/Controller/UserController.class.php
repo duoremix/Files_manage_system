@@ -13,24 +13,30 @@ class UserController extends Controller {
     //验证用户名和密码
     public function redir_consultation() {
 		//获取用户名和密码
-		$data['username'] = $_POST['username'];
+        if($_POST['emp_id']) {
+            $data['username'] = $_POST['username'].'-'.$_POST['emp_id'];
+            $data2['username'] = $_POST['username'].'-'.$_POST['emp_id'];
+        } else {
+            $data['username'] = $_POST['username'];
+            $data2['username'] = $_POST['username'];
+        }
 		$data['password'] = md5($_POST['password']);
 		$data2['usertype'] = $_POST['usertype'];
-		$data2['username'] = $_POST['username'];
 
 		$user = M('user');
 
 		$user_data = $user->field('id')->select();
 		if($user_data) {
-			//查询数据库中的用户名和密码
 			$res = $user->where($data)->select();
-			//查询数据库中的用户名和职位
 			$res2 = $user->where($data2)->select();
-			//检验用户名和职位的合法性
 			if($res&&$res2){
 				session_start();
 				$_SESSION['usertype'] = $data2['usertype'];
-				$_SESSION['username'] = $data['username'];
+				$_SESSION['username'] = $_POST['username'];
+                if($data2['usertype'] != '超级管理员') {
+                    session_start();
+                    $_SESSION['newEmpId'] = (int)$_POST['emp_id'];
+                }
 				$this->redirect('Index/index');
 			} else {
 				$this->error("用户名或者密码不正确");

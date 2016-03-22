@@ -46,10 +46,10 @@
 					<li class="dropdown super">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="__APP__/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="__APP__/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -57,14 +57,14 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
-							<li>
-								<a href="__APP__/Admin/System/company_frame">企业架构设置</a>
+							<li class="super">
+								<a href="__APP__/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
-								<a href="__APP__/Admin/System/basedata_setting">基本资料设置</a>
+							<li class="super">
+								<a href="__APP__/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
 								<a href="__APP__/Admin/System/system_init">初始化系统</a>
@@ -94,7 +94,6 @@
 				</div>
 				<div class="single-row">
 					<a class="btn btn-primary super" href="__URL__/attendence_create">新建档案</a>
-					<a class="btn btn-primary" href="__URL__/attendence_create">申请请假</a>
 				</div>
 				<div>
 					<ul class="choose-tab">
@@ -175,6 +174,19 @@
 						</div>
 					</div>
 					<div class="single-row tab" style="display:none">
+						<div class="single-row">
+							<label>
+								<span>选择部门：</span>
+								<select name="department" id="department">
+									<option value="全部">全部</option>
+									{$department_data_str}
+								</select>
+							</label>
+							<label>
+								<input type="text" class="short
+								" id="select_name" name="select_name" placeholder="输入姓名查询">
+							</label>
+						</div>
 						<div class="single-row">
 							<div class="table_scroll long">
 								{$uncheck_data_str}

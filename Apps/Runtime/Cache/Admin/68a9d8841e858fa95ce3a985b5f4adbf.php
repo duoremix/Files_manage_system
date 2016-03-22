@@ -33,7 +33,12 @@
 		</div>
 	</section>
 
-	<script scr="/Files_manage_system/Public/js/jquery.js"></script>
-	<script scr="/Files_manage_system/Public/js/script.js"></script>
+	<script src="/Files_manage_system/Public/js/jquery.js"></script>
+	<script src="/Files_manage_system/Public/js/script.js"></script>
+	<script>
+		window.onload = function() {
+			login.init();
+		}
+	</script>
 </body>
 </html>

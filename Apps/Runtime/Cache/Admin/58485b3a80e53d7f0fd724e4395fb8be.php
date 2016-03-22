@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -102,7 +102,7 @@
 						<div id="emp_photo">
 							<input type="file" name="emp_photo">
 							<div class="tips">点此上传图片</div>
-							<img src="/Files_manage_system/Public/image/lin.jpeg" alt="">
+							<img src="/Files_manage_system/Public/image/default.png" alt="">
 						</div>
 						<div class="single-row">
 							<label>

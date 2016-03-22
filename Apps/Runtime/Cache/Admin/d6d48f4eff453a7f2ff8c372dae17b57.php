@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -90,7 +90,7 @@
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
 						<li><a href="#">绩效档案管理</a></li>
 						<li><a href="/Files_manage_system/Admin/Performance/attendence_check">考勤档案管理</a></li>
-						<li>新建档案</li>
+						<li>查看档案</li>
 					</ul>
 				</div>
 				<div>
@@ -157,6 +157,12 @@
 								<span>审批日期：</span>
 								<input type="text" name="manage_date" class="short datepick" value="<?php echo ($manage_date); ?>" readonly>
 							</label>
+							<label>
+								<span>审批状态：</span>
+								<select name="check_status" id="check_status" disabled>
+									<?php echo ($check_status_option); ?>
+								</select>
+							</label>
 						</div>
 						<div class="single-row">
 							<label>
@@ -187,6 +193,9 @@
 			main_nav.init();
 			attendence_delete.init();
 			attendence_putin.init();
+			if($('#usertype') != '超级管理员') {
+				$('a#cancel').attr('href', 'attendence_check');
+			}
 		}
 	</script>
 </body>

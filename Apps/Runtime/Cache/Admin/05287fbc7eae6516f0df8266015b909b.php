@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -95,6 +95,7 @@
 				<div class="single-row super">
 					<a class="btn btn-primary" href="/Files_manage_system/Admin/Performance/train_create">新建档案</a>
 				</div>
+				<p class="form-title employee">我的培训档案</p>
 				<div class="single-row">
 					<div class="table_scroll long">
 						<?php echo ($infoData); ?>

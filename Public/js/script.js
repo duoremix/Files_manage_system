@@ -2,8 +2,10 @@ var main_nav = {
 	init: function() {
 		if($('#user_type').val() != '超级管理员') {
 			$('.super').remove();
+			$('.employee').removeClass('employee');
 		} else {
 			$('.super').removeClass('super');
+			$('.employee').remove();
 		}
 		$('ul.nav li.dropdown').hover(function() {
 			$('ul.dropdown-menu', this).stop().fadeIn(200);
@@ -14,6 +16,20 @@ var main_nav = {
 }
 
 // 导航栏
+
+var login = {
+	init: function() {
+		$('select#usertype').on('change', function(event) {
+			if($(this).val() != '超级管理员') {
+				$('<div class="form-field"><input id="emp_id" type="text" name="emp_id" placeholder="员工编号"></div>').insertAfter($(this).parent());
+			} else {
+				$('input#emp_id').parent().remove();
+			}
+		});
+	}
+}
+
+//登录
 
 var baseInfo_multiDelete = {
 	init: function() {
@@ -113,7 +129,6 @@ var baseInfo_save = {
 			$(this).val($(this).val().toUpperCase());
 			if(!(/^[0-9]+X?$/g).test($(this).val()) || $(this).val().length != 18) {
 				$(this).parent().append('<span class="error">格式错误</span>');
-				alert('f00');
 				$(this).css('border', '1px solid #f00');
 			} else {
 				$(this).parent().find('.error').remove();
@@ -344,8 +359,8 @@ var department_initData = {
 var attendence_cancel = {
 	init: function() {
 		$('a#cancel').on('click', function(event) {
-			var $id = $('input#hidden_emp_id').val();
-			if($id) {
+			var $user_type = $('input#user_type').val();
+			if($user_type == '超级管理员') {
 				window.location = 'attendence_list';
 			} else {
 				window.location = 'attendence_check';
@@ -458,7 +473,11 @@ var attendence_list_operation = {
 					success: function(data) {
 						console.log(data);
 						alert('档案删除成功！');
-						window.location = '../Performance/attendence_list';
+						if($('#user_type').val() == '超级管理员') {
+							window.location = 'attendence_list';
+						} else {
+							window.location = 'attendence_check';
+						}
 					}
 				});
 			}

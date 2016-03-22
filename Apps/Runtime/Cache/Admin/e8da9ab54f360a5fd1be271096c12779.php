@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -96,8 +96,8 @@
 				<div>
 					<form action="/Files_manage_system/Admin/Performance/attendence_edit_save" method="post" id="form_attendence">
 						<div class="single-row">
-							<a id="save" class="btn btn-primary super">保存</a>
-							<a id="cancel" class="btn btn-default" href="attendence_list">取消</a>
+							<a id="save" class="btn btn-primary">保存</a>
+							<a id="cancel" class="btn btn-default" href="#" onclick="history.go(-1)">取消</a>
 						</div>
 						<div class="single-row">
 							<input type="hidden" name="id" id="id" value="<?php echo ($id); ?>">
@@ -150,13 +150,19 @@
 							</label>
 						</div>
 						<div class="single-row">
-							<label>
+							<label class="super">
 								<span>审批人：</span>
-								<input type="text" name="manage_person" class="short" value="<?php echo ($manage_person); ?>">
+								<input type="text" name="manage_person" class="short" value="<?php echo ($manage_person); ?>" readonly>
+							</label>
+							<label class="super">
+								<span>审批日期：</span>
+								<input type="text" name="manage_date" class="short" value="<?php echo ($manage_date); ?>" placeholder="YYYY-M-d" readonly>
 							</label>
 							<label>
-								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick" value="<?php echo ($manage_date); ?>" placeholder="YYYY-M-d">
+								<span>审批状态：</span>
+								<select name="check_status" id="check_status">
+									<?php echo ($check_status_option); ?>
+								</select>
 							</label>
 						</div>
 						<div class="single-row">

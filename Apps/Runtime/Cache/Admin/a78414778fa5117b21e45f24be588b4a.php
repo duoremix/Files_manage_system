@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -97,11 +97,11 @@
 						<div class="single-row">
 							<a class="btn btn-primary super" href="/Files_manage_system/Admin/BaseInfo/edit">修改档案</a>
 							<a id="delete" class="btn btn-danger super">删除档案</a>
-							<a class="btn btn-default" href="/Files_manage_system/Admin/BaseInfo/check">返回</a>
+							<a class="btn btn-default super" href="/Files_manage_system/Admin/BaseInfo/check">返回</a>
 						</div>
 						<input type="hidden" name="id" value="<?php echo ($id); ?>">
 						<div id="emp_photo">
-							<img src="/Files_manage_system/Public/image/lin.jpeg" alt="">
+							<img src="/Files_manage_system/Public/image/default.png" alt="">
 						</div>
 						<div class="single-row">
 							<label>

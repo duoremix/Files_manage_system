@@ -1,6 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
+import('ORG.Util.Date');
 class PerformanceController extends Controller {
 	function __construct(){
 		parent::__construct();
@@ -10,13 +11,13 @@ class PerformanceController extends Controller {
 	}
 
     public function attendence_check() {
-    	unset($_SESSION['newEmpId']);
 	    $personal_info = M('personal_info');
         $duty_info = M('duty_info');
         $department = M('department');
         $attendence_info = M('attendence_info');
 
 	    if($_SESSION['usertype'] == '超级管理员') {
+            unset($_SESSION['newEmpId']);
             $person_data = $personal_info->select();
             $duty_data = $duty_info->select();
             $arraylength = count($person_data);
@@ -50,18 +51,74 @@ class PerformanceController extends Controller {
 
             $uncheck_data = $attendence_info->where('attendence_status="请假" and check_status=0')->select();
             $arraylength2 = count($uncheck_data);
-            $uncheck_data_str = '<table class="table table-striped"><tr><td>档案编号</td><td>员工编号</td><td>姓名</td><td>部门</td><td>职务</td><td>考勤状况</td><td>原因</td><td>开始日期</td><td>结束日期</td><td>审批状态</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
-            for($x=0;$x<$arraylength2;$x++) {
-                $this_person_data = $personal_info->where('id='.$uncheck_data[$x]['emp_id'])->select();
-                $this_duty_data = $duty_info->where('id='.$uncheck_data[$x]['emp_id'])->select();
-                $uncheck_data_str = $uncheck_data_str.'<tr id='.$uncheck_data[$x]['id'].'><td>'.$uncheck_data[$x]['fm_num'].'</td><td>No.'.$uncheck_data[$x]['emp_id'].'</td><td>'.$this_person_data[$x]['emp_name'].'</td><td>'.$this_duty_data[$x]['emp_department'].'</td><td>'.$this_duty_data[$x]['emp_job'].'</td><td>'.$uncheck_data[$x]['attendence_status'].'</td><td>'.$uncheck_data[$x]['attendence_reason'].'</td><td>'.$uncheck_data[$x]['attendence_start_date'].'</td><td>'.$uncheck_data[$x]['attendence_end_date'].'</td><td>待审批</td><td>'.$uncheck_data[$x]['manage_person'].'</td><td>'.$uncheck_data[$x]['manage_date'].'</td><td><a class="edit" href="#">查看</a><a class="delete super" href="#">删除</a></td></tr>';
+            
+            if($arraylength2) {
+                $uncheck_data_str = '<table class="table table-striped"><tr><td>档案编号</td><td>员工编号</td><td>姓名</td><td>部门</td><td>职务</td><td>考勤状况</td><td>原因</td><td>开始日期</td><td>结束日期</td><td>审批状态</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
+                for($x=0;$x<$arraylength2;$x++) {
+                    $this_person_data = $personal_info->where('id='.$uncheck_data[$x]['emp_id'])->select();
+                    $this_duty_data = $duty_info->where('id='.$uncheck_data[$x]['emp_id'])->select();
+                    $uncheck_data_str = $uncheck_data_str.'<tr id='.$uncheck_data[$x]['id'].'><td>'.$uncheck_data[$x]['fm_num'].'</td><td>No.'.$uncheck_data[$x]['emp_id'].'</td><td>'.$this_person_data[$x]['emp_name'].'</td><td>'.$this_duty_data[$x]['emp_department'].'</td><td>'.$this_duty_data[$x]['emp_job'].'</td><td>'.$uncheck_data[$x]['attendence_status'].'</td><td>'.$uncheck_data[$x]['attendence_reason'].'</td><td>'.$uncheck_data[$x]['attendence_start_date'].'</td><td>'.$uncheck_data[$x]['attendence_end_date'].'</td><td>待审批</td><td>'.$uncheck_data[$x]['manage_person'].'</td><td>'.$uncheck_data[$x]['manage_date'].'</td><td><a class="edit" href="#">查看</a></td></tr>';
+                }
+            } else {
+                $uncheck_data_str = '<p>没有待审批的假条</p>';
             }
             $this->assign('infoData', $infoData);
             $this->assign('uncheck_data_str', $uncheck_data_str);
             $this->assign('department_data_str', $department_data_str);
+            $this->assign('usertype', $_SESSION['usertype']);
+            $this->display('attendence_check');
+        } else {      
+            $emp_name = '我';
+            $attendence_data = $attendence_info->where('emp_id='.$_SESSION['newEmpId'])->field('id, fm_num, attendence_status, attendence_reason, attendence_start_date, attendence_end_date, manage_person, manage_date, check_status')->select();
+            $uncheck_data = $attendence_info->where('emp_id='.$_SESSION['newEmpId'].' and attendence_status="请假"')->field('id, fm_num, attendence_status, attendence_reason, attendence_start_date, attendence_end_date, manage_person, manage_date, check_status')->order('id desc')->select();
+            if($attendence_data) {
+                $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>考勤状况</td><td>原因</td><td>开始日期</td><td>结束日期</td><td>审批状态</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
+                $arraylength = count($attendence_data);
+                for($x=0;$x<$arraylength;$x++) {
+                    $operation = '<a class="show" href="#">查看</a>';
+                    if($attendence_data[$x]['attendence_status'] == '请假') {
+                        if($attendence_data[$x]['check_status'] == 0) {
+                            $check_status = '待审批';
+                            $operation = '<a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a>';
+                        } else if($attendence_data[$x]['check_status'] == 1) {
+                            $check_status = '批准';
+                        } else if($attendence_data[$x]['check_status'] == 2) {
+                            $check_status = '不批准';
+                        }
+                    } else {
+                        $check_status = '无';
+                    }
+                    $infoData = $infoData.'<tr id='.$attendence_data[$x]['id'].'><td>'.$attendence_data[$x]['fm_num'].'</td><td>'.$attendence_data[$x]['attendence_status'].'</td><td>'.$attendence_data[$x]['attendence_reason'].'</td><td>'.$attendence_data[$x]['attendence_start_date'].'</td><td>'.$attendence_data[$x]['attendence_end_date'].'</td><td>'.$check_status.'</td><td>'.$attendence_data[$x]['manage_person'].'</td><td>'.$attendence_data[$x]['manage_date'].'</td><td>'.$operation.'</td></tr>';
+                }
+                $infoData = $infoData.'</table>';
+            } else {
+                $infoData = '<p>暂无考勤档案</p>';
+            }
+            if($uncheck_data) {
+                $arraylength = count($uncheck_data)>3?3:count($uncheck_data);
+                $uncheck_data_str = '<table class="table table-striped"><tr><td>档案编号</td><td>考勤状况</td><td>原因</td><td>开始日期</td><td>结束日期</td><td>审批状态</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
+                for($x=0;$x<$arraylength;$x++) {
+                    $operation = '<a class="show" href="#">查看</a>';
+                    if($uncheck_data[$x]['check_status'] == 0) {
+                            $check_status = '待审批';
+                            $operation = '<a class="show" href="#">查看</a><a class="edit" href="#">修改</a><a class="delete" href="#">删除</a>';
+                        } else if($uncheck_data[$x]['check_status'] == 1) {
+                            $check_status = '批准';
+                        } else if($uncheck_data[$x]['check_status'] == 2) {
+                            $check_status = '不批准';
+                        }
+                    $uncheck_data_str = $uncheck_data_str.'<tr id='.$uncheck_data[$x]['id'].'><td>'.$uncheck_data[$x]['fm_num'].'</td><td>'.$uncheck_data[$x]['attendence_status'].'</td><td>'.$uncheck_data[$x]['attendence_reason'].'</td><td>'.$uncheck_data[$x]['attendence_start_date'].'</td><td>'.$uncheck_data[$x]['attendence_end_date'].'</td><td>'.$check_status.'</td><td>'.$uncheck_data[$x]['manage_person'].'</td><td>'.$uncheck_data[$x]['manage_date'].'</td><td>'.$operation.'</td></tr>';
+                }
+                $uncheck_data_str = $uncheck_data_str.'</table>';
+            } else {
+                $uncheck_data_str = '<p>尚未有假条</p>';
+            }
+            $this->assign('emp_name', $emp_name);
+            $this->assign('infoData', $infoData);
+            $this->assign('uncheck_data_str', $uncheck_data_str);
+            $this->assign('usertype', $_SESSION['usertype']);
+            $this->display('attendence_list');
         }
-        $this->assign('usertype', $_SESSION['usertype']);
-    	$this->display('attendence_check');
     }
 
     public function attendence_list() {
@@ -73,9 +130,10 @@ class PerformanceController extends Controller {
     	$attendence_info = M('Attendence_info');
 
     	$emp_name = $duty_info->where('id='.$_SESSION['newEmpId'])->field('emp_name')->select();
-    	$this->assign('emp_name', $emp_name[0]['emp_name']);
+    	
     	$attendence_data = $attendence_info->where('emp_id='.$_SESSION['newEmpId'])->field('id, fm_num, attendence_status, attendence_reason, attendence_start_date, attendence_end_date, manage_person, manage_date, check_status')->select();
-    	if($attendence_data) {
+
+        if($attendence_data) {
     		$infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>考勤状况</td><td>原因</td><td>开始日期</td><td>结束日期</td><td>审批状态</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
     		$arraylength = count($attendence_data);
     		for($x=0;$x<$arraylength;$x++) {
@@ -94,8 +152,10 @@ class PerformanceController extends Controller {
     		}
     		$infoData = $infoData.'</table>';
     	} else {
-    		$infoData = '<div>该员工暂无考勤档案</div>';
+    		$infoData = '<p>该员工暂无考勤档案</p>';
     	}
+        
+        $this->assign('emp_name', $emp_name[0]['emp_name']);
     	$this->assign('infoData', $infoData);
         $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('attendence_list');
@@ -159,6 +219,22 @@ class PerformanceController extends Controller {
             $this->assign('attendence_content', $data['attendence_content']);
         }
 
+        if($attendence_data[0]['check_status'] != '') {
+            if($attendence_data[0]['check_status'] == 0) {
+                if($_SESSION['usertype'] == '超级管理员') {
+                    $check_status_option = '<option value="未审批">未审批</option><option value="批准">批准</option><option value="不批准">不批准</option>';
+                } else {
+                    $check_status_option = '<option value="未审批">未审批</option>';
+                }
+            } else if($attendence_data[0]['check_status'] == 1) {
+                $check_status_option = '<option value="批准">批准</option>';
+            } else if($attendence_data[0]['check_status'] == 2) {
+                $check_status_option = '<option value="不批准">不批准</option>';
+            }
+            
+            $this->assign('check_status_option', $check_status_option);
+        }
+
         $this->assign('fileId', $_SESSION['newFileId']);
         $this->assign('usertype', $_SESSION['usertype']);
     	$this->display('attendence_show');
@@ -192,11 +268,10 @@ class PerformanceController extends Controller {
             $this->assign('department_data_str', $department_data_str);
             $this->assign('employee_data_str', $employee_data_str);
         } else {
-            $username_data = explode('-', $_SESSION['username']);
-            $emp_data = $duty_info->where('id='.$username_data[1])->select();
+            $emp_data = $duty_info->where('id='.$_SESSION['newEmpId'])->select();
             $department_data_str = '<option value="'.$emp_data[0]['emp_department'].'">'.$emp_data[0]['emp_department'].'</option>';
             $employee_data_str = '<input type="hidden" value="<option value='.$emp_data[0]['emp_name'].'>'.$emp_data[0]['emp_name'].'</option>">';
-            $this->assign('emp_id', $username_data[1]);
+            $this->assign('emp_id', $_SESSION['newEmpId']);
             $this->assign('department_data_str', $department_data_str);
             $this->assign('employee_data_str', $employee_data_str);
         }
@@ -232,7 +307,11 @@ class PerformanceController extends Controller {
     	$attendence_info->add();
     	session_start();
     	$_SESSION['newEmpId'] = $_POST['emp_id'];
-    	$this->success('新建考勤档案成功！', 'attendence_list');
+    	if($_SESSION['usertype'] == '超级管理员') {
+            $this->success('新建考勤档案成功！', 'attendence_list');
+        } else {
+            $this->success('假条提交成功，请等待审批', 'attendence_check');
+        }
     }
 
     public function attendence_edit() {
@@ -282,16 +361,38 @@ class PerformanceController extends Controller {
         if($attendence_data[0]['manage_person'] != '') {
             $data['manage_person'] = $attendence_data[0]['manage_person'];
             $this->assign('manage_person', $data['manage_person']);
+        } else {
+            $data['manage_person'] = $_SESSION['username'];
+            $this->assign('manage_person', $data['manage_person']);
         }
 
         if($attendence_data[0]['manage_date'] != '') {
             $data['manage_date'] = $attendence_data[0]['manage_date'];
+            $this->assign('manage_date', $data['manage_date']);
+        } else {
+            $data['manage_date'] = strval(Date('Y-m-d'));
             $this->assign('manage_date', $data['manage_date']);
         }
 
         if($attendence_data[0]['attendence_content'] != '') {
             $data['attendence_content'] = $attendence_data[0]['attendence_content'];
             $this->assign('attendence_content', $data['attendence_content']);
+        }
+
+        if($attendence_data[0]['check_status'] != '') {
+            if($attendence_data[0]['check_status'] == 0) {
+                if($_SESSION['usertype'] == '超级管理员') {
+                    $check_status_option = '<option value="未审批">未审批</option><option value="批准">批准</option><option value="不批准">不批准</option>';
+                } else {
+                    $check_status_option = '<option value="未审批">未审批</option>';
+                }
+            } else if($attendence_data[0]['check_status'] == 1) {
+                $check_status_option = '<option value="批准">批准</option>';
+            } else if($attendence_data[0]['check_status'] == 2) {
+                $check_status_option = '<option value="不批准">不批准</option>';
+            }
+            
+            $this->assign('check_status_option', $check_status_option);
         }
 
         $this->assign('id', $_SESSION['newFileId']);
@@ -304,9 +405,16 @@ class PerformanceController extends Controller {
     public function attendence_edit_save() {
         $attendence_info = M('Attendence_info');
         $attendence_info->where('id='.$_POST['id'])->delete();
+        if($_POST['check_status'] == '批准') {
+            $_POST['check_status'] = 1;
+        } else if($_POST['check_status'] == '不批准') {
+            $_POST['check_status'] = 2;
+        } else {
+            $_POST['check_status'] = 0;
+        }
         $attendence_info->create();
         $attendence_info->add();
-        $this->success('修改档案成功！', 'attendence_show');
+        $this->success('修改档案成功！', 'attendence_check');
     }
 
     public function attendence_delete() {
@@ -315,49 +423,74 @@ class PerformanceController extends Controller {
     	$res = $attendence_info->where('id='.$id)->delete();
         unset($_SESSION['newFileId']);
         if($res) {
-            $this->success('档案删除成功！', 'attendence_list');
+            if($_SESSION['usertype'] == '超级管理员') {
+                $this->success('档案删除成功！', 'attendence_list');
+            } else {
+                $this->success('假条删除成功！', 'attendence_check');
+            }
         }
     }
 
     public function rnp_check() {
-        unset($_SESSION['newEmpId']);
         $personal_info = M('personal_info');
         $duty_info = M('duty_info');
         $department = M('department');
-        $person_data = $personal_info->select();
-        $duty_data = $duty_info->select();
-        $arraylength = count($person_data);
-        if($arraylength) {
-            for($x=0;$x<$arraylength;$x++) {
-                if($person_data[$x]['id'] == $duty_data[$x]['id']) {
-                    $data[$x]['id'] = $person_data[$x]['id'];
-                    $data[$x]['emp_name'] = $person_data[$x]['emp_name'];
-                    $data[$x]['emp_sex'] = $person_data[$x]['emp_sex'];
-                    $data[$x]['emp_department'] = $duty_data[$x]['emp_department'];
-                    $data[$x]['emp_job'] = $duty_data[$x]['emp_job'];
+        $rnp_info = M('rnp_info');
+
+        if($_SESSION['usertype'] == '超级管理员') {
+            unset($_SESSION['newEmpId']);
+            $person_data = $personal_info->select();
+            $duty_data = $duty_info->select();
+            $arraylength = count($person_data);
+            if($arraylength) {
+                for($x=0;$x<$arraylength;$x++) {
+                    if($person_data[$x]['id'] == $duty_data[$x]['id']) {
+                        $data[$x]['id'] = $person_data[$x]['id'];
+                        $data[$x]['emp_name'] = $person_data[$x]['emp_name'];
+                        $data[$x]['emp_sex'] = $person_data[$x]['emp_sex'];
+                        $data[$x]['emp_department'] = $duty_data[$x]['emp_department'];
+                        $data[$x]['emp_job'] = $duty_data[$x]['emp_job'];
+                    }
+                }
+                $arraylength = count($data);
+                $infoData = '<table class="table table-striped"><tr><td>员工编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>操作</td></tr>';
+                for($x=0;$x<$arraylength;$x++) {
+                    $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>No.'.$data[$x]['id'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td><a class="list" href="#">查看奖惩档案</a></td></tr>';
+                }
+                $infoData = $infoData.'</table>';
+            } else {
+                $infoData = '<div>尚未有考勤档案</div>';
+            }
+            $department_data = $department->select();
+            $department_data_str = '';
+            if($department_data) {
+                $arraylength = count($department_data);
+                for($x=0;$x<$arraylength;$x++) {
+                    $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
                 }
             }
-            $arraylength = count($data);
-            $infoData = '<table class="table table-striped"><tr><td>员工编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>操作</td></tr>';
-            for($x=0;$x<$arraylength;$x++) {
-                $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>No.'.$data[$x]['id'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td><a class="list" href="#">查看奖惩档案</a></td></tr>';
-            }
-            $infoData = $infoData.'</table>';
+            $this->assign('infoData', $infoData);
+            $this->assign('department_data_str', $department_data_str);
+            $this->assign('usertype', $_SESSION['usertype']);
+            $this->display('rnp_check');
         } else {
-            $infoData = '<div>尚未有考勤档案</div>';
-        }
-        $department_data = $department->select();
-        $department_data_str = '';
-        if($department_data) {
-            $arraylength = count($department_data);
-            for($x=0;$x<$arraylength;$x++) {
-                $department_data_str = $department_data_str.'<option value="'.$department_data[$x]['department'].'">'.$department_data[$x]['department'].'</option>';
+            $emp_name = '我';       
+            $rnp_data = $rnp_info->where('emp_id='.$_SESSION['newEmpId'])->field('id, fm_num, rnp_status, rnp_reason, rnp_date, manage_person, manage_date')->select();
+            if($rnp_data) {
+                $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>奖惩状况</td><td>原因</td><td>落实日期</td><td>审批人</td><td>审批日期</td><td>操作</td></tr>';
+                $arraylength = count($rnp_data);
+                for($x=0;$x<$arraylength;$x++) {
+                    $infoData = $infoData.'<tr id='.$rnp_data[$x]['id'].'><td>'.$rnp_data[$x]['fm_num'].'</td><td>'.$rnp_data[$x]['rnp_status'].'</td><td>'.$rnp_data[$x]['rnp_reason'].'</td><td>'.$rnp_data[$x]['rnp_date'].'</td><td>'.$rnp_data[$x]['manage_person'].'</td><td>'.$rnp_data[$x]['manage_date'].'</td><td><a class="show" href="#">查看</a><a class="edit super" href="#">修改</a><a class="delete super" href="#">删除</a></td></tr>';
+                }
+                $infoData = $infoData.'</table>';
+            } else {
+                $infoData = '<div>暂无奖惩档案</div>';
             }
+            $this->assign('infoData', $infoData);
+            $this->assign('emp_name', $emp_name);
+            $this->assign('usertype', $_SESSION['usertype']);
+            $this->display('rnp_list');
         }
-        $this->assign('infoData', $infoData);
-        $this->assign('department_data_str', $department_data_str);
-        $this->assign('usertype', $_SESSION['usertype']);
-        $this->display('rnp_check');
     }
 
     public function rnp_list() {
@@ -608,22 +741,49 @@ class PerformanceController extends Controller {
     }
 
     public function train_check() {
-        unset($_SESSION['newFileId']);
         $train_info = M('train_info');
-        $train_data = $train_info->field('id, fm_num, train_name, train_start_date, train_end_date, train_unit, train_lecture')->select();
-        $arraylength = count($train_data);
-        if($arraylength) {
-            $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>培训名称</td><td>培训单位</td><td>培训讲师</td><td>开始时间</td><td>结束时间</td><td>操作</td></tr>';
-            for($x=0;$x<$arraylength;$x++) {
-                $infoData = $infoData.'<tr id='.$train_data[$x]['id'].'><td>'.$train_data[$x]['fm_num'].'</td><td>'.$train_data[$x]['train_name'].'</td><td>'.$train_data[$x]['train_unit'].'</td><td>'.$train_data[$x]['train_lecture'].'</td><td>'.$train_data[$x]['train_start_date'].'</td><td>'.$train_data[$x]['train_end_date'].'</td><td><a class="train_show" href="#">查看</a><a class="train_edit super" href="#">修改</a><a class="train_delete super" href="#">删除</a></td></tr>';
+        $train_person = M('train_person');
+
+        if($_SESSION['usertype'] == '超级管理员') {
+            unset($_SESSION['newFileId']);
+            $train_data = $train_info->field('id, fm_num, train_name, train_start_date, train_end_date, train_unit, train_lecture')->select();
+            $arraylength = count($train_data);
+            if($arraylength) {
+                $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>培训名称</td><td>培训单位</td><td>培训讲师</td><td>开始时间</td><td>结束时间</td><td>操作</td></tr>';
+                for($x=0;$x<$arraylength;$x++) {
+                    $infoData = $infoData.'<tr id='.$train_data[$x]['id'].'><td>'.$train_data[$x]['fm_num'].'</td><td>'.$train_data[$x]['train_name'].'</td><td>'.$train_data[$x]['train_unit'].'</td><td>'.$train_data[$x]['train_lecture'].'</td><td>'.$train_data[$x]['train_start_date'].'</td><td>'.$train_data[$x]['train_end_date'].'</td><td><a class="train_show" href="#">查看</a><a class="train_edit super" href="#">修改</a><a class="train_delete super" href="#">删除</a></td></tr>';
+                }
+                $infoData = $infoData.'</table>';
+            } else {
+                $infoData = '暂无培训档案';
             }
-            $infoData = $infoData.'</table>';
+            $this->assign('infoData', $infoData);
+            $this->assign('usertype', $_SESSION['usertype']);
+            $this->display('train_check');
         } else {
-            $infoData = '暂无培训档案';
+            $train_id = $train_person->where('emp_id='.$_SESSION['newEmpId'])->field('train_id')->select();
+            $train_data = $train_info->field('id, fm_num, train_name, train_start_date, train_end_date, train_unit, train_lecture')->select();
+            $arraylength = count($train_id);
+            for($x=0;$x<$arraylength;$x++) {
+                $ids[$x] = $train_id[$x]['train_id'];
+            }
+            $arraylength = count($train_data);
+            if($train_id) {
+                $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>培训名称</td><td>培训单位</td><td>培训讲师</td><td>开始时间</td><td>结束时间</td><td>操作</td></tr>';
+                for($x=0;$x<$arraylength;$x++) {
+                    if(in_array($train_data[$x]['id'], $ids)) {
+                        $infoData = $infoData.'<tr id='.$train_data[$x]['id'].'><td>'.$train_data[$x]['fm_num'].'</td><td>'.$train_data[$x]['train_name'].'</td><td>'.$train_data[$x]['train_unit'].'</td><td>'.$train_data[$x]['train_lecture'].'</td><td>'.$train_data[$x]['train_start_date'].'</td><td>'.$train_data[$x]['train_end_date'].'</td><td><a class="train_show" href="#">查看</a><a class="train_edit super" href="#">修改</a><a class="train_delete super" href="#">删除</a></td></tr>';
+                    }
+                }
+                $infoData = $infoData.'</table>';
+            } else {
+                $infoData = '暂无培训档案';
+            }
+            $this->assign('infoData', $infoData);
+            $this->assign('usertype', $_SESSION['usertype']);
+            $this->display('train_check');
         }
-        $this->assign('infoData', $infoData);
-        $this->assign('usertype', $_SESSION['usertype']);
-        $this->display('train_check');
+        
     }
 
     public function train_create() {

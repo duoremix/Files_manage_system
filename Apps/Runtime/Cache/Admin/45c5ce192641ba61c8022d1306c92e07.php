@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -93,8 +93,8 @@
 						<li><?php echo ($emp_name); ?>的奖惩档案</li>
 					</ul>
 				</div>
-				<div class="single-row">
-					<a class="btn btn-primary super" href="rnp_create">新建档案</a>
+				<div class="single-row super">
+					<a class="btn btn-primary" href="rnp_create">新建档案</a>
 					<a class="btn btn-default" href="rnp_check">返回</a>
 				</div>
 				<p class="form-title"><?php echo ($emp_name); ?>的奖惩档案</p>
