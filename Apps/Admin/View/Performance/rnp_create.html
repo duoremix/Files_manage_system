@@ -152,11 +152,11 @@
 						<div class="single-row">
 							<label>
 								<span>审批人：</span>
-								<input type="text" name="manage_person" class="short">
+								<input type="text" name="manage_person" class="short" value="{$_SESSION['username']}">
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d">
+								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d" value="{$date}">
 							</label>
 						</div>
 						<div class="single-row">

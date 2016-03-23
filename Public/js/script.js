@@ -1,6 +1,7 @@
 var main_nav = {
 	init: function() {
-		if($('#user_type').val() != '超级管理员') {
+		$usertype = $('#user_type').val();
+		if($usertype != '超级管理员') {
 			$('.super').remove();
 			$('.employee').removeClass('employee');
 		} else {
@@ -143,6 +144,34 @@ var baseInfo_save = {
 			} else {
 				$(this).parent().find('.error').remove();
 				$(this).css('border', '1px solid #aaa');
+			}
+
+			if($(this).attr('name') =='emp_exit_date' && $('input[name=emp_entry_date]').val() != '') {
+				$exit = $(this).val().split('-');
+				$entry = $('input[name=emp_entry_date]').val().split('-');
+				if($exit[0] < $entry[0]) {
+					alert('离职时间不能早于入职时间');
+					$(this).val('');
+				} else if($exit[1] < $entry[1]) {
+					alert('离职时间不能早于入职时间');
+					$(this).val('');
+				}
+			}
+
+			if(	$(this).attr('name') !='emp_borndate' 
+				&& $(this).attr('name') !='emp_gra_date'
+				&& $(this).attr('name') !='emp_entry_date'
+				&& $(this).attr('name') !='emp_exit_date'
+				&& $('input[name=emp_cont_start]').val() != '') {
+				$last = $(this).val().split('-');
+				$first = $('input[name=emp_cont_start]').val().split('-');
+				if($last[0] < $first[0]) {
+					alert('不能早于合同开始时间');
+					$(this).val('');
+				} else if($last[1] < $first[1]) {
+					alert('不能早于合同开始时间');
+					$(this).val('');
+				}
 			}
 		});
 		
@@ -292,6 +321,7 @@ var baseInfo_putin = {
 		$('select#emp_edu').val($('#hidden_edu').val());
 		$('select#emp_department').val($('#hidden_department').val());
 		$('select#emp_use_form').val($('#hidden_use_form').val());
+		$('#hidden_folk').parent().remove();
 	}
 }
 
@@ -359,8 +389,7 @@ var department_initData = {
 var attendence_cancel = {
 	init: function() {
 		$('a#cancel').on('click', function(event) {
-			var $user_type = $('input#user_type').val();
-			if($user_type == '超级管理员') {
+			if($('input#hidden_emp_id').val()) {
 				window.location = 'attendence_list';
 			} else {
 				window.location = 'attendence_check';
@@ -431,6 +460,7 @@ var attendence_delete = {
 
 var attendence_list_operation = {
 	init: function() {
+		$usertype = $('#user_type').val();
 		$('a.show').on('click', function(event) {
 			$id = $(this).parents('tr').prop('id');
 			$.ajax({
@@ -473,7 +503,7 @@ var attendence_list_operation = {
 					success: function(data) {
 						console.log(data);
 						alert('档案删除成功！');
-						if($('#user_type').val() == '超级管理员') {
+						if($usertype == '超级管理员') {
 							window.location = 'attendence_list';
 						} else {
 							window.location = 'attendence_check';
@@ -1495,6 +1525,7 @@ var statistic = {
 			$('select').each(function(index, el) {
 				$(this).attr('disabled', true);
 			});
+			$('select#department').attr('disabled', false);
 			$('select#statistic_year').attr('disabled', false);
 			if($(this).val() == '月') {
 				$('select#statistic_month').attr('disabled', false);

@@ -334,6 +334,7 @@
 			main_nav.init();
 			baseInfo_putin.init();
 			baseInfo_save.init();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

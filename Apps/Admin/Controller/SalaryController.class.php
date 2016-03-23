@@ -575,6 +575,7 @@ class SalaryController extends Controller {
         $person_data = $personal_info->select();
         $duty_data = $duty_info->select();
         $salary_data = $salary->select();
+
         $arraylength = count($person_data);
         if($arraylength) {
             for($x=0;$x<$arraylength;$x++) {
@@ -585,6 +586,8 @@ class SalaryController extends Controller {
                     $data[$x]['emp_sex'] = $person_data[$x]['emp_sex'];
                     $data[$x]['emp_department'] = $duty_data[$x]['emp_department'];
                     $data[$x]['emp_job'] = $duty_data[$x]['emp_job'];
+                    $data[$x]['emp_cont_start'] = $duty_data[$x]['emp_cont_start'];
+                    $data[$x]['emp_cont_end'] = $duty_data[$x]['emp_cont_end'];
                 }
                 if($person_data[$x]['id'] == $salary_data[$x]['id']) {
                     $data[$x]['salary'] = $salary_data[$x]['salary'];
@@ -600,7 +603,7 @@ class SalaryController extends Controller {
                 $active_account_project = $account_project->where('account_id='.$active_account[0]['id'])->order('project_id asc')->select();
                 $arraylength = count($active_account_project);
             }
-            $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>工资</td>';
+            $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>基本工资</td>';
             if($arraylength) {
                 for($x=0;$x<$arraylength;$x++) {
                     $infoData = $infoData.'<td>'.$active_account_project[$x]['project_name'].'</td>';
@@ -611,7 +614,161 @@ class SalaryController extends Controller {
 
             $arraylength = count($data);
             for($x=0;$x<$arraylength;$x++) {
-                $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'×'.$month_count.'元</td>';
+                $emp_month_count = $month_count;
+                $cont_start_date = explode('-', $data[$x]['emp_cont_start']);
+                $cont_end_date = explode('-', $data[$x]['emp_cont_end']);
+                if($month_count == 12) {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1];
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count = 13 - (int)$cont_start_date[1] - 1;
+                        } else {
+                            $emp_month_count = 13 - (int)$cont_start_date[1];
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[2] >= 15) {
+                            $emp_month_count = (int)$cont_end_date[1];
+                        } else {
+                            $emp_month_count = (int)$cont_end_date[1] - 1;
+                        }
+                    }
+                } else if($_POST['alternative'] == '上') {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=1 && (int)$cont_start_date[1]<=6) {
+                            $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1] < 7 - (int)$cont_start_date[1]?(int)$cont_end_date[1] - (int)$cont_start_date[1]:7- (int)$cont_start_date[1];
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=1 && (int)$cont_start_date[1]<=6) {
+                            $emp_month_count = 6 - (int)$cont_start_date[1];
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=1 && (int)$cont_end_date[1]<=6) {
+                            $emp_month_count = 6 - (int)$cont_end_date[1];
+                        } else {
+                            $emp_month_count = 6 + (int)$cont_end_date[1];
+                        }
+                    }
+                } else if($_POST['alternative'] == '下') {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=7 && (int)$cont_end_date[1]<=12) {
+                            $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1] < (int)$cont_end_date[1] - 6?(int)$cont_end_date[1] - (int)$cont_start_date[1]:(int)$cont_end_date[1] - 6;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=7 && (int)$cont_start_date[1]<=12) {
+                            $emp_month_count = 13 - (int)$cont_start_date[1];
+                        } else {
+                            $emp_month_count = 6;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=7 && (int)$cont_end_date[1]<=12) {
+                            $emp_month_count = 13 - (int)$cont_end_date[1] + 6;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    }
+                } else if($_POST['alternative'] == '第一') {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=1 && (int)$cont_start_date[1]<=3) {
+                            $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1] < 4 - (int)$cont_start_date[1]?(int)$cont_end_date[1] - (int)$cont_start_date[1]:4 - (int)$cont_start_date[1];
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=1 && (int)$cont_start_date[1]<=3) {
+                            $emp_month_count = 4 - (int)$cont_start_date[1];
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=1 && (int)$cont_end_date[1]<=3) {
+                            $emp_month_count = (int)$cont_end_date[1];
+                        } else {
+                            $emp_month_count = 3;
+                        }
+                    }
+                } else if($_POST['alternative'] == '第二') {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=4 && (int)$cont_start_date[1]<=6) {
+                            $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1] < 7 - (int)$cont_start_date[1]?(int)$cont_end_date[1] - (int)$cont_start_date[1]:7 - (int)$cont_start_date[1];
+                        } else if((int)$cont_start_date[1] < 4) {
+                            $emp_month_count = (int)$cont_end_date[1] - 3 < 3?(int)$cont_end_date[1] - 3:3;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]<=6) {
+                            $emp_month_count = 7 - (int)$cont_start_date[1] < 3?7 - (int)$cont_start_date[1]:3;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=4 && (int)$cont_end_date[1]<=6) {
+                            $emp_month_count = (int)$cont_end_date[1] - 3;
+                        } else if((int)$cont_end_date[1]<4) {
+                            $emp_month_count = 0;
+                        } else {
+                            $emp_month_count = 3;
+                        }
+                    }
+                } else if($_POST['alternative'] == '第三') {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=7 && (int)$cont_start_date[1]<=9) {
+                            $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1] < 10 - (int)$cont_start_date[1]?(int)$cont_end_date[1] - (int)$cont_start_date[1]:10 - (int)$cont_start_date[1];
+                        } else if((int)$cont_start_date[1] < 7) {
+                            $emp_month_count = (int)$cont_end_date[1] - 6 < 3?(int)$cont_end_date[1] - 6:3;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]<=9) {
+                            $emp_month_count = 10 - (int)$cont_start_date[1] < 3?10 - (int)$cont_start_date[1]:3;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=7 && (int)$cont_end_date[1]<=9) {
+                            $emp_month_count = (int)$cont_end_date[1] - 6;
+                        } else if((int)$cont_end_date[1]<7) {
+                            $emp_month_count = 0;
+                        } else {
+                            $emp_month_count = 3;
+                        }
+                    }
+                } else if($_POST['alternative'] == '第四') {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]>=10 && (int)$cont_start_date[1]<=12) {
+                            $emp_month_count = (int)$cont_end_date[1] - (int)$cont_start_date[1] < 13 - (int)$cont_start_date[1]?(int)$cont_end_date[1] - (int)$cont_start_date[1]:13 - (int)$cont_start_date[1];
+                        } else if((int)$cont_start_date[1] < 10) {
+                            $emp_month_count = (int)$cont_end_date[1] - 9 < 3?(int)$cont_end_date[1] - 9:3;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_start_date[1]<=9) {
+                            $emp_month_count = 13 - (int)$cont_start_date[1] < 3?13 - (int)$cont_start_date[1]:3;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$cont_end_date[1]>=10 && (int)$cont_end_date[1]<=12) {
+                            $emp_month_count = (int)$cont_end_date[1] - 9;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                    }
+                }
+
+                if($emp_month_count < 0) {
+                    $emp_month_count = 0;
+                }
+                $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'×'.$emp_month_count.'元</td>';
                 if($active_account) {
                     $first_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="缺勤"'.$attendence_query)->select());
                     $second_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="迟到"'.$attendence_query)->select());

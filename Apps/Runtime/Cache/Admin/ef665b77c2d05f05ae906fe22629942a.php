@@ -101,7 +101,7 @@
 						<div id="emp_photo">
 							<input type="file" name="emp_photo">
 							<div class="tips">点此上传图片</div>
-							<img src="/Files_manage_system/Public/image/lin.jpeg" alt="">
+							<img src="/Files_manage_system/Public/image/default.png" alt="">
 						</div>
 						<div class="single-row">
 							<input type="hidden" name="id" value="<?php echo ($auto_id); ?>">
@@ -326,6 +326,7 @@
 			});
 			main_nav.init();
 			baseInfo_save.init();
+			$('input[type=hidden]').remove();
 		}
 	</script>
 </body>

@@ -207,6 +207,7 @@
 			attendence_check.init();
 			attendence_list.init();
 			info_select.init();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

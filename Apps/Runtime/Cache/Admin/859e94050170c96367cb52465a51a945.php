@@ -96,6 +96,7 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

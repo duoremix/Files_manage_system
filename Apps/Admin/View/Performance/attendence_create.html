@@ -97,7 +97,7 @@
 					<form action="__URL__/attendence_save" method="post" id="form_attendence">
 						<div class="single-row">
 							<a id="save" class="btn btn-primary super">保存</a>
-							<a id="save" class="btn btn-primary">提交</a>
+							<a id="save" class="btn btn-primary employee">提交</a>
 							<a id="cancel" class="btn btn-default" href="#">取消</a>
 						</div>
 						<div class="single-row">
@@ -150,11 +150,11 @@
 						<div class="single-row super">
 							<label>
 								<span>审批人：</span>
-								<input type="text" name="manage_person" class="short">
+								<input type="text" name="manage_person" class="short" value="{$_SESSION['username']}">
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d">
+								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d" value="{$date}">
 							</label>
 						</div>
 						<div class="single-row">
@@ -172,7 +172,7 @@
 						<input type="hidden" id="hidden_emp_id" value="{$emp_id}">
 					</div>
 				</div>
-				<input id="user_type" type="hidden" value="{$usertype}">
+				<input id="user_type" type="hidden" value="{$_SESSION['usertype']}">
 			</div>
 		</div>
 	</section>
@@ -189,6 +189,7 @@
 			department_initData.init();
 			attendence_cancel.init();
 			attendence_save.init();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

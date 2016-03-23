@@ -275,6 +275,7 @@ class PerformanceController extends Controller {
             $this->assign('department_data_str', $department_data_str);
             $this->assign('employee_data_str', $employee_data_str);
         }
+        $this->assign('date', Date('Y-m-d'));
     	$this->display('attendence_create');
     }
 
@@ -545,6 +546,7 @@ class PerformanceController extends Controller {
         $this->assign('department_data_str', $department_data_str);
         $this->assign('employee_data_str', $employee_data_str);
         $this->assign('usertype', $_SESSION['usertype']);
+        $this->assign('date', Date('Y-m-d'));
         $this->display('rnp_create');
     }
 

@@ -185,6 +185,7 @@
 			baseInfo_multiDelete.init();
 			baseInfo_list_operation.init();
 			info_select.init();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

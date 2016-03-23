@@ -43,13 +43,13 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -152,11 +152,11 @@
 						<div class="single-row">
 							<label>
 								<span>审批人：</span>
-								<input type="text" name="manage_person" class="short">
+								<input type="text" name="manage_person" class="short" value="<?php echo ($_SESSION['username']); ?>">
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d">
+								<input type="text" name="manage_date" class="short datepick" placeholder="YYYY-M-d" value="<?php echo ($date); ?>">
 							</label>
 						</div>
 						<div class="single-row">
