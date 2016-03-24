@@ -101,31 +101,31 @@ class SalaryController extends Controller {
         $personal_info = M('personal_info');
         $person_data = $personal_info->select();
         $arraylength = count($person_data);
-        for($x=0;$x<$arraylength;$x++) {
-            for($z=4;$z<=5;$z++) {
-                $project_person_data = $project_person->select();
-                $auto_id2 = 1;
-                $arraylength2 = count($project_person_data);
-                for($y=0;$y<$arraylength2;$y++) {
-                    $ids3[$y] = $project_person_data[$y]['id'];
-                }
-                while(in_array($auto_id2, $ids3)) {
-                    $auto_id2++;
-                }
-                $data3['id'] = $auto_id2;
-                $data3['account_id'] = $auto_id;
-                $data3['project_id'] = $z;
-                $data3['emp_id'] = $person_data[$x]['id'];
-                $this_time = Date('Y-m-d');
-                $data3['update_time'] = strval($this_time);
-                if($z == 4) {
-                    $data3['count'] = 12;
-                } else if($z == 5) {
-                    $data3['count'] = 1;
-                }
-                $project_person->add($data3);
-            }
-        }
+        // for($x=0;$x<$arraylength;$x++) {
+        //     for($z=4;$z<=5;$z++) {
+        //         $project_person_data = $project_person->select();
+        //         $auto_id2 = 1;
+        //         $arraylength2 = count($project_person_data);
+        //         for($y=0;$y<$arraylength2;$y++) {
+        //             $ids3[$y] = $project_person_data[$y]['id'];
+        //         }
+        //         while(in_array($auto_id2, $ids3)) {
+        //             $auto_id2++;
+        //         }
+        //         $data3['id'] = $auto_id2;
+        //         $data3['account_id'] = $auto_id;
+        //         $data3['project_id'] = $z;
+        //         $data3['emp_id'] = $person_data[$x]['id'];
+        //         $this_time = Date('Y-m-d');
+        //         $data3['update_time'] = strval($this_time);
+        //         if($z == 4) {
+        //             $data3['count'] = 12;
+        //         } else if($z == 5) {
+        //             $data3['count'] = 1;
+        //         }
+        //         $project_person->add($data3);
+        //     }
+        // }
 
         $account_info_data = $mysql->select();
         $arraylength = count($account_info_data);
@@ -343,10 +343,12 @@ class SalaryController extends Controller {
         $person_data = $personal_info->select();
         $duty_data = $duty_info->select();
         $salary_data = $salary->select();
+
+        $today_date = explode('-', Date('Y-m-d'));
         $arraylength = count($person_data);
         $active_account = $account_info->where('use_status="on"')->field('id')->select();
         if($active_account) {
-            $table_title = $account_project->where('account_id='.$active_account[0]['id'].' and project_id>3')->field('project_id, project_name, project_unit')->order('project_id asc')->select();
+            $table_title = $account_project->where('account_id='.$active_account[0]['id'].' and project_id>5')->field('project_id, project_name, project_unit')->order('project_id asc')->select();
         }
         if($arraylength) {
             for($x=0;$x<$arraylength;$x++) {
@@ -378,13 +380,20 @@ class SalaryController extends Controller {
             $infoData = $infoData.'</tr>';
             for($x=0;$x<$arraylength;$x++) {
                 if($table_title) {
-                    $project_person_data = $project_person->where('account_id='.$active_account[0]['id'].' and emp_id='.$data[$x]['id'])->field('count')->order('project_id asc')->select();
+                    $project_person_data = $project_person->where('account_id='.$active_account[0]['id'].' and emp_id='.$data[$x]['id'].' and update_time like "'.$today_date[0].'-%"')->field('count, project_id')->order('project_id asc')->select();
                     $arraylength2 = count($project_person_data);
                 }
                 $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'元</td>';
                 if($arraylength2) {
-                    for($y=0;$y<$arraylength2;$y++) {
-                        $infoData = $infoData.'<td>'.$project_person_data[$y]['count'].$table_title[$y]['project_unit'].'</td>';
+                    $z = 0;
+                    for($y=0;$y<$arraylength2 && $z<count($table_title);) {
+                        if($project_person_data[$y]['project_id'] == $table_title[$z]['project_id']) {
+                            $infoData = $infoData.'<td>'.$project_person_data[$y]['count'].$table_title[$z]['project_unit'].'</td>';
+                            $y++;
+                        } else {
+                            $infoData = $infoData.'<td>0'.$table_title[$z]['project_unit'].'</td>';
+                        }
+                        $z++;
                     }
                 } else {
                     $arraylength2 = count($table_title);
@@ -460,14 +469,30 @@ class SalaryController extends Controller {
         }
 
         $active_account = $account_info->where('use_status="on"')->field('id')->select();
-        $arraylength2 = count($_POST['salary'][0]) - 1;
+        $arraylength2 = count($_POST['salary'][0]);
+        $mysql_id = $project_person->field('id')->select();
+        $arraylength3 = count($mysql_id);
+        for($z=0;$z<$arraylength3;$z++){
+            $ids[$z] = $mysql_id[$z]['id'];
+        }
+        $auto_id = 1;
+        $today_date = explode('-', Date('Y-m-d'));
         for($x=0;$x<$arraylength;$x++) {
-            $data2 = $project_person->where('emp_id='.$_POST['id'][$x].' and account_id='.$active_account[0]['id'])->order('project_id asc')->select();
-            if($data2) {
-                for($y=0;$y<$arraylength2;$y++) {
-                    $data2[$y]['count'] = $_POST['salary'][$x][$y+1];
-                    $project_person->where('id='.$data2[$y]['id'])->save($data2[$y]);
-                } 
+            $project_person->where('emp_id='.$_POST['id'][$x].' and account_id='.$active_account[0]['id'].' and update_time like "'.$today_date[0].'-%"')->delete();
+            for($y=1;$y<$arraylength2;$y++) {
+                while(in_array($auto_id, $ids)) {
+                    $auto_id++;
+                }
+                $data2['id'] = $auto_id;
+                $data2['account_id'] = $active_account[0]['id'];
+                $data2['project_id'] = $y + 5;
+                $data2['emp_id'] = $_POST['id'][$x];
+                $data2['count'] = $_POST['salary'][$x][$y];
+                $data2['update_time'] = Date('Y-m-d');
+                $ids[++$z] = $auto_id;
+                $auto_id = 1;
+
+                $project_person->add($data2);
             } 
         }
     }
@@ -640,17 +665,29 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
                         if((int)$cont_start_date[1]>=1 && (int)$cont_start_date[1]<=6) {
                             $emp_month_count = 6 - (int)$cont_start_date[1];
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
                         if((int)$cont_end_date[1]>=1 && (int)$cont_end_date[1]<=6) {
                             $emp_month_count = 6 - (int)$cont_end_date[1];
                         } else {
                             $emp_month_count = 6 + (int)$cont_end_date[1];
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
                         }
                     }
                 } else if($_POST['alternative'] == '下') {
@@ -660,17 +697,29 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
                         if((int)$cont_start_date[1]>=7 && (int)$cont_start_date[1]<=12) {
                             $emp_month_count = 13 - (int)$cont_start_date[1];
                         } else {
                             $emp_month_count = 6;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
                         if((int)$cont_end_date[1]>=7 && (int)$cont_end_date[1]<=12) {
                             $emp_month_count = 13 - (int)$cont_end_date[1] + 6;
                         } else {
                             $emp_month_count = 0;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
                         }
                     }
                 } else if($_POST['alternative'] == '第一') {
@@ -680,17 +729,29 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
                         if((int)$cont_start_date[1]>=1 && (int)$cont_start_date[1]<=3) {
                             $emp_month_count = 4 - (int)$cont_start_date[1];
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
                         if((int)$cont_end_date[1]>=1 && (int)$cont_end_date[1]<=3) {
                             $emp_month_count = (int)$cont_end_date[1];
                         } else {
                             $emp_month_count = 3;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
                         }
                     }
                 } else if($_POST['alternative'] == '第二') {
@@ -702,11 +763,20 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
                         if((int)$cont_start_date[1]<=6) {
                             $emp_month_count = 7 - (int)$cont_start_date[1] < 3?7 - (int)$cont_start_date[1]:3;
                         } else {
                             $emp_month_count = 0;
+                        }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
                         }
                     } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
                         if((int)$cont_end_date[1]>=4 && (int)$cont_end_date[1]<=6) {
@@ -715,6 +785,9 @@ class SalaryController extends Controller {
                             $emp_month_count = 0;
                         } else {
                             $emp_month_count = 3;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
                         }
                     }
                 } else if($_POST['alternative'] == '第三') {
@@ -726,11 +799,20 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
                         if((int)$cont_start_date[1]<=9) {
                             $emp_month_count = 10 - (int)$cont_start_date[1] < 3?10 - (int)$cont_start_date[1]:3;
                         } else {
                             $emp_month_count = 0;
+                        }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
                         }
                     } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
                         if((int)$cont_end_date[1]>=7 && (int)$cont_end_date[1]<=9) {
@@ -739,6 +821,9 @@ class SalaryController extends Controller {
                             $emp_month_count = 0;
                         } else {
                             $emp_month_count = 3;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
                         }
                     }
                 } else if($_POST['alternative'] == '第四') {
@@ -750,11 +835,20 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
                         if((int)$cont_start_date[1]<=9) {
                             $emp_month_count = 13 - (int)$cont_start_date[1] < 3?13 - (int)$cont_start_date[1]:3;
                         } else {
                             $emp_month_count = 0;
+                        }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
                         }
                     } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
                         if((int)$cont_end_date[1]>=10 && (int)$cont_end_date[1]<=12) {
@@ -762,11 +856,59 @@ class SalaryController extends Controller {
                         } else {
                             $emp_month_count = 0;
                         }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
+                    }
+                } else if($month_count == 1) {
+                    if((int)$cont_start_date[0] == (int)$_POST['year'] && (int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$_POST['alternative'] >= (int)$cont_start_date[1] && (int)$_POST['alternative'] <= (int)$cont_end_date[1]) {
+                            $emp_month_count = 1;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
+                    } else if((int)$cont_start_date[0] == (int)$_POST['year']) {
+                        if((int)$_POST['alternative'] >= (int)$cont_start_date[1]) {
+                            $emp_month_count = 1;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                        if((int)$cont_start_date[2] >= 15) {
+                            $emp_month_count--;
+                        }
+                    } else if((int)$cont_end_date[0] == (int)$_POST['year']) {
+                        if((int)$_POST['alternative'] <= (int)$cont_end_date[1]) {
+                            $emp_month_count = 1;
+                        } else {
+                            $emp_month_count = 0;
+                        }
+                        if((int)$cont_end_date[2] < 15) {
+                            $emp_month_count--;
+                        }
                     }
                 }
 
                 if($emp_month_count < 0) {
                     $emp_month_count = 0;
+                }
+                $emp_month_reward = $emp_month_count;
+                $emp_year_reward = 1;
+                $emp_month_res = $rnp_info->where('emp_id='.$person_data[$x]['id'].' and rnp_type="月奖金"'.$rnp_query)->select();
+                $emp_year_res = $rnp_info->where('emp_id='.$person_data[$x]['id'].' and rnp_type="年终奖"')->select();
+                if($emp_year_res) {
+                    $emp_year_reward = 0;
+                }
+                if($emp_month_res) {
+                    $emp_month_reward -= count($emp_month_res);
+                }
+                if($emp_month_reward < 0) {
+                    $emp_month_reward = 0;
                 }
                 $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'×'.$emp_month_count.'元</td>';
                 if($active_account) {
@@ -823,24 +965,33 @@ class SalaryController extends Controller {
                     $infoData = $infoData.'<td>'.$active_account_project[0]['project_money'].'×'.$first_count.'元</td>';
                     $infoData = $infoData.'<td>'.$active_account_project[1]['project_money'].'×'.$second_count.'元</td>';
                     $infoData = $infoData.'<td>'.$active_account_project[2]['project_money'].'×'.$third_count.'元</td>';
+                    $infoData = $infoData.'<td>'.$active_account_project[3]['project_money'].'×'.$emp_month_reward.'元</td>';
+                    $infoData = $infoData.'<td>'.$active_account_project[4]['project_money'].'×'.$emp_year_reward.'元</td>';
 
                     $arraylength2 = 0;
 
                     $project_person_data = $project_person->where('emp_id='.$data[$x]['id'].' and account_id='.$active_account[0]['id'].$project_person_query)->order('project_id asc')->select();
                     $arraylength2 = count($project_person_data);
                     if($arraylength2) {
-                        for($y=0;$y<$arraylength2;$y++) {
-                            $infoData = $infoData.'<td>'.$active_account_project[$y+3]['project_money'].'×'.$project_person_data[$y]['count'].'元</td>';
+                        $z = 0;
+                        for($y=0;$y<$arraylength2&&$z<count($active_account_project) - 5;) {
+                            if($active_account_project[$z+5]['project_id'] == $project_person_data[$y]['project_id']) {
+                                $infoData = $infoData.'<td>'.$active_account_project[$z+5]['project_money'].'×'.$project_person_data[$y]['count'].'元</td>';
+                                $y++;
+                            } else {
+                                $infoData = $infoData.'<td>'.$active_account_project[$z+5]['project_money'].'×0元</td>';
+                            }
+                            $z++;
                         }
                     } else {
                         $arraylength2 = count($active_account_project);
-                        for($y=3;$y<$arraylength2;$y++) {
+                        for($y=5;$y<$arraylength2;$y++) {
                             $infoData = $infoData.'<td>'.$active_account_project[$y]['project_money'].'×0元</td>';
                         }
                     }
                 }
                 $reward_data = $rnp_info->where('emp_id='.$data[$x]['id'].' and rnp_status="奖励"'.$rnp_query)->select();
-                $punish_data = $rnp_info->where('emp_id='.$data[$x]['id'].' and rnp_status="惩罚"'.$rnp_query)->select();
+                $punish_data = $rnp_info->where('emp_id='.$data[$x]['id'].' and rnp_status="惩罚" and rnp_type="其他"'.$rnp_query)->select();
 
                 $reward_money = 0;
                 $punish_money = 0;

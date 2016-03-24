@@ -311,7 +311,7 @@
 						</div>
 					</form>
 				</div>
-				<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
+				<input id="user_type" type="hidden" value="<?php echo ($_SESSION['usertype']); ?>">
 			</div>
 		</div>
 	</section>
@@ -326,7 +326,7 @@
 			});
 			main_nav.init();
 			baseInfo_save.init();
-			$('input[type=hidden]').remove();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

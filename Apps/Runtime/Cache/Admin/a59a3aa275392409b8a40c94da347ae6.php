@@ -46,10 +46,10 @@
 					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
 							</li>
 							<li>
@@ -57,7 +57,7 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown super">
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
@@ -130,12 +130,21 @@
 								<span>奖惩状况：</span>
 								<label class="normal">
 									<span>奖励</span>
-									<input type="radio" name="rnp_status" value="奖励" <?php echo ($rnp_reward); ?>>
+									<input type="radio" name="rnp_status" value="奖励" <?php echo ($rnp_reward); ?> onclick="return false">
 								</label>
 								<label class="normal">
 									<span>惩罚</span>
-									<input type="radio" name="rnp_status" value="惩罚" <?php echo ($rnp_punish); ?>>
+									<input type="radio" name="rnp_status" value="惩罚" <?php echo ($rnp_punish); ?> onclick="return false">
 								</label>
+							</label>
+							<label>
+								<span>奖惩类型：</span>
+								<select name="rnp_type" id="rnp_type">
+									<option value="工资">工资</option>
+									<option value="月奖金">月奖金</option>
+									<option value="年终奖">年终奖</option>
+									<option value="其他">其他</option>
+								</select>
 							</label>
 							<label>
 								<span>金额：</span>
@@ -149,7 +158,7 @@
 							</label>
 							<label>
 								<span>落实日期：</span>
-								<input type="text" name="rnp_date" class="short datepick" value="<?php echo ($rnp_date); ?>">
+								<input type="text" name="rnp_date" class="short datepick" value="<?php echo ($rnp_date); ?>" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">
@@ -159,7 +168,7 @@
 							</label>
 							<label>
 								<span>审批日期：</span>
-								<input type="text" name="manage_date" class="short datepick" value="<?php echo ($manage_date); ?>">
+								<input type="text" name="manage_date" class="short datepick" value="<?php echo ($manage_date); ?>" placeholder="YYYY-M-d">
 							</label>
 						</div>
 						<div class="single-row">
@@ -173,6 +182,7 @@
 						<?php echo ($employee_data_str); ?>
 					</div>
 					<div>
+						<input type="hidden" id="hidden_rnp_type" value="<?php echo ($rnp_type); ?>">
 						<input type="hidden" id="emp_data" value="<?php echo ($emp_data_str); ?>">
 						<input type="hidden" id="hidden_emp_id" value="<?php echo ($emp_id); ?>">
 					</div>
@@ -194,6 +204,13 @@
 			department_initData.init();
 			rnp_cancel.init();
 			rnp_save.init();
+			if($('input#hidden_rnp_type').val() != '') {
+				$('select#rnp_type').val($('input#hidden_rnp_type').val());
+			}
+			$('input#hidden_rnp_type').remove();
+			if($('input[name=rnp_status]:checked').val() == '奖励') {
+				$('select#rnp_type').html('<option value="其他">其他</option>');
+			}
 		}
 	</script>
 </body>

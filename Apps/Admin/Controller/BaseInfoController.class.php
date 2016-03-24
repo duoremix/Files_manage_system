@@ -924,6 +924,8 @@ class BaseInfoController extends Controller {
     public function BaseInfo_save() {
         $personal_info = M('personal_info');
         $duty_info = M('duty_info');
+        $account_project = M('account_project');
+        $project_person = M('project_person');
         $user = M('user');
         
         $upload = new \Think\Upload();
@@ -956,6 +958,32 @@ class BaseInfoController extends Controller {
         $data['password'] = md5('123456');
         $data['usertype'] = '普通用户';
         $user->add($data);
+
+        $account_project_data = $account_project->where('project_id>5')->select();
+        $arraylength= count($account_project_data);
+        if($arraylength) {
+            for($y=0;$y<$arraylength;$y++) {
+                $project_id = $project_person->field('id')->select();
+                $arraylength2 = count($project_id);
+                for($x=0;$x<$arraylength2;$x++){
+                    $ids2[$x] = $project_id[$x]['id'];
+                }
+                $auto_id2 = 1;
+                while(in_array($auto_id2, $ids2)) {
+                    $auto_id2++;
+                }
+                
+                $data2['id'] = $auto_id2;
+                $data2['account_id'] = $account_project_data[$y]['account_id'];
+                $data2['project_id'] = $account_project_data[$y]['project_id'];
+                $data2['emp_id'] = $auto_id;
+                $data2['count'] = 0;
+                $data2['update_time'] = Date('Y-m-d');
+
+                $project_person->add($data2);
+            }
+        }
+
 
         $personal_info->create();
         $res = $personal_info->add();

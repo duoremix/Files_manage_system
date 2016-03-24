@@ -189,6 +189,7 @@
 			department_initData.init();
 			attendence_cancel.init();
 			attendence_save.init();
+			$('input#user_type').remove();
 		}
 	</script>
 </body>

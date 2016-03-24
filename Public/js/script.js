@@ -617,6 +617,26 @@ var rnp_cancel = {
 
 var rnp_save = {
 	init: function() {
+		$('input[name=rnp_status]').on('change', function(event) {
+			if($(this).val() == '惩罚') {
+				$('select#rnp_type').html('<option value="工资">工资</option><option value="月奖金">月奖金</option><option value="年终奖">年终奖</option><option value="其他">其他</option>');
+				$('input[name=rnp_money]').val(0);
+				$('input[name=rnp_money]').attr('readonly', true);
+			} else {
+				$('select#rnp_type').html('<option value="其他">其他</option>');
+				$('input[name=rnp_money]').val('');
+				$('input[name=rnp_money]').attr('readonly', false);
+			}
+		});
+		$(document).on('change', 'select#rnp_type', function(event) {
+			if($(this).val() == '其他') {
+				$('input[name=rnp_money]').val('');
+				$('input[name=rnp_money]').attr('readonly', false);
+			} else {
+				$('input[name=rnp_money]').val(0);
+				$('input[name=rnp_money]').attr('readonly', true);
+			}
+		});
 		$('form input, textarea').on('blur change', function(event) {
 			if($(this).val() == '') {
 				$(this).css('border', '1px solid #f00');
@@ -1477,7 +1497,7 @@ var salary_setting = {
 						salary: $salary
 					},
 					success: function(data) {
-						// console.log(data);
+						console.log(data);
 						$('.cancel').prev().remove();
 						$('.cancel').remove();
 						$('.save').addClass('edit').removeClass('save');

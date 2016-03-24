@@ -137,6 +137,15 @@
 								</label>
 							</label>
 							<label>
+								<span>奖惩类型：</span>
+								<select name="rnp_type" id="rnp_type" disabled>
+									<option value="工资">工资</option>
+									<option value="月奖金">月奖金</option>
+									<option value="年终奖">年终奖</option>
+									<option value="其他">其他</option>
+								</select>
+							</label>
+							<label>
 								<span>金额：</span>
 								<input type="number" name="rnp_money" class="short" placeholder="0.00" value="<?php echo ($rnp_money); ?>" readonly>
 							</label>
@@ -172,6 +181,7 @@
 						<?php echo ($employee_data_str); ?>
 					</div>
 					<div>
+						<input type="hidden" id="hidden_rnp_type" value="<?php echo ($rnp_type); ?>">
 						<input type="hidden" id="emp_data" value="<?php echo ($emp_data_str); ?>">
 						<input type="hidden" id="fileId" value="<?php echo ($fileId); ?>">
 						<input type="hidden" id="hidden_emp_id" value="<?php echo ($emp_id); ?>">
@@ -192,6 +202,10 @@
 			rnp_cancel.init();
 			rnp_save.init();
 			rnp_delete.init();
+			if($('input#hidden_rnp_type').val() != '') {
+				$('select#rnp_type').val($('input#hidden_rnp_type').val());
+			}
+			$('input#hidden_rnp_type').remove();
 		}
 	</script>
 </body>

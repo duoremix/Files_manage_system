@@ -578,7 +578,7 @@ class PerformanceController extends Controller {
         $rnp_info->add();
         session_start();
         $_SESSION['newEmpId'] = $_POST['emp_id'];
-        $this->success('新建考勤档案成功！', 'rnp_list');
+        $this->success('新建奖惩档案成功！', 'rnp_list');
     }
 
     public function rnp_show() {
@@ -620,6 +620,11 @@ class PerformanceController extends Controller {
         if($rnp_data[0]['rnp_reason'] != '') {
             $data['rnp_reason'] = $rnp_data[0]['rnp_reason'];
             $this->assign('rnp_reason', $data['rnp_reason']);
+        }
+
+        if($rnp_data[0]['rnp_type'] != '') {
+            $data['rnp_type'] = $rnp_data[0]['rnp_type'];
+            $this->assign('rnp_type', $data['rnp_type']);
         }
 
         if($rnp_data[0]['rnp_money'] != '') {
@@ -691,6 +696,11 @@ class PerformanceController extends Controller {
         if($rnp_data[0]['rnp_reason'] != '') {
             $data['rnp_reason'] = $rnp_data[0]['rnp_reason'];
             $this->assign('rnp_reason', $data['rnp_reason']);
+        }
+
+        if($rnp_data[0]['rnp_type'] != '') {
+            $data['rnp_type'] = $rnp_data[0]['rnp_type'];
+            $this->assign('rnp_type', $data['rnp_type']);
         }
 
         if($rnp_data[0]['rnp_money'] != '') {

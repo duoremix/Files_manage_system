@@ -127,12 +127,18 @@
 								<span>奖惩状况：</span>
 								<label class="normal">
 									<span>奖励</span>
-									<input type="radio" name="rnp_status" value="奖励">
+									<input type="radio" name="rnp_status" value="奖励" checked>
 								</label>
 								<label class="normal">
 									<span>惩罚</span>
 									<input type="radio" name="rnp_status" value="惩罚">
 								</label>
+							</label>
+							<label>
+								<span>奖惩类型：</span>
+								<select name="rnp_type" id="rnp_type">
+									<option value="其他">其他</option>
+								</select>
 							</label>
 							<label>
 								<span>金额：</span>

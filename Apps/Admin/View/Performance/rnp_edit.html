@@ -130,12 +130,21 @@
 								<span>奖惩状况：</span>
 								<label class="normal">
 									<span>奖励</span>
-									<input type="radio" name="rnp_status" value="奖励" {$rnp_reward}>
+									<input type="radio" name="rnp_status" value="奖励" {$rnp_reward} onclick="return false">
 								</label>
 								<label class="normal">
 									<span>惩罚</span>
-									<input type="radio" name="rnp_status" value="惩罚" {$rnp_punish}>
+									<input type="radio" name="rnp_status" value="惩罚" {$rnp_punish} onclick="return false">
 								</label>
+							</label>
+							<label>
+								<span>奖惩类型：</span>
+								<select name="rnp_type" id="rnp_type">
+									<option value="工资">工资</option>
+									<option value="月奖金">月奖金</option>
+									<option value="年终奖">年终奖</option>
+									<option value="其他">其他</option>
+								</select>
 							</label>
 							<label>
 								<span>金额：</span>
@@ -173,6 +182,7 @@
 						{$employee_data_str}
 					</div>
 					<div>
+						<input type="hidden" id="hidden_rnp_type" value="{$rnp_type}">
 						<input type="hidden" id="emp_data" value="{$emp_data_str}">
 						<input type="hidden" id="hidden_emp_id" value="{$emp_id}">
 					</div>
@@ -194,6 +204,13 @@
 			department_initData.init();
 			rnp_cancel.init();
 			rnp_save.init();
+			if($('input#hidden_rnp_type').val() != '') {
+				$('select#rnp_type').val($('input#hidden_rnp_type').val());
+			}
+			$('input#hidden_rnp_type').remove();
+			if($('input[name=rnp_status]:checked').val() == '奖励') {
+				$('select#rnp_type').html('<option value="其他">其他</option>');
+			}
 		}
 	</script>
 </body>
