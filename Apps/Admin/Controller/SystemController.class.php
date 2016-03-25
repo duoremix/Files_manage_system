@@ -16,9 +16,43 @@ class SystemController extends Controller {
 
 	public function systemInit() {
 		if(md5($_POST['password']) == md5('admin')) {
-			echo 'success';
+            $account_info = M('account_info');
+            $account_project = M('account_project');
+            $attendence_info = M('attendence_info');
+            $date_record = M('date_record');
+            $department = M('department');
+            $duty_info = M('duty_info');
+            $folk_type = M('folk_type');
+            $native_type = M('native_type');
+            $personal_info = M('personal_info');
+            $project_person = M('project_person');
+            $rnp_info = M('rnp_info');
+            $salary = M('salary');
+            $train_info = M('train_info');
+            $train_person = M('train_person');
+            $use_form = M('use_form');
+            $user = M('user');
+
+            $res1 = $account_info->where('id!=0')->delete();
+            $res2 = $account_project->where('id!=0')->delete();
+            $res3 = $attendence_info->where('id!=0')->delete();
+            $res4 = $date_record->where('id!=0')->delete();
+            $res5 = $department->where('id!=0')->delete();
+            $res6 = $duty_info->where('id!=0')->delete();
+            $res7 = $folk_type->where('id!=0')->delete();
+            $res8 = $native_type->where('id!=0')->delete();
+            $res9 = $personal_info->where('id!=0')->delete();
+            $res10 = $project_person->where('id!=0')->delete();
+            $res11 = $rnp_info->where('id!=0')->delete();
+            $res12 = $salary->where('id!=0')->delete();
+            $res13 = $train_info->where('id!=0')->delete();
+            $res14 = $train_person->where('id!=0')->delete();
+            $res15 = $use_form->where('id!=0')->delete();
+            $res16 = $user->where('id!=0')->delete();
+
+            echo "success";
 		} else {
-            echo 'error';
+            echo 'password error';
         }
 	}
 

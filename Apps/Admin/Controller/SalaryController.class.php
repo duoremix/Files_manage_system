@@ -544,7 +544,7 @@ class SalaryController extends Controller {
         $this->display('statistic');
     }
 
-    public function statistic_change() { 
+    public function statistic_change() {
         $personal_info = M('personal_info');    //个人信息表
         $duty_info = M('duty_info');    //职务信息表
         $attendence_info = M('attendence_info');    //出勤信息表
@@ -597,13 +597,20 @@ class SalaryController extends Controller {
         }
         // echo $project_person_query.' jfjj '.$_POST['alternative'];
         // $project_person_data = $project_person->where('update_time like "'.$_POST['year'].'-01%" or update_time like "'.$_POST['year'].'-02%" or update_time like "'.$_POST['year'].'-03%"')->select();
-        $person_data = $personal_info->select();
-        $duty_data = $duty_info->select();
-        $salary_data = $salary->select();
+        if($_SESSION['usertype'] == '超级管理员') {
+            $person_data = $personal_info->select();
+            $duty_data = $duty_info->select();
+            $salary_data = $salary->select();
+        } else {
+            $person_data = $personal_info->where('id='.$_SESSION['newEmpId'])->select();
+            $duty_data = $duty_info->where('id='.$_SESSION['newEmpId'])->select();
+            $salary_data = $salary->where('id='.$_SESSION['newEmpId'])->select();
+        }
 
         $arraylength = count($person_data);
         if($arraylength) {
             for($x=0;$x<$arraylength;$x++) {
+                $sum = 0;
                 if($person_data[$x]['id'] == $duty_data[$x]['id']) {
                     $data[$x]['id'] = $person_data[$x]['id'];
                     $data[$x]['fm_num'] = $person_data[$x]['fm_num'];
@@ -635,7 +642,7 @@ class SalaryController extends Controller {
                 }
             }
 
-            $infoData = $infoData.'<td>奖励</td><td>惩罚</td></tr>';
+            $infoData = $infoData.'<td>奖励</td><td>惩罚</td><td>总计</td></tr>';
 
             $arraylength = count($data);
             for($x=0;$x<$arraylength;$x++) {
@@ -911,6 +918,7 @@ class SalaryController extends Controller {
                     $emp_month_reward = 0;
                 }
                 $infoData = $infoData.'<tr id='.$data[$x]['id'].'>'.'<td>'.$data[$x]['fm_num'].'</td>'.'<td>'.$data[$x]['emp_name'].'</td>'.'<td>'.$data[$x]['emp_sex'].'</td>'.'<td>'.$data[$x]['emp_department'].'</td>'.'<td>'.$data[$x]['emp_job'].'</td>'.'<td>'.$data[$x]['salary'].'×'.$emp_month_count.'元</td>';
+                $sum = $data[$x]['salary']*(int)$emp_month_count;
                 if($active_account) {
                     $first_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="缺勤"'.$attendence_query)->select());
                     $second_count = count($attendence_info->where('emp_id='.$data[$x]['id'].' and attendence_status="迟到"'.$attendence_query)->select());
@@ -962,12 +970,14 @@ class SalaryController extends Controller {
                         $third_count += 0;
                     }
                     
-                    $infoData = $infoData.'<td>'.$active_account_project[0]['project_money'].'×'.$first_count.'元</td>';
-                    $infoData = $infoData.'<td>'.$active_account_project[1]['project_money'].'×'.$second_count.'元</td>';
-                    $infoData = $infoData.'<td>'.$active_account_project[2]['project_money'].'×'.$third_count.'元</td>';
+                    $infoData = $infoData.'<td>-'.$active_account_project[0]['project_money'].'×'.$first_count.'元</td>';
+                    $infoData = $infoData.'<td>-'.$active_account_project[1]['project_money'].'×'.$second_count.'元</td>';
+                    $infoData = $infoData.'<td>-'.$active_account_project[2]['project_money'].'×'.$third_count.'元</td>';
                     $infoData = $infoData.'<td>'.$active_account_project[3]['project_money'].'×'.$emp_month_reward.'元</td>';
                     $infoData = $infoData.'<td>'.$active_account_project[4]['project_money'].'×'.$emp_year_reward.'元</td>';
 
+                    $sum = $sum - $active_account_project[0]['project_money']*$first_count - $active_account_project[1]['project_money']*$second_count - $active_account_project[2]['project_money']*$third_count;
+                    $sum = $sum + $active_account_project[3]['project_money']*$emp_month_reward + $active_account_project[4]['project_money']*$emp_year_reward;
                     $arraylength2 = 0;
 
                     $project_person_data = $project_person->where('emp_id='.$data[$x]['id'].' and account_id='.$active_account[0]['id'].$project_person_query)->order('project_id asc')->select();
@@ -976,10 +986,23 @@ class SalaryController extends Controller {
                         $z = 0;
                         for($y=0;$y<$arraylength2&&$z<count($active_account_project) - 5;) {
                             if($active_account_project[$z+5]['project_id'] == $project_person_data[$y]['project_id']) {
-                                $infoData = $infoData.'<td>'.$active_account_project[$z+5]['project_money'].'×'.$project_person_data[$y]['count'].'元</td>';
+                                if($active_account_project[$z+5]['project_type'] == '扣除'){
+                                    $flag = '-';
+                                    $sum = $sum - $active_account_project[$z+5]['project_money']*$project_person_data[$y]['count'];
+                                } else {
+                                    $flag = '';
+                                    $sum = $sum + $active_account_project[$z+5]['project_money']*$project_person_data[$y]['count'];
+                                }
+                                $infoData = $infoData.'<td>'.$flag.$active_account_project[$z+5]['project_money'].'×'.$project_person_data[$y]['count'].'元</td>';
+
                                 $y++;
                             } else {
-                                $infoData = $infoData.'<td>'.$active_account_project[$z+5]['project_money'].'×0元</td>';
+                                if($active_account_project[$z+5]['project_type'] == '扣除'){
+                                    $flag = '-';
+                                } else {
+                                    $flag = '';
+                                }
+                                $infoData = $infoData.'<td>'.$flag.$active_account_project[$z+5]['project_money'].'×0元</td>';
                             }
                             $z++;
                         }
@@ -1010,7 +1033,8 @@ class SalaryController extends Controller {
                     }
                 }
 
-                $infoData = $infoData.'<td>'.$reward_money.'元</td><td>'.$punish_money.'元</td></tr>';
+                $sum = $sum + $reward_money - $punish_money;
+                $infoData = $infoData.'<td>'.$reward_money.'元</td><td>-'.$punish_money.'元</td><td>'.$sum.'</td></tr>';
             }
             $infoData = $infoData.'</table>';
         } else {

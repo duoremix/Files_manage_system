@@ -1214,14 +1214,18 @@ var system_init = {
 						password: $('input#password').val()
 					},
 					success: function(data) {
-						if(data == 'error') {
+						if(data == 'password error') {
 							alert('密码错误！');
 						} else if(data == 'success') {
-							alert(data);
+							alert('初始化成功！现返回登录界面');
+							window.location = '../../'
+						} else {
+							alert('出现未知错误！');
 						}
 					}
 				});
 			}
+			return false;
 		});
 	}
 }
