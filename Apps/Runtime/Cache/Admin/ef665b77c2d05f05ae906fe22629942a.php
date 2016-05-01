@@ -50,7 +50,7 @@
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li class="super">
-								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">工资内容管理</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
@@ -61,7 +61,7 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业部门设置</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
@@ -75,7 +75,7 @@
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
 							<li class="super">
-								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/user_add">新增管理员</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
@@ -121,7 +121,7 @@
 									<span>性别：</span>
 									<label class="normal">
 										<span>男</span>
-										<input type="radio" name="emp_sex" value="男" <?php echo ($emp_sex_male); ?>>
+										<input type="radio" name="emp_sex" value="男" <?php echo ($emp_sex_male); ?> checked>
 									</label>
 									<label class="normal">
 										<span>女</span>
@@ -175,7 +175,7 @@
 									<span>政治面貌：</span>
 									<label class="normal">
 										<span>党员</span>
-										<input type="radio" name="emp_politics" value="党员" <?php echo ($emp_politics_dangyuan); ?>>
+										<input type="radio" name="emp_politics" value="党员" <?php echo ($emp_politics_dangyuan); ?> checked>
 									</label>
 									<label class="normal">
 										<span>群众</span>
@@ -186,7 +186,7 @@
 									<span>婚姻状况：</span>
 									<label class="normal">
 										<span>未婚</span>
-										<input type="radio" name="emp_marriage" value="未婚" <?php echo ($emp_marriage_unmarried); ?>>
+										<input type="radio" name="emp_marriage" value="未婚" <?php echo ($emp_marriage_unmarried); ?> checked>
 									</label>
 									<label class="normal">
 										<span>已婚</span>

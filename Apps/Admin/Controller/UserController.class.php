@@ -25,7 +25,7 @@ class UserController extends Controller {
 
 		$user = M('user');
 
-		$user_data = $user->field('id')->select();
+		$user_data = $user->where('usertype="超级管理员"')->field('usertype')->select();
 		if($user_data) {
 			$res = $user->where($data)->select();
 			$res2 = $user->where($data2)->select();
@@ -107,4 +107,13 @@ class UserController extends Controller {
     	$user->add($data[0]);
     	$this->success('修改密码成功！', 'password_edit');
     }
+
+    public function initPwdSetting() {
+        $user = M('user');
+        $data['id'] = 0;
+        $data['password'] = md5($_POST['password']);
+        $data['username'] = 'admin';
+        $user->add($data);
+    }
+
 }

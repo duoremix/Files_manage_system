@@ -50,7 +50,7 @@
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li class="super">
-								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">工资内容管理</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
@@ -61,7 +61,7 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业部门设置</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
@@ -75,7 +75,7 @@
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
 							<li class="super">
-								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/user_add">新增管理员</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
@@ -89,7 +89,7 @@
 					<ul class="mybreadcrumb">
 						<li><a href="/Files_manage_system/Admin/Index">主页</a></li>
 						<li>系统维护</li>
-						<li>企业架构设置</li>
+						<li>企业部门设置</li>
 					</ul>
 				</div>
 				<div class="single-row">
@@ -144,6 +144,9 @@
 							</tr>
 						</table> -->
 					</div>
+				</div>
+				<div class="single-row">
+					<a id="save" class="btn btn-primary" style="display:none">保存更改</a>
 				</div>
 				<input id="user_type" type="hidden" value="<?php echo ($_SESSION['usertype']); ?>">
 			</div>

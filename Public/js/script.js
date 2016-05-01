@@ -32,6 +32,52 @@ var login = {
 
 //登录
 
+var initPwdSetting = {
+	init: function() {
+		if($('#initPwdFlag').val() == false) {
+			$('.white-bg').fadeIn();
+			$('input').on('blur', function(event) {
+				if($(this).val() == '') {
+					$(this).css('border', '1px solid #f00');
+				} else {
+					$(this).css('border', '1px solid #aaa');
+				}
+				if($(this).attr('id') == 'r_password' && $(this).val() != '') {
+					if($('#password').val() != $('#r_password').val()) {
+						$(this).css('border', '1px solid #f00');
+						$('span.tips').show();
+					} else {
+						$(this).css('border', '1px solid #aaa');
+						$('span.tips').hide();
+					}	
+				}
+			});
+			$('a#submit').on('click', function(event) {
+				if($('#password').val() == $('#r_password').val()) {
+					$.ajax({
+							url: '../User/initPwdSetting',
+							type: 'POST',
+							data: {
+								password: $('#password').val()
+							},
+							success: function(data) {
+								console.log(data);
+								alert('密码设置成功！现在跳转至企业部门设置！');
+								window.location = '../System/company_frame';
+							}
+						});
+				} else {
+					alert('两次输入的密码不同');
+				}
+			});
+		} else {
+			$('.white-bg').remove();
+		}
+	}
+}
+
+//设置初始密码
+
 var baseInfo_multiDelete = {
 	init: function() {
 		$flag = false;
@@ -708,7 +754,7 @@ var train_save = {
 		$('a#save').on('click', function(event) {
 			$flag = false;
 			$('form input').each(function(index, el) {
-				if($(this).val() == '') {
+				if($(this).val() == '' && $(this).attr('id')!='train_person') {
 					$flag = true;
 					$(this).css('border', '1px solid #f00');
 				}
@@ -1221,6 +1267,7 @@ var system_init = {
 							window.location = '../../'
 						} else {
 							alert('出现未知错误！');
+							console.log(data);
 						}
 					}
 				});
@@ -1234,6 +1281,7 @@ var system_init = {
 
 var account_setting = {
 	init: function() {
+		$('.used').text('取消使用');
 		$('.project_add').on('click', function(event) {
 			$('a.project_edit_confirm').addClass('project_add_confirm').removeClass('project_edit_confirm');
 			if($('.shown').length) {
@@ -1273,11 +1321,40 @@ var account_setting = {
 		$(document).on('click', 'a.use', function(event) {
 			$_this = $(this);
 			$id = parseInt($_this.parents('tr').attr('id'));
+			$this_class = $(this).attr('class'); 
 			$.ajax({
 				url: '../Salary/use_status_change',
 				type: 'POST',
 				data: {
-					id: $id
+					id: $id,
+					class: $this_class
+				},
+				success: function(data) {
+					$('tr').each(function(index, el) {
+						if($(this).find('td').eq(2).text() == '正在使用') {
+							$(this).find('td').eq(2).text('未使用');
+							$(this).find('td').eq(3).find('a').eq(0).text('使用');
+						}
+					});
+					$_this.parents('tr').find('td').eq(2).text('正在使用');
+					$('.used').text('使用');
+					$('.used').removeClass('used').addClass('use');
+					$_this.removeClass('use').addClass('used');
+					$_this.text('取消使用');
+				}
+			});
+		});
+
+		$(document).on('click', 'a.used', function(event) {
+			$_this = $(this);
+			$id = parseInt($_this.parents('tr').attr('id'));
+			$this_class = $(this).attr('class'); 
+			$.ajax({
+				url: '../Salary/use_status_change',
+				type: 'POST',
+				data: {
+					id: $id,
+					class: $this_class
 				},
 				success: function(data) {
 					$('tr').each(function(index, el) {
@@ -1285,9 +1362,9 @@ var account_setting = {
 							$(this).find('td').eq(2).text('未使用');
 						}
 					});
-					$_this.parents('tr').find('td').eq(2).text('正在使用');
-					$('.used').removeClass('used').addClass('use');
-					$_this.removeClass('use').addClass('used');
+					$_this.parents('tr').find('td').eq(2).text('未使用');
+					$_this.text('使用');
+					$_this.removeClass('used').addClass('use');
 				}
 			});
 		});
@@ -1584,9 +1661,52 @@ var statistic = {
 				success: function(data) {
 					// console.log(data);
 					$('.table_scroll').html(data);
+					$('#lowest_salary').val('');
+					$('#highest_salary').val('');
 				}
 			});
 
+		});
+
+		$('.salary_select').on('click', function(event) {
+			if($('table').length) {
+				if($('#lowest_salary').val() == '' && $('#highest_salary').val() == '') {
+
+				} else if($('#lowest_salary').val() != '' && $('#highest_salary').val() == '') {
+					$('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if(parseFloat($(this).find('td').eq(5).text().split('×')[0]) >= $('#lowest_salary').val()) {
+								$(this).removeClass('hide');
+							} else {
+								$(this).removeClass('hide').addClass('hide');
+							}
+						}
+					});
+				} else if($('#highest_salary').val() != '' && $('#lowest_salary').val() == '') {
+					$('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if(parseFloat($(this).find('td').eq(5).text().split('×')[0]) <= $('#highest_salary').val()) {
+								$(this).removeClass('hide');
+							} else {
+								$(this).removeClass('hide').addClass('hide');
+							}
+						}
+					});
+				} else {
+					$('table tr').each(function(index, el) {
+						if($(this).index() != 0) {
+							if(	parseFloat($(this).find('td').eq(5).text().split('×')[0]) >= $('#lowest_salary').val() &&
+								parseFloat($(this).find('td').eq(5).text().split('×')[0]) <= $('#highest_salary').val()) {
+								$(this).removeClass('hide');
+							} else {
+								$(this).removeClass('hide').addClass('hide');
+							}
+						}
+					});
+				}
+			} else {
+				alert('请先生成报表！');
+			}
 		});
 	}
 }

@@ -30,11 +30,11 @@ class SalaryController extends Controller {
                     $use_status = '未使用';
                     $use_a = '<a class="use" href="#">使用</a>';
                 }
-                $infoData = $infoData.'<tr id='.$account_info_data[$x]['id'].'><td>'.($x+1).'</td><td>'.$account_info_data[$x]['account_name'].'</td><td>'.$use_status.'</td><td>'.$use_a.'<a class="show" href="#">查看</a><a class="account_delete" href="#">删除</a></td></tr>';
+                $infoData = $infoData.'<tr id='.$account_info_data[$x]['id'].'><td>'.($x+1).'</td><td>'.$account_info_data[$x]['account_name'].'</td><td>'.$use_status.'</td><td>'.$use_a.'<a class="account_edit" href="#">修改</a><a class="show" href="#">查看</a><a class="account_delete" href="#">删除</a></td></tr>';
             }
             $infoData = $infoData.'</table>';
         } else {
-            $infoData = '<p class="form-title">尚未建立账套</p>';
+            $infoData = '<p>尚未建立账套</p>';
         }
         $this->assign('infoData', $infoData);
         $this->assign('usertype', $_SESSION['usertype']);
@@ -133,12 +133,12 @@ class SalaryController extends Controller {
         for($x=0;$x<$arraylength;$x++) {
             if($account_info_data[$x]['use_status'] == 'on') {
                 $use_status = '正在使用';
-                $use_a = '<a class="used" href="#">使用</a>';
+                $use_a = '<a class="used" href="#">取消使用</a>';
             } else {
                 $use_status = '未使用';
                 $use_a = '<a class="use" href="#">使用</a>';
             }
-            $infoData = $infoData.'<tr id='.$account_info_data[$x]['id'].'><td>'.($x+1).'</td><td>'.$account_info_data[$x]['account_name'].'</td><td>'.$use_status.'</td><td>'.$use_a.'<a class="show" href="#">查看</a><a class="account_delete" href="#">删除</a></td></tr>';
+            $infoData = $infoData.'<tr id='.$account_info_data[$x]['id'].'><td>'.($x+1).'</td><td>'.$account_info_data[$x]['account_name'].'</td><td>'.$use_status.'</td><td>'.$use_a.'<a class="account_edit" href="#">修改</a><a class="show" href="#">查看</a><a class="account_delete" href="#">删除</a></td></tr>';
         }
         $infoData = $infoData.'</table>';
         echo $infoData;
@@ -157,7 +157,12 @@ class SalaryController extends Controller {
                 } else {
                     $delete_operation = '<a class="project_delete" href="#">删除</a>';
                 }
-                $infoData = $infoData.'<tr><td>'.$account_project_data[$x]['project_id'].'</td><td>'.$account_project_data[$x]['project_name'].'</td><td>'.$account_project_data[$x]['project_unit'].'</td><td>'.$account_project_data[$x]['project_type'].'</td><td>'.$account_project_data[$x]['project_money'].'元</td><td><a class="project_edit" href="#">修改</a>'.$delete_operation.'</td></tr>';
+                if($account_project_data[$x]['project_unit'] == '次') {
+                    $infoData = $infoData.'<tr><td>'.$account_project_data[$x]['project_id'].'</td><td>'.$account_project_data[$x]['project_name'].'</td><td>'.$account_project_data[$x]['project_unit'].'</td><td>'.$account_project_data[$x]['project_type'].'</td><td>'.$account_project_data[$x]['project_money'].'元</td><td><a class="project_edit" href="#">修改</a>'.$delete_operation.'</td></tr>';
+                } else {
+                    $infoData = $infoData.'<tr><td>'.$account_project_data[$x]['project_id'].'</td><td>'.$account_project_data[$x]['project_name'].'</td><td>'.$account_project_data[$x]['project_unit'].'/次</td><td>'.$account_project_data[$x]['project_type'].'</td><td>'.$account_project_data[$x]['project_money'].'元</td><td><a class="project_edit" href="#">修改</a>'.$delete_operation.'</td></tr>';
+                }
+                
             }
             $infoData = $infoData.'</table>';
         } else {
@@ -195,17 +200,25 @@ class SalaryController extends Controller {
     public function use_status_change() {
         $id = $_POST['id'];
         $account_info = M('account_info');
-        $old_use = $account_info->where(array('use_status'=>'on'))->select();
-        $new_use = $account_info->where('id='.$id)->select();
-        $account_info->where(array('use_status'=>'on'))->delete();
-        $account_info->where('id='.$id)->delete();
-        if($old_use) {
-            $old_use[0]['use_status'] = 'off';
-            $account_info->add($old_use[0]);
-        }
-        if($new_use) {
-            $new_use[0]['use_status'] = 'on';  
-            $account_info->add($new_use[0]);
+        if($_POST['class'] == 'use') {
+            $old_use = $account_info->where(array('use_status'=>'on'))->select();
+            $new_use = $account_info->where('id='.$id)->select();
+            $account_info->where(array('use_status'=>'on'))->delete();
+            $account_info->where('id='.$id)->delete();
+            if($old_use) {
+                $old_use[0]['use_status'] = 'off';
+                $account_info->add($old_use[0]);
+            }
+            if($new_use) {
+                $new_use[0]['use_status'] = 'on';  
+                $account_info->add($new_use[0]);
+            }
+        } else if($_POST['class'] == 'used') {
+            $old_use = $account_info->where(array('use_status'=>'on'))->select();
+            if($old_use) {
+                $old_use[0]['use_status'] = 'off';
+                $account_info->where(array('use_status'=>'on'))->save($old_use[0]);
+            }
         }
     }
 
@@ -297,7 +310,11 @@ class SalaryController extends Controller {
                 } else {
                     $delete_operation = '<a class="project_delete" href="#">删除</a>';
                 }
-                $infoData = $infoData.'<tr><td>'.$account_project_data[$x]['project_id'].'</td><td>'.$account_project_data[$x]['project_name'].'</td><td>'.$account_project_data[$x]['project_unit'].'</td><td>'.$account_project_data[$x]['project_type'].'</td><td>'.$account_project_data[$x]['project_money'].'元</td><td><a class="project_edit" href="#">修改</a>'.$delete_operation.'</td></tr>';
+                if($account_project_data[$x]['project_unit'] == '次') {
+                    $infoData = $infoData.'<tr><td>'.$account_project_data[$x]['project_id'].'</td><td>'.$account_project_data[$x]['project_name'].'</td><td>'.$account_project_data[$x]['project_unit'].'</td><td>'.$account_project_data[$x]['project_type'].'</td><td>'.$account_project_data[$x]['project_money'].'元</td><td><a class="project_edit" href="#">修改</a>'.$delete_operation.'</td></tr>';
+                } else {
+                    $infoData = $infoData.'<tr><td>'.$account_project_data[$x]['project_id'].'</td><td>'.$account_project_data[$x]['project_name'].'</td><td>'.$account_project_data[$x]['project_unit'].'/次</td><td>'.$account_project_data[$x]['project_type'].'</td><td>'.$account_project_data[$x]['project_money'].'元</td><td><a class="project_edit" href="#">修改</a>'.$delete_operation.'</td></tr>';
+                }
             }
             $infoData = $infoData.'</table>';
         } else {
@@ -388,17 +405,17 @@ class SalaryController extends Controller {
                     $z = 0;
                     for($y=0;$y<$arraylength2 && $z<count($table_title);) {
                         if($project_person_data[$y]['project_id'] == $table_title[$z]['project_id']) {
-                            $infoData = $infoData.'<td>'.$project_person_data[$y]['count'].$table_title[$z]['project_unit'].'</td>';
+                            $infoData = $infoData.'<td>'.$project_person_data[$y]['count'].'次</td>';
                             $y++;
                         } else {
-                            $infoData = $infoData.'<td>0'.$table_title[$z]['project_unit'].'</td>';
+                            $infoData = $infoData.'<td>0次</td>';
                         }
                         $z++;
                     }
                 } else {
                     $arraylength2 = count($table_title);
                     for($y=0;$y<$arraylength2;$y++) {
-                        $infoData = $infoData.'<td>0'.$table_title[$y]['project_unit'].'</td>';
+                        $infoData = $infoData.'<td>0次</td>';
                     }
                 }
                 $infoData = $infoData.'</tr>';
@@ -635,7 +652,7 @@ class SalaryController extends Controller {
                 $active_account_project = $account_project->where('account_id='.$active_account[0]['id'])->order('project_id asc')->select();
                 $arraylength = count($active_account_project);
             }
-            $infoData = '<table class="table table-striped"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>基本工资</td>';
+            $infoData = '<table class="table table-striped" id="statistic"><tr><td>档案编号</td><td>姓名</td><td>性别</td><td>部门</td><td>职务</td><td>基本工资</td>';
             if($arraylength) {
                 for($x=0;$x<$arraylength;$x++) {
                     $infoData = $infoData.'<td>'.$active_account_project[$x]['project_name'].'</td>';
@@ -911,6 +928,9 @@ class SalaryController extends Controller {
                 if($emp_year_res) {
                     $emp_year_reward = 0;
                 }
+                if($_POST['alternative'] != '') {
+                    $emp_year_reward = 0;
+                }
                 if($emp_month_res) {
                     $emp_month_reward -= count($emp_month_res);
                 }
@@ -967,7 +987,7 @@ class SalaryController extends Controller {
                             }
                         }
                     } else {
-                        $third_count += 0;
+                        $third_count = 0;
                     }
                     
                     $infoData = $infoData.'<td>-'.$active_account_project[0]['project_money'].'×'.$first_count.'元</td>';

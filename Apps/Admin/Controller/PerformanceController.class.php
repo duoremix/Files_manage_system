@@ -57,7 +57,7 @@ class PerformanceController extends Controller {
                 for($x=0;$x<$arraylength2;$x++) {
                     $this_person_data = $personal_info->where('id='.$uncheck_data[$x]['emp_id'])->select();
                     $this_duty_data = $duty_info->where('id='.$uncheck_data[$x]['emp_id'])->select();
-                    $uncheck_data_str = $uncheck_data_str.'<tr id='.$uncheck_data[$x]['id'].'><td>'.$uncheck_data[$x]['fm_num'].'</td><td>No.'.$uncheck_data[$x]['emp_id'].'</td><td>'.$this_person_data[$x]['emp_name'].'</td><td>'.$this_duty_data[$x]['emp_department'].'</td><td>'.$this_duty_data[$x]['emp_job'].'</td><td>'.$uncheck_data[$x]['attendence_status'].'</td><td>'.$uncheck_data[$x]['attendence_reason'].'</td><td>'.$uncheck_data[$x]['attendence_start_date'].'</td><td>'.$uncheck_data[$x]['attendence_end_date'].'</td><td>待审批</td><td>'.$uncheck_data[$x]['manage_person'].'</td><td>'.$uncheck_data[$x]['manage_date'].'</td><td><a class="edit" href="#">查看</a></td></tr>';
+                    $uncheck_data_str = $uncheck_data_str.'<tr id='.$uncheck_data[$x]['id'].'><td>'.$uncheck_data[$x]['fm_num'].'</td><td>No.'.$uncheck_data[$x]['emp_id'].'</td><td>'.$this_person_data[0]['emp_name'].'</td><td>'.$this_duty_data[0]['emp_department'].'</td><td>'.$this_duty_data[0]['emp_job'].'</td><td>'.$uncheck_data[$x]['attendence_status'].'</td><td>'.$uncheck_data[$x]['attendence_reason'].'</td><td>'.$uncheck_data[$x]['attendence_start_date'].'</td><td>'.$uncheck_data[$x]['attendence_end_date'].'</td><td>待审批</td><td>'.$uncheck_data[$x]['manage_person'].'</td><td>'.$uncheck_data[$x]['manage_date'].'</td><td><a class="edit" href="#">查看</a></td></tr>';
                 }
             } else {
                 $uncheck_data_str = '<p>没有待审批的假条</p>';
@@ -167,6 +167,7 @@ class PerformanceController extends Controller {
     		$_SESSION['newFileId'] = $_POST['id'];
     	}
     	$attendence_info = M('Attendence_info');
+        $personal_info = M('personal_info');
     	$attendence_data = $attendence_info->where('id='.$_SESSION['newFileId'])->select();
     	
         if($attendence_data[0]['department'] != '') {
@@ -174,14 +175,17 @@ class PerformanceController extends Controller {
             $this->assign('department', $data['department']);
         }
 
-        if($attendence_data[0]['employee'] != '') {
-            $data['employee'] = $attendence_data[0]['employee'];
-            $this->assign('employee', $data['employee']);
-        }
+        // if($attendence_data[0]['employee'] != '') {
+        //     $data['employee'] = $attendence_data[0]['employee'];
+        //     $this->assign('employee', $data['employee']);
+        // }
 
         if($attendence_data[0]['emp_id'] != '') {
             $data['emp_id'] = $attendence_data[0]['emp_id'];
             $this->assign('emp_id', $data['emp_id']);
+            $data2 = $personal_info->where('id='.(int)$data['emp_id'])->field('emp_name')->select();
+            $this->assign('employee', $data2[0]['emp_name']);
+
         }
 
         if($attendence_data[0]['attendence_status'] != '') {
@@ -322,6 +326,7 @@ class PerformanceController extends Controller {
         }
 
         $attendence_info = M('Attendence_info');
+        $personal_info = M('personal_info');
         $attendence_data = $attendence_info->where('id='.$_SESSION['newFileId'])->select();
         
         if($attendence_data[0]['department'] != '') {
@@ -329,14 +334,16 @@ class PerformanceController extends Controller {
             $this->assign('department', $data['department']);
         }
 
-        if($attendence_data[0]['employee'] != '') {
-            $data['employee'] = $attendence_data[0]['employee'];
-            $this->assign('employee', $data['employee']);
-        }
+        // if($attendence_data[0]['employee'] != '') {
+        //     $data['employee'] = $attendence_data[0]['employee'];
+        //     $this->assign('employee', $data['employee']);
+        // }
 
         if($attendence_data[0]['emp_id'] != '') {
             $data['emp_id'] = $attendence_data[0]['emp_id'];
             $this->assign('emp_id', $data['emp_id']);
+            $data2 = $personal_info->where('id='.(int)$data['emp_id'])->field('emp_name')->select();
+            $this->assign('employee', $data2[0]['emp_name']);
         }
 
         if($attendence_data[0]['attendence_status'] != '') {
@@ -587,6 +594,7 @@ class PerformanceController extends Controller {
             $_SESSION['newFileId'] = $_POST['id'];
         }
         $rnp_info = M('rnp_info');
+        $personal_info = M('personal_info');
         $rnp_data = $rnp_info->where('id='.$_SESSION['newFileId'])->select();
 
         if($rnp_data[0]['department'] != '') {
@@ -594,14 +602,16 @@ class PerformanceController extends Controller {
             $this->assign('department', $data['department']);
         }
 
-        if($rnp_data[0]['employee'] != '') {
-            $data['employee'] = $rnp_data[0]['employee'];
-            $this->assign('employee', $data['employee']);
-        }
+        // if($rnp_data[0]['employee'] != '') {
+        //     $data['employee'] = $rnp_data[0]['employee'];
+        //     $this->assign('employee', $data['employee']);
+        // }
 
         if($rnp_data[0]['emp_id'] != '') {
             $data['emp_id'] = $rnp_data[0]['emp_id'];
             $this->assign('emp_id', $data['emp_id']);
+            $data2 = $personal_info->where('id='.(int)$data['emp_id'])->field('emp_name')->select();
+            $this->assign('employee', $data2[0]['emp_name']);
         }
 
         if($rnp_data[0]['rnp_status'] != '') {
@@ -663,6 +673,7 @@ class PerformanceController extends Controller {
             $_SESSION['newFileId'] = $_POST['id'];
         }
         $rnp_info = M('rnp_info');
+        $personal_info = M('personal_info');
         $rnp_data = $rnp_info->where('id='.$_SESSION['newFileId'])->select();
         
         if($rnp_data[0]['department'] != '') {
@@ -670,14 +681,16 @@ class PerformanceController extends Controller {
             $this->assign('department', $data['department']);
         }
 
-        if($rnp_data[0]['employee'] != '') {
-            $data['employee'] = $rnp_data[0]['employee'];
-            $this->assign('employee', $data['employee']);
-        }
+        // if($rnp_data[0]['employee'] != '') {
+        //     $data['employee'] = $rnp_data[0]['employee'];
+        //     $this->assign('employee', $data['employee']);
+        // }
 
         if($rnp_data[0]['emp_id'] != '') {
             $data['emp_id'] = $rnp_data[0]['emp_id'];
             $this->assign('emp_id', $data['emp_id']);
+            $data2 = $personal_info->where('id='.(int)$data['emp_id'])->field('emp_name')->select();
+            $this->assign('employee', $data2[0]['emp_name']);
         }
 
         if($rnp_data[0]['rnp_status'] != '') {

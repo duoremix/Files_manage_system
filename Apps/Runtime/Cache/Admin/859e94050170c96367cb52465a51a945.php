@@ -50,7 +50,7 @@
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li class="super">
-								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">工资内容管理</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
@@ -61,7 +61,7 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业部门设置</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
@@ -75,7 +75,7 @@
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
 							<li class="super">
-								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/user_add">新增管理员</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
@@ -87,7 +87,27 @@
 			<div class="welcome">
 				欢迎使用<br>企业档案管理系统！
 			</div>
+			<div class="white-bg">
+				<div class="float-content" style="top:80%;width:430px">
+					<p class="form-title" style="text-align:center;padding:0">初次使用系统，请设置初始密码</p>
+					<div class="single-row super">
+						<form>
+							<div class="form-field">
+								<input id="password" type="password" name="password" placeholder="密码">
+							</div>
+							<div class="form-field">
+								<input id="r_password" type="password" name="r_password" placeholder="重复密码">
+								<span class="tips">两次输入的密码不同</span>
+							</div>
+							<div class="form-field">
+								<a id="submit" class="system_init" href="#">确定</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 			<input id="user_type" type="hidden" value="<?php echo ($usertype); ?>">
+			<input id="initPwdFlag" type="hidden" value="<?php echo ($initPwdFlag); ?>">
 		</div>
 	</section>
 
@@ -96,7 +116,9 @@
 	<script>
 		window.onload = function() {
 			main_nav.init();
+			initPwdSetting.init();
 			$('input#user_type').remove();
+			$('input#initPwdFlag').remove();
 		}
 	</script>
 </body>

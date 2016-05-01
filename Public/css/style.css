@@ -427,7 +427,7 @@ div.table_scroll.long {
   max-height: 300px;
 }
 
-a.used, a.shown {
+a.shown {
   color: black;
   cursor: text;
 }

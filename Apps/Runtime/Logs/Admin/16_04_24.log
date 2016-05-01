@@ -1,0 +1,825 @@
+[ 2016-04-24T17:18:45+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036872s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.037262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037678s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 7 行.
+
+[ 2016-04-24T17:18:45+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036846s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.037515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037883s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 7 行.
+
+[ 2016-04-24T17:18:45+08:00 ] ::1 /Files_manage_system/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000976s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.161780s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.161952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.030134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.030296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006296s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006451s ]
+
+[ 2016-04-24T17:18:49+08:00 ] ::1 /Files_manage_system/Admin/User/redir_consultation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: emp_id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\UserController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.0474s ]
+SQL: SELECT `usertype` FROM `fm_user` WHERE ( usertype="超级管理员" )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_user` WHERE `username` = 'duo' AND `password` = '202cb962ac59075b964b07152d234b70'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_user` WHERE `username` = 'duo' AND `usertype` = '超级管理员'  [ RunTime:0.0002s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\UserController.class.php 第 33 行.
+
+[ 2016-04-24T17:18:49+08:00 ] ::1 /Files_manage_system/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `fm_user` WHERE ( id=0 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000141s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000305s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036355s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-04-24T17:18:55+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.1589s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0706s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0428s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000461s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056617s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000906s ]
+
+[ 2016-04-24T17:19:05+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0607s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0446s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0406s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000273s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000406s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061985s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000864s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001097s ]
+
+[ 2016-04-24T17:19:05+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000421s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021045s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001179s ]
+
+[ 2016-04-24T17:19:07+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 659 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0950s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000317s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000498s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 249 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 253 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 267 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 271 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060519s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001057s ]
+
+[ 2016-04-24T17:19:15+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/baseInfo_edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.0071s ]
+SQL: SELECT `emp_name` FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: DELETE FROM `fm_personal_info` WHERE ( id=1 ) [ RunTime:0.1995s ]
+SQL: DELETE FROM `fm_duty_info` WHERE ( id=1 ) [ RunTime:0.0743s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: validate F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `fm_personal_info` (`id`,`fm_num`,`emp_name`,`emp_sex`,`emp_borndate`,`emp_folk`,`emp_native`,`emp_idnum`,`emp_edu`,`emp_gra_school`,`emp_gra_date`,`emp_politics`,`emp_marriage`,`emp_postcode`,`emp_phone`,`emp_qq`,`emp_email`,`emp_addr`,`have_photo`) VALUES ('1','B00001','张三','男','1993-06-01','汉族','广东','441882199401041412','大专','华南理工大学','2016-06-25','党员','未婚','510642','13450258524','123456789','123456789@qq.com','广东省XX市XX区XX路2XX号','jpg') [ RunTime:0.0490s ]
+NOTIC: [8] Undefined index: validate F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `fm_duty_info` (`id`,`fm_num`,`emp_name`,`emp_department`,`emp_job`,`emp_entry_date`,`emp_use_form`,`emp_exit_date`,`emp_exit_reason`,`emp_cont_start`,`emp_cont_end`,`emp_full_date`,`emp_full_age`,`emp_bank_name`,`emp_sociaty_insu`,`emp_lostjob_insu`,`emp_old_insu`,`emp_bank_num`,`emp_medical_insu`,`emp_hurt_insu`,`emp_resevered_fund`) VALUES ('1','B00001','张三','技术部','部长','2016-04-14','临时工','','','2016-04-14','2021-04-14','','','41235321','43125321','51234254','52134','523143125321435','4132412','53214123','43124132') [ RunTime:0.0761s ]
+SQL: SELECT * FROM `fm_user` WHERE ( username="张三-1" )  [ RunTime:0.0003s ]
+SQL: UPDATE `fm_user` SET `id`='1',`username`='张三-1',`password`='e10adc3949ba59abbe56e057f20f883e',`usertype`='普通用户' WHERE ( username="张三-1" ) [ RunTime:0.0890s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1046 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000671s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.104259s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.104624s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001766s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001771s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001994s ]
+
+[ 2016-04-24T17:19:17+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001457s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.1031s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.1022s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0078s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000385s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022697s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022856s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002514s ]
+
+[ 2016-04-24T17:19:18+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001404s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000417s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024533s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001180s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002245s ]
+
+[ 2016-04-24T17:19:23+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0116s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000271s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000567s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012785s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012940s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000649s ]
+
+[ 2016-04-24T17:19:24+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000424s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019785s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000779s ]
+
+[ 2016-04-24T17:19:24+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019632s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019803s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000624s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2016-04-24T17:19:25+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 659 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000426s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000788s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 249 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 253 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 267 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 271 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022796s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2016-04-24T17:19:29+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/baseInfo_edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0238s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0549s ]
+SQL: SHOW COLUMNS FROM `fm_user` [ RunTime:0.0088s ]
+SQL: SELECT `emp_name` FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: DELETE FROM `fm_personal_info` WHERE ( id=1 ) [ RunTime:0.0855s ]
+SQL: DELETE FROM `fm_duty_info` WHERE ( id=1 ) [ RunTime:0.1378s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: validate F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `fm_personal_info` (`id`,`fm_num`,`emp_name`,`emp_sex`,`emp_borndate`,`emp_folk`,`emp_native`,`emp_idnum`,`emp_edu`,`emp_gra_school`,`emp_gra_date`,`emp_politics`,`emp_marriage`,`emp_postcode`,`emp_phone`,`emp_qq`,`emp_email`,`emp_addr`,`have_photo`) VALUES ('1','B00001','张三','男','1993-06-01','汉族','广东','441882199401041412','大专','华南理工大学','2016-06-25','党员','未婚','510642','13450258524','123456789','123456789@qq.com','广东省XX市XX区XX路2XX号','jpg') [ RunTime:0.2459s ]
+NOTIC: [8] Undefined index: validate F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\wamp\www\Files_manage_system\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `fm_duty_info` (`id`,`fm_num`,`emp_name`,`emp_department`,`emp_job`,`emp_entry_date`,`emp_use_form`,`emp_exit_date`,`emp_exit_reason`,`emp_cont_start`,`emp_cont_end`,`emp_full_date`,`emp_full_age`,`emp_bank_name`,`emp_sociaty_insu`,`emp_lostjob_insu`,`emp_old_insu`,`emp_bank_num`,`emp_medical_insu`,`emp_hurt_insu`,`emp_resevered_fund`) VALUES ('1','B00001','张三','技术部','部长','2016-04-14','临时工','','','2016-04-14','2021-04-14','','','41235321','43125321','51234254','52134','523143125321435','4132412','53214123','43124132') [ RunTime:0.1383s ]
+SQL: SELECT * FROM `fm_user` WHERE ( username="张三-1" )  [ RunTime:0.0007s ]
+SQL: UPDATE `fm_user` SET `id`='1',`username`='张三-1',`password`='e10adc3949ba59abbe56e057f20f883e',`usertype`='普通用户' WHERE ( username="张三-1" ) [ RunTime:0.0931s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1046 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000460s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001158s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035476s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035948s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001809s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001551s ]
+
+[ 2016-04-24T17:19:30+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001475s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000389s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000581s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026514s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026662s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001971s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002209s ]
+
+[ 2016-04-24T17:19:33+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001412s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.1023s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000252s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000414s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002201s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002509s ]
+
+[ 2016-04-24T17:19:34+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001806s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0099s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000247s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000413s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025727s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002206s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002507s ]
+
+[ 2016-04-24T17:19:34+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001461s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=1 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025259s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025436s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001691s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001879s ]
+
+[ 2016-04-24T17:19:35+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `fm_personal_info`  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info`  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000657s ]
+
+[ 2016-04-24T17:19:36+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=2 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=2 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000353s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+NOTIC: [8] Undefined variable: emp_bank_name F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 276 行.
+NOTIC: [8] Undefined variable: emp_sociaty_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 280 行.
+NOTIC: [8] Undefined variable: emp_lostjob_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 284 行.
+NOTIC: [8] Undefined variable: emp_old_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 288 行.
+NOTIC: [8] Undefined variable: emp_bank_num F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 294 行.
+NOTIC: [8] Undefined variable: emp_medical_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 298 行.
+NOTIC: [8] Undefined variable: emp_hurt_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 302 行.
+NOTIC: [8] Undefined variable: emp_resevered_fund F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 306 行.
+NOTIC: [8] Undefined variable: have_photo F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 308 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019124s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019245s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000826s ]
+
+[ 2016-04-24T17:19:37+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/show
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 393 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=2 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=2 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000346s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000594s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 248 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 252 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 266 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 270 行.
+NOTIC: [8] Undefined variable: emp_bank_name F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 276 行.
+NOTIC: [8] Undefined variable: emp_sociaty_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 280 行.
+NOTIC: [8] Undefined variable: emp_lostjob_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 284 行.
+NOTIC: [8] Undefined variable: emp_old_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 288 行.
+NOTIC: [8] Undefined variable: emp_bank_num F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 294 行.
+NOTIC: [8] Undefined variable: emp_medical_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 298 行.
+NOTIC: [8] Undefined variable: emp_hurt_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 302 行.
+NOTIC: [8] Undefined variable: emp_resevered_fund F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 306 行.
+NOTIC: [8] Undefined variable: have_photo F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\a78414778fa5117b21e45f24be588b4a.php 第 308 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2016-04-24T17:22:55+08:00 ] ::1 /Files_manage_system/Admin/BaseInfo/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+NOTIC: [2048] Declaration of Admin\Controller\BaseInfoController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 1105 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\Files_manage_system\Apps\Admin\Controller\BaseInfoController.class.php 第 659 行.
+SQL: SHOW COLUMNS FROM `fm_personal_info` [ RunTime:0.0265s ]
+SQL: SHOW COLUMNS FROM `fm_duty_info` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `fm_department` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `fm_folk_type` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `fm_native_type` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `fm_use_form` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `fm_personal_info` WHERE ( id=2 )  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `fm_duty_info` WHERE ( id=2 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `fm_department`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_folk_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_native_type`  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `fm_use_form`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000270s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000437s ]
+NOTIC: [8] Undefined variable: emp_exit_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 249 行.
+NOTIC: [8] Undefined variable: emp_exit_reason F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 253 行.
+NOTIC: [8] Undefined variable: emp_full_date F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 267 行.
+NOTIC: [8] Undefined variable: emp_full_age F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 271 行.
+NOTIC: [8] Undefined variable: emp_bank_name F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 277 行.
+NOTIC: [8] Undefined variable: emp_sociaty_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 281 行.
+NOTIC: [8] Undefined variable: emp_lostjob_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 285 行.
+NOTIC: [8] Undefined variable: emp_old_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 289 行.
+NOTIC: [8] Undefined variable: emp_bank_num F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 295 行.
+NOTIC: [8] Undefined variable: emp_medical_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 299 行.
+NOTIC: [8] Undefined variable: emp_hurt_insu F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 303 行.
+NOTIC: [8] Undefined variable: emp_resevered_fund F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 307 行.
+NOTIC: [8] Undefined variable: have_photo F:\wamp\www\Files_manage_system\Apps\Runtime\Cache\Admin\58485b3a80e53d7f0fd724e4395fb8be.php 第 309 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023454s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001248s ]
+

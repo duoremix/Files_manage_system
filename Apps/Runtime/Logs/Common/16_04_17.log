@@ -1,0 +1,48 @@
+[ 2016-04-17T17:23:23+08:00 ] ::1 /Files_manage_system/Index/initPwdSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-17T17:23:38+08:00 ] ::1 /Files_manage_system/Index/initPwdSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000696s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-17T17:25:52+08:00 ] ::1 /Files_manage_system/User/initPwdSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+ERR: 无法加载模块:User
+
+[ 2016-04-17T17:25:55+08:00 ] ::1 /Files_manage_system/User/initPwdSetting
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+ERR: 无法加载模块:User
+
+[ 2016-04-17T17:29:28+08:00 ] ::1 /Files_manage_system/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000636s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-17T17:29:35+08:00 ] ::1 /Files_manage_system/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-17T17:29:36+08:00 ] ::1 /Files_manage_system/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+ERR: 无法加载模块:Index
+
+[ 2016-04-17T17:29:36+08:00 ] ::1 /Files_manage_system/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+ERR: 无法加载模块:Index
+

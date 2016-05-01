@@ -43,14 +43,14 @@
 							</li>
 						</ul>
 					</li>
-					<li class="dropdown super">
+					<li class="dropdown">
 						<a href="#" class="level1">工资等级管理</a>
 						<ul class="dropdown-menu">
-							<li>
+							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
-							<li>
-								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
+							<li class="super">
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">工资内容管理</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
@@ -61,7 +61,7 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/Files_manage_system/Admin/System/company_frame">企业架构设置</a>
+								<a href="/Files_manage_system/Admin/System/company_frame">企业部门设置</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/System/basedata_setting">基本资料设置</a>
@@ -75,7 +75,7 @@
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
 							<li class="super">
-								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/user_add">新增管理员</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
@@ -130,11 +130,11 @@
 						<div class="single-row">
 							<label>
 								<span>开始日期：</span>
-								<input type="text" name="train_start_date" class="short datepick" value="<?php echo ($train_start_date); ?>">
+								<input type="text" name="train_start_date" class="short datepick" value="<?php echo ($train_start_date); ?>" placeholder="YYYY-M-d">
 							</label>
 							<label>
 								<span>结束日期：</span>
-								<input type="text" name="train_end_date" class="short datepick" value="<?php echo ($train_end_date); ?>">
+								<input type="text" name="train_end_date" class="short datepick" value="<?php echo ($train_end_date); ?>" placeholder="YYYY-M-d">
 							</label>
 							<input type="hidden" id="train_person" name='train_person'>
 						</div>

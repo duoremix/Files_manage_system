@@ -50,7 +50,7 @@
 								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
 							</li>
 							<li class="super">
-								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
+								<a href="/Files_manage_system/Admin/Salary/salary_setting">工资内容管理</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/Salary/statistic">统计报表</a>
@@ -61,7 +61,7 @@
 						<a href="#" class="level1">系统维护</a>
 						<ul class="dropdown-menu">
 							<li class="super">
-								<a href="/Files_manage_system/Admin/Salary/account_setting">账套档案管理</a>
+								<a href="/Files_manage_system/Admin/Salary/account_setting">企业部门设置</a>
 							</li>
 							<li class="super">
 								<a href="/Files_manage_system/Admin/Salary/salary_setting">人员设置</a>
@@ -75,7 +75,7 @@
 						<a href="#" class="level1">用户管理</a>
 						<ul class="dropdown-menu">
 							<li class="super">
-								<a href="/Files_manage_system/Admin/User/user_add">新增用户</a>
+								<a href="/Files_manage_system/Admin/User/user_add">新增管理员</a>
 							</li>
 							<li>
 								<a href="/Files_manage_system/Admin/User/password_edit">修改密码</a>
@@ -206,6 +206,7 @@
 			main_nav.init();
 			attendence_check.init();
 			attendence_list.init();
+			attendence_list_operation.init();
 			info_select.init();
 			$('input#user_type').remove();
 		}

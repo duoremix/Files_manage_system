@@ -15,11 +15,12 @@ class SystemController extends Controller {
 	}
 
 	public function systemInit() {
-		if(md5($_POST['password']) == md5('admin')) {
+        $user = M('user');
+        $data = $user->where('id=0')->field('password')->select();
+		if(md5($_POST['password']) == $data[0]['password']) {
             $account_info = M('account_info');
             $account_project = M('account_project');
             $attendence_info = M('attendence_info');
-            $date_record = M('date_record');
             $department = M('department');
             $duty_info = M('duty_info');
             $folk_type = M('folk_type');
@@ -31,24 +32,23 @@ class SystemController extends Controller {
             $train_info = M('train_info');
             $train_person = M('train_person');
             $use_form = M('use_form');
-            $user = M('user');
+            
 
             $res1 = $account_info->where('id!=0')->delete();
             $res2 = $account_project->where('id!=0')->delete();
             $res3 = $attendence_info->where('id!=0')->delete();
-            $res4 = $date_record->where('id!=0')->delete();
-            $res5 = $department->where('id!=0')->delete();
-            $res6 = $duty_info->where('id!=0')->delete();
-            $res7 = $folk_type->where('id!=0')->delete();
-            $res8 = $native_type->where('id!=0')->delete();
-            $res9 = $personal_info->where('id!=0')->delete();
-            $res10 = $project_person->where('id!=0')->delete();
-            $res11 = $rnp_info->where('id!=0')->delete();
-            $res12 = $salary->where('id!=0')->delete();
-            $res13 = $train_info->where('id!=0')->delete();
-            $res14 = $train_person->where('id!=0')->delete();
-            $res15 = $use_form->where('id!=0')->delete();
-            $res16 = $user->where('id!=0')->delete();
+            $res4 = $department->where('id!=0')->delete();
+            $res5 = $duty_info->where('id!=0')->delete();
+            $res6 = $folk_type->where('id!=0')->delete();
+            $res7 = $native_type->where('id!=0')->delete();
+            $res8 = $personal_info->where('id!=0')->delete();
+            $res9 = $project_person->where('id!=0')->delete();
+            $res10 = $rnp_info->where('id!=0')->delete();
+            $res11 = $salary->where('id!=0')->delete();
+            $res12 = $train_info->where('id!=0')->delete();
+            $res13 = $train_person->where('id!=0')->delete();
+            $res14 = $use_form->where('id!=0')->delete();
+            $res15 = $user->where('id!=-1')->delete();
 
             echo "success";
 		} else {
@@ -153,8 +153,9 @@ class SystemController extends Controller {
                 }
                 $infoData = $infoData.'</select></td><td><a class="delete" href="#">删除</a></td></tr>';
             }
-            $infoData = $infoData.'</table><div class="single-row"><a id="save" class="btn btn-primary" style="display:none">保存更改</a></div>';
+            $infoData = $infoData.'</table>';
         } else {
+            $department_init = '<option value="无" checked>无</option>';
             $infoData = '<p class="form-title">尚未有部门信息</p>';
         }
         $this->assign('infoData', $infoData);
