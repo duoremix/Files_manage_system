@@ -1,5 +1,6 @@
 var main_nav = {
 	init: function() {
+		document.cookie = "username=" + $('#username>a').text();
 		$usertype = $('#user_type').val();
 		if($usertype != '超级管理员') {
 			$('.super').remove();
