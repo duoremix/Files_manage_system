@@ -3,17 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>企业档案管理系统</title>
-	<link rel="stylesheet" href="/Files_manage_system/Public/css/style.css">
-	<link rel="shortcut icon" href="/Files_manage_system/Public/image/icon.png">
+	<link rel="stylesheet" href="/Public/css/style.css">
+	<link rel="shortcut icon" href="/Public/image/icon.png">
 </head>
 <body>
 	<section>
 		<div class="topbanner">
-			<img src="/Files_manage_system/Public/image/logo.png">
+			<img src="/Public/image/logo.png">
 			<!-- <h1>企业档案管理系统</h1> -->
 		</div>
 		<div class="form-unit">
-			<form action="/Files_manage_system/Admin/User/redir_consultation" method="post">
+			<form action="/Admin/User/redir_consultation" method="post">
 				<div class="form-field">
 					<select name="usertype" id="usertype">
 						<option value="超级管理员">超级管理员</option>
@@ -33,8 +33,8 @@
 		</div>
 	</section>
 
-	<script src="/Files_manage_system/Public/js/jquery.js"></script>
-	<script src="/Files_manage_system/Public/js/script.js"></script>
+	<script src="/Public/js/jquery.js"></script>
+	<script src="/Public/js/script.js"></script>
 	<script>
 		window.onload = function() {
 			login.init();
